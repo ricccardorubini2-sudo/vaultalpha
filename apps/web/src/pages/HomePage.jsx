@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
 import {
-    Menu, X, ArrowRight, ArrowUpRight, Boxes, BrainCircuit, Globe2, Coins,
-    Landmark, ShieldCheck, Layers, Wrench, LineChart, Lock, Compass, Users,
+    Menu, X, ArrowRight, ArrowUpRight, ShieldCheck, Compass, Users,
     Sprout, Network, HeartHandshake, Mail, Phone, MapPin, Linkedin, Twitter,
     Github, Quote, Check
 } from 'lucide-react';
@@ -30,16 +29,16 @@ const STATS = [
 ];
 
 const FOCUS = [
-    { icon: Boxes, title: 'Blockchain Infrastructure', desc: 'Base layers, rollups, and settlement rails engineered for global scale.' },
-    { icon: BrainCircuit, title: 'Artificial Intelligence', desc: 'Applied models and agentic systems redefining how software is built.' },
-    { icon: Globe2, title: 'Digital Assets', desc: 'Institutional-grade custody, issuance, and asset management.' },
-    { icon: Landmark, title: 'Digital Finance', desc: 'Transparent financial primitives and modern market structure.' },
-    { icon: LineChart, title: 'Stablecoins', desc: 'Compliant settlement money and programmable payment infrastructure.' },
-    { icon: Layers, title: 'Real World Assets', desc: 'Tokenized credit, treasuries, and commodities bridged on-chain.' },
-    { icon: ShieldCheck, title: 'Cybersecurity', desc: 'Cryptographic security, key management, and threat intelligence.' },
-    { icon: Lock, title: 'Zero-Knowledge', desc: 'Privacy and scale powered by frontier cryptography.' },
-    { icon: Wrench, title: 'Developer Tools', desc: 'The infrastructure that unlocks the next generation of builders.' },
-    { icon: Network, title: 'Decentralized Systems', desc: 'Open, verifiable networks that compound value across participants.' },
+    { icon: '/focus/blockchain.svg', title: 'Blockchain Infrastructure', desc: 'Base layers, rollups, and settlement rails engineered for global scale.' },
+    { icon: '/focus/ai.svg', title: 'Artificial Intelligence', desc: 'Applied models and agentic systems redefining how software is built.' },
+    { icon: '/focus/assets.svg', title: 'Digital Assets', desc: 'Institutional-grade custody, issuance, and asset management.' },
+    { icon: '/focus/finance.svg', title: 'Digital Finance', desc: 'Transparent financial primitives and modern market structure.' },
+    { icon: '/focus/usdc.svg', title: 'Stablecoins', desc: 'Compliant settlement money and programmable payment infrastructure.' },
+    { icon: '/focus/rwa.svg', title: 'Real World Assets', desc: 'Tokenized credit, treasuries, and commodities bridged on-chain.' },
+    { icon: '/focus/cyber.svg', title: 'Cybersecurity', desc: 'Cryptographic security, key management, and threat intelligence.' },
+    { icon: '/focus/zk.svg', title: 'Zero-Knowledge', desc: 'Privacy and scale powered by frontier cryptography.' },
+    { icon: '/focus/devtools.svg', title: 'Developer Tools', desc: 'The infrastructure that unlocks the next generation of builders.' },
+    { icon: '/focus/decentralized.svg', title: 'Decentralized Systems', desc: 'Open, verifiable networks that compound value across participants.' },
 ];
 
 const PROCESS = [
@@ -51,15 +50,15 @@ const PROCESS = [
 ];
 
 const PORTFOLIO = [
-    { name: 'Meridian Labs', industry: 'Infrastructure', stage: 'Series B', country: 'United States', status: 'Active' },
-    { name: 'Halcyon AI', industry: 'Artificial Intelligence', stage: 'Series A', country: 'United Kingdom', status: 'Active' },
-    { name: 'Vault Protocol', industry: 'Digital Finance', stage: 'Seed', country: 'Singapore', status: 'Active' },
-    { name: 'Aurora Chain', industry: 'Infrastructure', stage: 'Series A', country: 'Germany', status: 'Active' },
-    { name: 'Ledgerlyne', industry: 'Digital Assets', stage: 'Series B', country: 'Switzerland', status: 'Active' },
-    { name: 'Ciphergrid', industry: 'Cybersecurity', stage: 'Seed', country: 'Israel', status: 'Active' },
-    { name: 'Northwind AI', industry: 'Artificial Intelligence', stage: 'Series C', country: 'Canada', status: 'Growth' },
-    { name: 'Terrafi', industry: 'Digital Finance', stage: 'Series A', country: 'United Arab Emirates', status: 'Active' },
-    { name: 'Proofstack', industry: 'Cybersecurity', stage: 'Seed', country: 'Estonia', status: 'Active' },
+    { name: 'Meridian Labs', industry: 'Infrastructure', stage: 'Series B', country: 'United States', status: 'Active', logo: '/portfolio/meridian-labs-icon.svg', tile: 'light', url: 'https://meridianlabs.ai' },
+    { name: 'Halcyon AI', industry: 'Artificial Intelligence', stage: 'Series A', country: 'United Kingdom', status: 'Active', logo: '/portfolio/halcyon-ai-icon.png', tile: 'light', url: 'https://www.halcyon.ai' },
+    { name: 'Vault Protocol', industry: 'Digital Finance', stage: 'Seed', country: 'Singapore', status: 'Active', logo: '/portfolio/vault-protocol.svg', tile: 'dark', logoWide: true, url: 'https://vaultprotocol.ai' },
+    { name: 'Aurora Chain', industry: 'Infrastructure', stage: 'Series A', country: 'Germany', status: 'Active', logo: '/portfolio/aurora-chain.svg', tile: 'light', url: 'https://aurora.dev' },
+    { name: 'Ledgerlyne', industry: 'Digital Assets', stage: 'Series B', country: 'Switzerland', status: 'Active', logo: '/portfolio/ledgerlyne.webp', tile: 'light', url: 'https://www.ledgerly.com' },
+    { name: 'Ciphergrid', industry: 'Cybersecurity', stage: 'Seed', country: 'Israel', status: 'Active', logo: '/portfolio/ciphergrid.svg', tile: 'dark', url: 'https://ciphergrid.ai' },
+    { name: 'Northwind AI', industry: 'Artificial Intelligence', stage: 'Series C', country: 'Canada', status: 'Growth', logo: '/portfolio/northwind-ai.svg', tile: 'light', url: 'https://northwind.ai' },
+    { name: 'Terrafi', industry: 'Digital Finance', stage: 'Series A', country: 'United Arab Emirates', status: 'Active', logo: '/portfolio/terrafi.svg', tile: 'dark', url: 'https://www.terrafi.in' },
+    { name: 'Proofstack', industry: 'Cybersecurity', stage: 'Seed', country: 'Estonia', status: 'Active', logo: '/portfolio/proofstack-official.svg', tile: 'light', url: 'https://proofstack.io' },
 ];
 const CATEGORIES = ['All', 'Infrastructure', 'Artificial Intelligence', 'Digital Finance', 'Digital Assets', 'Cybersecurity'];
 
@@ -80,7 +79,7 @@ const RESEARCH = [
 
 const TEAM_MEMBER_META = {
     'Charles Whitmore': { role: 'Founding Partner', bio: 'Backed 40+ infrastructure companies. Believes patient capital builds category leaders.' },
-    'Ihor Ostrynskyi': { role: 'Managing Partner', bio: 'Former head of digital assets at a global bank. Two decades in markets and technology.' },
+    'Vadym Yaroshevskyi': { role: 'Managing Partner', bio: 'Former head of digital assets at a global bank. Two decades in markets and technology.' },
     'Maya Becker': { role: 'Head of Technical Diligence', bio: 'Protocol engineer turned investor. Leads architecture and security reviews.' },
     'Mykhailo Mechenko': { role: 'Partner, Portfolio Operations', bio: 'Supports founders across growth, hiring, and follow-on strategy across the portfolio.' },
     'Yuki Tanaka': { role: 'Head of Research', bio: 'Publishes our market outlook and drives thesis development across sectors.' },
@@ -93,6 +92,8 @@ const teamPhotoModules = import.meta.glob('../../../../teams_image/*.png', {
     import: 'default',
 });
 
+const TEAM_ORDER = Object.keys(TEAM_MEMBER_META);
+
 const TEAM = Object.entries(teamPhotoModules)
     .filter(([path]) => !path.endsWith('/logo.png'))
     .map(([path, url]) => {
@@ -101,7 +102,11 @@ const TEAM = Object.entries(teamPhotoModules)
         const meta = TEAM_MEMBER_META[name] ?? { role: 'Partner', bio: '' };
         return { name, ...meta, img: url };
     })
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => {
+        const ai = TEAM_ORDER.indexOf(a.name);
+        const bi = TEAM_ORDER.indexOf(b.name);
+        return (ai === -1 ? TEAM_ORDER.length : ai) - (bi === -1 ? TEAM_ORDER.length : bi);
+    });
 
 const TESTIMONIALS = [
     { quote: 'They understood our architecture better than most engineers we interviewed. The technical diligence made us a stronger company.', name: 'Elena Vasquez', role: 'Founder & CEO, Meridian Labs' },
@@ -370,9 +375,7 @@ function Focus() {
                     {FOCUS.map((f, i) => (
                         <Reveal key={f.title} delay={(i % 5) * 0.05}>
                             <div className="group h-full rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/40 hover:bg-white/[0.05] hover:shadow-[0_24px_60px_-24px_rgba(56,189,248,0.4)]">
-                                <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-sky-500/20 to-indigo-500/20 text-sky-300 transition-colors group-hover:from-sky-500 group-hover:to-indigo-600 group-hover:text-white">
-                                    <f.icon className="h-5 w-5" strokeWidth={1.75} />
-                                </div>
+                                <img src={f.icon} alt="" className="h-12 w-12 object-contain drop-shadow-[0_8px_16px_rgba(56,189,248,0.18)] transition-transform duration-300 group-hover:scale-110" />
                                 <h3 className="mt-5 font-display text-base font-semibold text-white">{f.title}</h3>
                                 <p className="mt-2 text-sm leading-relaxed text-slate-400">{f.desc}</p>
                             </div>
@@ -407,8 +410,11 @@ function Portfolio() {
                 </div>
                 <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                     {filtered.map((p) => (
-                        <motion.div
+                        <motion.a
                             key={p.name}
+                            href={p.url}
+                            target="_blank"
+                            rel="noreferrer"
                             layout
                             initial={{ opacity: 0, y: 16 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -416,11 +422,11 @@ function Portfolio() {
                             className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:-translate-y-1 hover:border-sky-400/50 hover:bg-white/[0.06] hover:shadow-[0_28px_70px_-28px_rgba(56,189,248,0.5)]"
                         >
                             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-400/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                            <div className="flex items-center justify-between">
-                                <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 font-display text-lg font-semibold text-white shadow-[0_0_20px_-6px_rgba(56,189,248,0.8)]">
-                                    {p.name.charAt(0)}
+                            <div className="flex items-center justify-between gap-3">
+                                <div className={`grid h-14 place-items-center overflow-hidden rounded-xl p-2 ${p.tile === 'dark' ? 'bg-[#0b1220] ring-1 ring-white/10' : 'bg-white'} ${p.logoWide ? 'w-[7.5rem]' : 'w-14'}`}>
+                                    <img src={p.logo} alt={`${p.name} logo`} className={`h-full w-full ${p.logoWide ? 'object-contain object-left' : 'object-contain'}`} />
                                 </div>
-                                <ArrowUpRight className="h-5 w-5 text-slate-500 transition-all group-hover:text-sky-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                                <ArrowUpRight className="h-5 w-5 shrink-0 text-slate-500 transition-all group-hover:text-sky-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                             </div>
                             <h3 className="mt-6 font-display text-xl font-semibold text-white">{p.name}</h3>
                             <p className="mt-1 text-sm text-slate-400">{p.industry}</p>
@@ -429,7 +435,7 @@ function Portfolio() {
                                 <span className="rounded-full bg-sky-500/10 px-2.5 py-1 text-sky-300">{p.status}</span>
                                 <span className="ml-auto flex items-center gap-1"><MapPin className="h-3 w-3" />{p.country}</span>
                             </div>
-                        </motion.div>
+                        </motion.a>
                     ))}
                 </div>
             </div>
@@ -584,7 +590,7 @@ function Testimonials() {
 }
 
 function Partners() {
-    const partners = ['Meridian', 'Halcyon', 'Aurora', 'Ledgerlyne', 'Ciphergrid', 'Northwind', 'Terrafi', 'Proofstack'];
+    const partners = PORTFOLIO.filter((p) => p.name !== 'Vault Protocol');
     return (
         <Section id="careers" className="bg-[#04060f]">
             <div className="mx-auto max-w-[80rem] px-6 lg:px-12">
@@ -594,9 +600,20 @@ function Partners() {
                 </Reveal>
                 <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 sm:grid-cols-4">
                     {partners.map((p) => (
-                        <div key={p} className="flex items-center justify-center bg-[#050813] px-6 py-10 font-display text-lg font-semibold tracking-tight text-slate-400 transition-colors hover:text-white">
-                            {p}
-                        </div>
+                        <a
+                            key={p.name}
+                            href={p.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="group flex flex-col items-center justify-center gap-4 bg-[#050813] px-6 py-10 transition-colors hover:bg-white/[0.04]"
+                        >
+                            <img
+                                src={p.logo}
+                                alt={`${p.name} logo`}
+                                className={`h-14 w-auto max-w-[8.5rem] object-contain ${p.name === 'Meridian Labs' ? 'brightness-0 invert' : ''}`}
+                            />
+                            <span className="font-display text-sm font-semibold tracking-tight text-slate-400 transition-colors group-hover:text-white">{p.name}</span>
+                        </a>
                     ))}
                 </div>
                 <Reveal delay={0.1}>
