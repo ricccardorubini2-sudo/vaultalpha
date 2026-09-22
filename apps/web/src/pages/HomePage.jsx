@@ -81,7 +81,7 @@ const TEAM_MEMBER_META = {
     'Charles Whitmore': { role: 'Founding Partner', bio: 'Backed 40+ infrastructure companies. Believes patient capital builds category leaders.' },
     'Vadym Yaroshevskyi': { role: 'Managing Partner', bio: 'Former head of digital assets at a global bank. Two decades in markets and technology.' },
     'Maya Becker': { role: 'Head of Technical Diligence', bio: 'Protocol engineer turned investor. Leads architecture and security reviews.' },
-    'Mykhailo Mechenko': { role: 'Partner, Portfolio Operations', bio: 'Supports founders across growth, hiring, and follow-on strategy across the portfolio.' },
+    'Sofiia Tkachenko': { role: 'Partner, Portfolio Operations', bio: 'Supports founders across growth, hiring, and follow-on strategy across the portfolio.' },
     'Yuki Tanaka': { role: 'Head of Research', bio: 'Publishes our market outlook and drives thesis development across sectors.' },
     'Yullia Mitchell': { role: 'Partner, Investor Relations', bio: 'Builds relationships with LPs, institutions, and strategic partners worldwide.' },
 };
