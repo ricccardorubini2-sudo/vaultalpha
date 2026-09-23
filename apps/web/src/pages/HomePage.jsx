@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
 import {
     Menu, X, ArrowRight, ArrowUpRight, ShieldCheck, Compass, Users,
@@ -78,7 +79,7 @@ const RESEARCH = [
 ];
 
 const TEAM_MEMBER_META = {
-    'Charles Whitmore': { role: 'Founding Partner', bio: 'Backed 40+ infrastructure companies. Believes patient capital builds category leaders.' },
+    'Vladyslav Blyzniuk': { role: 'Founding Partner', bio: 'Backed 40+ infrastructure companies. Believes patient capital builds category leaders.' },
     'Vadym Yaroshevskyi': { role: 'Managing Partner', bio: 'Former head of digital assets at a global bank. Two decades in markets and technology.' },
     'Maya Becker': { role: 'Head of Technical Diligence', bio: 'Protocol engineer turned investor. Leads architecture and security reviews.' },
     'Sofiia Tkachenko': { role: 'Partner, Portfolio Operations', bio: 'Supports founders across growth, hiring, and follow-on strategy across the portfolio.' },
@@ -713,9 +714,35 @@ function Contact() {
 
 function Footer() {
     const cols = [
-        { title: 'Firm', links: ['About', 'Investment Areas', 'Portfolio', 'Research', 'Careers'] },
-        { title: 'Insights', links: ['AI', 'Blockchain', 'Stablecoins', 'Cybersecurity', 'Market Intelligence'] },
-        { title: 'Legal', links: ['Privacy Policy', 'Terms of Service', 'Disclosures', 'Cookie Settings'] },
+        {
+            title: 'Firm',
+            links: [
+                { label: 'About', href: '#about' },
+                { label: 'Investment Areas', href: '#focus' },
+                { label: 'Portfolio', href: '#portfolio' },
+                { label: 'Research', href: '#research' },
+                { label: 'Careers', href: '#careers' },
+            ],
+        },
+        {
+            title: 'Insights',
+            links: [
+                { label: 'AI', href: '#research' },
+                { label: 'Blockchain', href: '#research' },
+                { label: 'Stablecoins', href: '#research' },
+                { label: 'Cybersecurity', href: '#focus' },
+                { label: 'Market Intelligence', href: '#research' },
+            ],
+        },
+        {
+            title: 'Legal',
+            links: [
+                { label: 'Privacy Policy', to: '/privacy-policy' },
+                { label: 'Terms of Service', to: '/terms-of-service' },
+                { label: 'Disclosures', to: '/disclosures' },
+                { label: 'Cookie Settings', to: '/cookie-settings' },
+            ],
+        },
     ];
     return (
         <footer className="border-t border-white/10 bg-[#04060f] text-white">
@@ -736,7 +763,13 @@ function Footer() {
                             <h4 className="text-sm font-semibold text-white">{c.title}</h4>
                             <ul className="mt-4 space-y-3">
                                 {c.links.map((l) => (
-                                    <li key={l}><a href="#top" className="text-sm text-slate-400 transition-colors hover:text-white">{l}</a></li>
+                                    <li key={l.label}>
+                                        {l.to ? (
+                                            <Link to={l.to} className="text-sm text-slate-400 transition-colors hover:text-white">{l.label}</Link>
+                                        ) : (
+                                            <a href={l.href} className="text-sm text-slate-400 transition-colors hover:text-white">{l.label}</a>
+                                        )}
+                                    </li>
                                 ))}
                             </ul>
                         </div>
