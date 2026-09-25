@@ -79,12 +79,12 @@ const RESEARCH = [
 ];
 
 const TEAM_MEMBER_META = {
-    'Vladyslav Blyzniuk': { role: 'Founding Partner', bio: 'Backed 40+ infrastructure companies. Believes patient capital builds category leaders.' },
-    'Vadym Yaroshevskyi': { role: 'Managing Partner', bio: 'Former head of digital assets at a global bank. Two decades in markets and technology.' },
-    'Maya Becker': { role: 'Head of Technical Diligence', bio: 'Protocol engineer turned investor. Leads architecture and security reviews.' },
-    'Sofiia Tkachenko': { role: 'Partner, Portfolio Operations', bio: 'Supports founders across growth, hiring, and follow-on strategy across the portfolio.' },
-    'Yuki Tanaka': { role: 'Head of Research', bio: 'Publishes our market outlook and drives thesis development across sectors.' },
-    'Yullia Mitchell': { role: 'Partner, Investor Relations', bio: 'Builds relationships with LPs, institutions, and strategic partners worldwide.' },
+    'Vladyslav Blyzniuk': { role: 'Founder, Partner' },
+    'Vadym Nemyrytskyi': { role: 'Chief Executive Officer, Partner' },
+    'Vadym Yaroshevskyi': { role: 'Managing Partner' },
+    'Maya Becker': { role: 'Head of Technical Diligence' },
+    'Yuki Tanaka': { role: 'Head of Research' },
+    'Yullia Mitchell': { role: 'Partner, Investor Relations' },
 };
 
 const teamPhotoModules = import.meta.glob('../../../../teams_image/*.png', {
@@ -100,7 +100,7 @@ const TEAM = Object.entries(teamPhotoModules)
     .map(([path, url]) => {
         const file = path.split('/').pop() ?? '';
         const name = file.replace(/\.png$/i, '');
-        const meta = TEAM_MEMBER_META[name] ?? { role: 'Partner', bio: '' };
+        const meta = TEAM_MEMBER_META[name] ?? { role: 'Partner' };
         return { name, ...meta, img: url };
     })
     .sort((a, b) => {
@@ -543,16 +543,15 @@ function Team() {
                     <H2 className="mt-7 max-w-3xl">Engineers, operators, researchers.</H2>
                 </Reveal>
                 <Reveal delay={0.1}>
-                    <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="mt-16 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
                         {TEAM.map((m) => (
-                            <div key={m.name} className="group rounded-2xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:border-sky-400/30">
+                            <div key={m.name} className="group rounded-2xl border border-white/10 bg-white/[0.02] p-3 transition-all hover:border-sky-400/30 sm:p-4">
                                 <div className="aspect-[3/4] overflow-hidden rounded-xl bg-white/5">
-                                    <img src={m.img} alt={m.name} loading="lazy" className="h-full w-full object-cover opacity-95 transition-transform duration-700 group-hover:scale-105" />
+                                    <img src={m.img} alt={m.name} loading="lazy" className="h-full w-full object-cover object-top opacity-95 transition-transform duration-700 group-hover:scale-105" />
                                 </div>
-                                <div className="px-2 pb-1 pt-5">
-                                    <h3 className="font-display text-lg font-semibold text-white">{m.name}</h3>
-                                    <p className="text-sm text-sky-400">{m.role}</p>
-                                    <p className="mt-3 text-sm leading-relaxed text-slate-400">{m.bio}</p>
+                                <div className="px-1 pb-0.5 pt-4">
+                                    <h3 className="font-display text-sm font-semibold text-white sm:text-base">{m.name}</h3>
+                                    <p className="mt-1 text-xs text-sky-400 sm:text-sm">{m.role}</p>
                                 </div>
                             </div>
                         ))}

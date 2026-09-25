@@ -31,12 +31,3 @@ export function hasCookieConsent() {
         return false;
     }
 }
-
-export function clearCookieConsent() {
-    try {
-        localStorage.removeItem(PREFS_KEY);
-        localStorage.removeItem(CONSENT_KEY);
-    } catch {
-        /* ignore */
-    }
-}

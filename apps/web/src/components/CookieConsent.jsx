@@ -1,26 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { COOKIE_DEFAULTS, clearCookieConsent, hasCookieConsent, writeCookiePrefs } from '@/lib/cookies';
-
-function isHardRefreshKey(e) {
-    if (e.key === 'F5' && e.ctrlKey) return true;
-    if ((e.key === 'r' || e.key === 'R') && e.ctrlKey && e.shiftKey) return true;
-    return false;
-}
+import { COOKIE_DEFAULTS, hasCookieConsent, writeCookiePrefs } from '@/lib/cookies';
 
 export default function CookieConsent() {
     const { pathname } = useLocation();
     const [open, setOpen] = useState(false);
-
-    useEffect(() => {
-        const onKeyDown = (e) => {
-            if (!isHardRefreshKey(e)) return;
-            clearCookieConsent();
-        };
-        window.addEventListener('keydown', onKeyDown);
-        return () => window.removeEventListener('keydown', onKeyDown);
-    }, []);
 
     useEffect(() => {
         if (pathname === '/cookie-settings') {
