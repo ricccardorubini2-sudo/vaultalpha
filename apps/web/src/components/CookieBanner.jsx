@@ -30,12 +30,12 @@ export default function CookieBanner() {
             aria-label="Cookie settings"
             className="fixed inset-x-0 bottom-0 z-[70] p-4 sm:p-6"
         >
-            <div className="mx-auto flex max-w-3xl flex-col gap-4 rounded-2xl border border-white/15 bg-[#0a1020]/95 p-5 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.85)] backdrop-blur-xl sm:flex-row sm:items-center sm:gap-6 sm:p-6">
+            <div className="mx-auto flex max-w-3xl flex-col gap-4 rounded-2xl border border-slate-200 bg-white/95 p-5 shadow-[0_24px_80px_-20px_rgba(15,23,42,0.2)] backdrop-blur-xl sm:flex-row sm:items-center sm:gap-6 sm:p-6">
                 <div className="min-w-0 flex-1">
-                    <p className="font-display text-sm font-semibold text-white">We use cookies</p>
-                    <p className="mt-1.5 text-sm leading-relaxed text-slate-400">
+                    <p className="font-display text-sm font-semibold text-slate-900">We use cookies</p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
                         Essential cookies keep the site secure. Optional analytics and functional cookies help us improve — you can change this anytime in{' '}
-                        <Link to="/cookie-settings" className="text-sky-400 underline-offset-2 hover:underline">
+                        <Link to="/cookie-settings" className="text-sky-600 underline-offset-2 hover:underline">
                             Cookie Settings
                         </Link>
                         .
@@ -45,20 +45,20 @@ export default function CookieBanner() {
                     <button
                         type="button"
                         onClick={rejectOptional}
-                        className="rounded-full border border-white/20 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-white/40 hover:text-white"
+                        className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:border-slate-400 hover:text-slate-900"
                     >
                         Reject optional
                     </button>
                     <Link
                         to="/cookie-settings"
-                        className="rounded-full border border-white/20 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-sky-400/50 hover:text-white"
+                        className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:border-sky-400/50 hover:text-slate-900"
                     >
                         Customize
                     </Link>
                     <button
                         type="button"
                         onClick={acceptAll}
-                        className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#050813] transition-opacity hover:opacity-90"
+                        className="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                     >
                         Accept all
                     </button>

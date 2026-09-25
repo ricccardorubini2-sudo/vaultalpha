@@ -59,7 +59,7 @@ export default function NetworkCanvas({ density = 0.00012, className = '', inter
                     const dist = Math.hypot(dx, dy);
                     if (dist < LINK) {
                         const o = (1 - dist / LINK) * 0.5;
-                        ctx.strokeStyle = `rgba(96, 165, 250, ${o})`;
+                        ctx.strokeStyle = `rgba(37, 99, 235, ${o})`;
                         ctx.lineWidth = 0.6;
                         ctx.beginPath();
                         ctx.moveTo(a.x, a.y);
@@ -74,7 +74,7 @@ export default function NetworkCanvas({ density = 0.00012, className = '', inter
                     const md = Math.hypot(mdx, mdy);
                     if (md < 190) {
                         const o = (1 - md / 190) * 0.7;
-                        ctx.strokeStyle = `rgba(129, 140, 248, ${o})`;
+                        ctx.strokeStyle = `rgba(79, 70, 229, ${o})`;
                         ctx.lineWidth = 0.8;
                         ctx.beginPath();
                         ctx.moveTo(a.x, a.y);
@@ -88,13 +88,13 @@ export default function NetworkCanvas({ density = 0.00012, className = '', inter
                 const pr = a.r + (Math.sin(a.pulse) + 1) * (a.hub ? 1.4 : 0.5);
                 ctx.beginPath();
                 const g = ctx.createRadialGradient(a.x, a.y, 0, a.x, a.y, pr * glow);
-                g.addColorStop(0, a.hub ? 'rgba(147,197,253,0.9)' : 'rgba(96,165,250,0.75)');
-                g.addColorStop(1, 'rgba(96,165,250,0)');
+                g.addColorStop(0, a.hub ? 'rgba(37,99,235,0.55)' : 'rgba(59,130,246,0.4)');
+                g.addColorStop(1, 'rgba(59,130,246,0)');
                 ctx.fillStyle = g;
                 ctx.arc(a.x, a.y, pr * glow, 0, Math.PI * 2);
                 ctx.fill();
                 ctx.beginPath();
-                ctx.fillStyle = a.hub ? 'rgba(191,219,254,0.95)' : 'rgba(147,197,253,0.85)';
+                ctx.fillStyle = a.hub ? 'rgba(29,78,216,0.9)' : 'rgba(37,99,235,0.75)';
                 ctx.arc(a.x, a.y, pr, 0, Math.PI * 2);
                 ctx.fill();
             }

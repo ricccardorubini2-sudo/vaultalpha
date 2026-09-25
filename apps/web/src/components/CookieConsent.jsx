@@ -31,10 +31,10 @@ export default function CookieConsent() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 16 }}
                     transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                    className="fixed bottom-4 right-4 z-[70] w-[min(100%-2rem,22rem)] rounded-2xl border border-white/15 bg-[#0a1020]/95 p-5 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.85)] backdrop-blur-xl"
+                    className="fixed bottom-4 right-4 z-[70] w-[min(100%-2rem,22rem)] rounded-2xl border border-slate-200 bg-white/95 p-5 shadow-[0_24px_60px_-20px_rgba(15,23,42,0.25)] backdrop-blur-xl"
                 >
                     <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky-400">Cookies</p>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                    <p className="mt-3 text-sm leading-relaxed text-slate-600">
                         We use cookies to run this site securely and, with your consent, to improve it.{' '}
                         <Link to="/cookie-settings" className="text-sky-400 underline-offset-2 hover:underline" onClick={() => setOpen(false)}>
                             Cookie Settings
@@ -48,14 +48,14 @@ export default function CookieConsent() {
                         <button
                             type="button"
                             onClick={() => close(COOKIE_DEFAULTS)}
-                            className="rounded-full border border-white/20 px-4 py-2 text-xs font-medium text-slate-300 transition-colors hover:border-white/40 hover:text-white"
+                            className="rounded-full border border-slate-300 px-4 py-2 text-xs font-medium text-slate-600 transition-colors hover:border-slate-400 hover:text-slate-900"
                         >
                             Reject
                         </button>
                         <button
                             type="button"
                             onClick={() => close({ essential: true, analytics: true, functional: true })}
-                            className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#050813] transition-opacity hover:opacity-90"
+                            className="rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90"
                         >
                             Accept
                         </button>

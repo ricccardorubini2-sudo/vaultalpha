@@ -528,3 +528,333 @@
 - url: http://localhost:3000/#team
 - via: popstate
 
+## 2026-09-25 06:49:02.189Z load
+- url: http://localhost:3000/#team
+
+## 2026-09-25 06:49:02.264Z navigate
+- url: http://localhost:3000/#team
+- via: replaceState
+
+## 2026-09-25 06:49:11.524Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:49:12.377Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:49:12.944Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:49:13.368Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:49:14.040Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:49:40.158Z click
+- element: {"tag":"section","role":null,"ariaLabel":null,"name":null,"type":null,"id":"network","placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Our Global Investment NetworkA living map of capital, founders, and infrastructure.Our investment ecosystem spans connected hubs across 38 countries — a real-time fabric of founders, institutions, and blockchain infrastructure.New YorkLondonBerlinDubaiSingaporeTokyoSão Paulo38Connected countries12Investment hubs400+Founder network24/7Live coverage"}
+
+## 2026-09-25 06:49:41.018Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:49:41.498Z click
+- element: {"tag":"section","role":null,"ariaLabel":null,"name":null,"type":null,"id":"network","placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Our Global Investment NetworkA living map of capital, founders, and infrastructure.Our investment ecosystem spans connected hubs across 38 countries — a real-time fabric of founders, institutions, and blockchain infrastructure.New YorkLondonBerlinDubaiSingaporeTokyoSão Paulo38Connected countries12Investment hubs400+Founder network24/7Live coverage"}
+
+## 2026-09-25 06:49:43.328Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:50:41.838Z click
+- element: {"tag":"p","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Our investment ecosystem spans connected hubs across 38 countries — a real-time fabric of founders, institutions, and blockchain infrastructure."}
+
+## 2026-09-25 06:50:42.304Z click
+- element: {"tag":"p","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Our investment ecosystem spans connected hubs across 38 countries — a real-time fabric of founders, institutions, and blockchain infrastructure."}
+
+## 2026-09-25 06:50:42.824Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Our Global Investment NetworkA living map of capital, founders, and infrastructure.Our investment ecosystem spans connected hubs across 38 countries — a real-time fabric of founders, institutions, and blockchain infrastructure."}
+
+## 2026-09-25 06:50:48.571Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Our Global Investment NetworkA living map of capital, founders, and infrastructure.Our investment ecosystem spans connected hubs across 38 countries — a real-time fabric of founders, institutions, and blockchain infrastructure."}
+
+## 2026-09-25 06:50:53.893Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:50:55.730Z click
+- element: {"tag":"section","role":null,"ariaLabel":null,"name":null,"type":null,"id":"top","placeholder":null,"label":null,"value":null,"valueLength":0,"text":" Global technology investment institutionInvesting in the Architecture of TomorrowVaultAlpha Fund partners with exceptional founders building the future of blockchain infrastructure, artificial intelligence, digital finance, cybersecurity, and decentralized technologies.Apply for Funding Explore Portfolio"}
+
+## 2026-09-25 06:50:56.508Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:50:56.787Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:51:36.518Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:51:36.976Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:51:37.646Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:51:38.518Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:51:39.562Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 06:52:43.588Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Our Global Investment NetworkA living map of capital, founders, and infrastructure.Our investment ecosystem spans connected hubs across 38 countries — a real-time fabric of founders, institutions, and blockchain infrastructure.New YorkLondonBerlinDubaiSingaporeTokyoSão Paulo38Connected countries12Investment hubs400+Founder network24/7Live coverage"}
+
+## 2026-09-25 06:59:57.512Z click
+- element: {"tag":"section","role":null,"ariaLabel":null,"name":null,"type":null,"id":"focus","placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Investment FocusThe frontiers where we build conviction.Blockchain InfrastructureBase layers, rollups, and settlement rails engineered for global scale.Artificial IntelligenceApplied models and agentic systems redefining how software is built.Digital AssetsInstitutional-grade custody, issuance, and asset management.Digital FinanceTransparent financial primitives and modern market structure.StablecoinsCompliant settlement money and programmable payment infrastructure.Real World AssetsTokenized credit, treasuries, and commodities bridged on-chain.CybersecurityCryptographic security, key management, and threat intelligence.Zero-KnowledgePrivacy and scale powered by frontier cryptography.Developer ToolsThe infrastructure that unlocks the next generation of builders.Decentralized SystemsOpen, verifiable networks that compound value across participants."}
+
+## 2026-09-25 07:05:08.066Z click
+- element: {"tag":"main","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" Global technology investment institutionInvesting in the Architecture of TomorrowVaultAlpha Fund partners with exceptional founders building the future of blockchain infrastructure, artificial intelligence, digital finance, cybersecurity, and decentralized technologies.Apply for Funding Explore PortfolioBlockchain Artificial Intelligence Digital Finance Zero-Knowledge Stablecoins Cybersecurity Real World Assets Developer Tools Blockchain Artificial Intelligence Digital Finance Zero-Knowledge Stablecoins Cybersecurity Real World Assets Developer Tools Investment PhilosophyA partner for the long arc of technology.VaultAlpha Fund funds and builds the foundational companies of the next digital era. We combine deep technical judgment with global reach, partnering with founders from first conviction through category leadership.We are engineers, operators, and researchers who believe open, verifiable technology will reshape finance, infrastructure, and intelligence itself. Founders choose us because we move with discipline, diligence honestly, and stay for the long term.$2.4B+Assets under management180+Portfolio companies38Countries400+Founder network25+Investment professionalsOur Global Investment NetworkA living map of capital, founders, and infrastructure.Our investment ecosystem spans connected hubs across 38 countries — a real-time fabric of founders, institutions, and blockchain infrastructure.New YorkLondonBerlinDubaiSingaporeTokyoSão Paulo38Connected countries12Investment hubs400+Founder network24/7Live coverageInvestment FocusThe frontiers where we build conviction.Blockchain InfrastructureBase layers, rollups, and settlement rails engineered for global scale.Artificial IntelligenceApplied models and agentic systems redefining how software is built.Digital AssetsInstitutional-grade custody, issuance, and asset management.Digital FinanceTransparent financial primitives and modern market structure.StablecoinsCompliant settlement money and programmable payment infra..."}
+
+## 2026-09-25 07:05:09.816Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:05:10.220Z click
+- element: {"tag":"section","role":null,"ariaLabel":null,"name":null,"type":null,"id":"focus","placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Investment FocusThe frontiers where we build conviction.Blockchain InfrastructureBase layers, rollups, and settlement rails engineered for global scale.Artificial IntelligenceApplied models and agentic systems redefining how software is built.Digital AssetsInstitutional-grade custody, issuance, and asset management.Digital FinanceTransparent financial primitives and modern market structure.StablecoinsCompliant settlement money and programmable payment infrastructure.Real World AssetsTokenized credit, treasuries, and commodities bridged on-chain.CybersecurityCryptographic security, key management, and threat intelligence.Zero-KnowledgePrivacy and scale powered by frontier cryptography.Developer ToolsThe infrastructure that unlocks the next generation of builders.Decentralized SystemsOpen, verifiable networks that compound value across participants."}
+
+## 2026-09-25 07:05:10.638Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:05:11.105Z click
+- element: {"tag":"section","role":null,"ariaLabel":null,"name":null,"type":null,"id":"focus","placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Investment FocusThe frontiers where we build conviction.Blockchain InfrastructureBase layers, rollups, and settlement rails engineered for global scale.Artificial IntelligenceApplied models and agentic systems redefining how software is built.Digital AssetsInstitutional-grade custody, issuance, and asset management.Digital FinanceTransparent financial primitives and modern market structure.StablecoinsCompliant settlement money and programmable payment infrastructure.Real World AssetsTokenized credit, treasuries, and commodities bridged on-chain.CybersecurityCryptographic security, key management, and threat intelligence.Zero-KnowledgePrivacy and scale powered by frontier cryptography.Developer ToolsThe infrastructure that unlocks the next generation of builders.Decentralized SystemsOpen, verifiable networks that compound value across participants."}
+
+## 2026-09-25 07:05:11.616Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:05:12.018Z click
+- element: {"tag":"section","role":null,"ariaLabel":null,"name":null,"type":null,"id":"focus","placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Investment FocusThe frontiers where we build conviction.Blockchain InfrastructureBase layers, rollups, and settlement rails engineered for global scale.Artificial IntelligenceApplied models and agentic systems redefining how software is built.Digital AssetsInstitutional-grade custody, issuance, and asset management.Digital FinanceTransparent financial primitives and modern market structure.StablecoinsCompliant settlement money and programmable payment infrastructure.Real World AssetsTokenized credit, treasuries, and commodities bridged on-chain.CybersecurityCryptographic security, key management, and threat intelligence.Zero-KnowledgePrivacy and scale powered by frontier cryptography.Developer ToolsThe infrastructure that unlocks the next generation of builders.Decentralized SystemsOpen, verifiable networks that compound value across participants."}
+
+## 2026-09-25 07:05:12.610Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:05:13.014Z click
+- element: {"tag":"section","role":null,"ariaLabel":null,"name":null,"type":null,"id":"focus","placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Investment FocusThe frontiers where we build conviction.Blockchain InfrastructureBase layers, rollups, and settlement rails engineered for global scale.Artificial IntelligenceApplied models and agentic systems redefining how software is built.Digital AssetsInstitutional-grade custody, issuance, and asset management.Digital FinanceTransparent financial primitives and modern market structure.StablecoinsCompliant settlement money and programmable payment infrastructure.Real World AssetsTokenized credit, treasuries, and commodities bridged on-chain.CybersecurityCryptographic security, key management, and threat intelligence.Zero-KnowledgePrivacy and scale powered by frontier cryptography.Developer ToolsThe infrastructure that unlocks the next generation of builders.Decentralized SystemsOpen, verifiable networks that compound value across participants."}
+
+## 2026-09-25 07:05:15.628Z click
+- element: {"tag":"main","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" Global technology investment institutionInvesting in the Architecture of TomorrowVaultAlpha Fund partners with exceptional founders building the future of blockchain infrastructure, artificial intelligence, digital finance, cybersecurity, and decentralized technologies.Apply for Funding Explore PortfolioBlockchain Artificial Intelligence Digital Finance Zero-Knowledge Stablecoins Cybersecurity Real World Assets Developer Tools Blockchain Artificial Intelligence Digital Finance Zero-Knowledge Stablecoins Cybersecurity Real World Assets Developer Tools Investment PhilosophyA partner for the long arc of technology.VaultAlpha Fund funds and builds the foundational companies of the next digital era. We combine deep technical judgment with global reach, partnering with founders from first conviction through category leadership.We are engineers, operators, and researchers who believe open, verifiable technology will reshape finance, infrastructure, and intelligence itself. Founders choose us because we move with discipline, diligence honestly, and stay for the long term.$2.4B+Assets under management180+Portfolio companies38Countries400+Founder network25+Investment professionalsOur Global Investment NetworkA living map of capital, founders, and infrastructure.Our investment ecosystem spans connected hubs across 38 countries — a real-time fabric of founders, institutions, and blockchain infrastructure.New YorkLondonBerlinDubaiSingaporeTokyoSão Paulo38Connected countries12Investment hubs400+Founder network24/7Live coverageInvestment FocusThe frontiers where we build conviction.Blockchain InfrastructureBase layers, rollups, and settlement rails engineered for global scale.Artificial IntelligenceApplied models and agentic systems redefining how software is built.Digital AssetsInstitutional-grade custody, issuance, and asset management.Digital FinanceTransparent financial primitives and modern market structure.StablecoinsCompliant settlement money and programmable payment infra..."}
+
+## 2026-09-25 07:05:16.260Z click
+- element: {"tag":"main","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" Global technology investment institutionInvesting in the Architecture of TomorrowVaultAlpha Fund partners with exceptional founders building the future of blockchain infrastructure, artificial intelligence, digital finance, cybersecurity, and decentralized technologies.Apply for Funding Explore PortfolioBlockchain Artificial Intelligence Digital Finance Zero-Knowledge Stablecoins Cybersecurity Real World Assets Developer Tools Blockchain Artificial Intelligence Digital Finance Zero-Knowledge Stablecoins Cybersecurity Real World Assets Developer Tools Investment PhilosophyA partner for the long arc of technology.VaultAlpha Fund funds and builds the foundational companies of the next digital era. We combine deep technical judgment with global reach, partnering with founders from first conviction through category leadership.We are engineers, operators, and researchers who believe open, verifiable technology will reshape finance, infrastructure, and intelligence itself. Founders choose us because we move with discipline, diligence honestly, and stay for the long term.$2.4B+Assets under management180+Portfolio companies38Countries400+Founder network25+Investment professionalsOur Global Investment NetworkA living map of capital, founders, and infrastructure.Our investment ecosystem spans connected hubs across 38 countries — a real-time fabric of founders, institutions, and blockchain infrastructure.New YorkLondonBerlinDubaiSingaporeTokyoSão Paulo38Connected countries12Investment hubs400+Founder network24/7Live coverageInvestment FocusThe frontiers where we build conviction.Blockchain InfrastructureBase layers, rollups, and settlement rails engineered for global scale.Artificial IntelligenceApplied models and agentic systems redefining how software is built.Digital AssetsInstitutional-grade custody, issuance, and asset management.Digital FinanceTransparent financial primitives and modern market structure.StablecoinsCompliant settlement money and programmable payment infra..."}
+
+## 2026-09-25 07:05:16.970Z click
+- element: {"tag":"main","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" Global technology investment institutionInvesting in the Architecture of TomorrowVaultAlpha Fund partners with exceptional founders building the future of blockchain infrastructure, artificial intelligence, digital finance, cybersecurity, and decentralized technologies.Apply for Funding Explore PortfolioBlockchain Artificial Intelligence Digital Finance Zero-Knowledge Stablecoins Cybersecurity Real World Assets Developer Tools Blockchain Artificial Intelligence Digital Finance Zero-Knowledge Stablecoins Cybersecurity Real World Assets Developer Tools Investment PhilosophyA partner for the long arc of technology.VaultAlpha Fund funds and builds the foundational companies of the next digital era. We combine deep technical judgment with global reach, partnering with founders from first conviction through category leadership.We are engineers, operators, and researchers who believe open, verifiable technology will reshape finance, infrastructure, and intelligence itself. Founders choose us because we move with discipline, diligence honestly, and stay for the long term.$2.4B+Assets under management180+Portfolio companies38Countries400+Founder network25+Investment professionalsOur Global Investment NetworkA living map of capital, founders, and infrastructure.Our investment ecosystem spans connected hubs across 38 countries — a real-time fabric of founders, institutions, and blockchain infrastructure.New YorkLondonBerlinDubaiSingaporeTokyoSão Paulo38Connected countries12Investment hubs400+Founder network24/7Live coverageInvestment FocusThe frontiers where we build conviction.Blockchain InfrastructureBase layers, rollups, and settlement rails engineered for global scale.Artificial IntelligenceApplied models and agentic systems redefining how software is built.Digital AssetsInstitutional-grade custody, issuance, and asset management.Digital FinanceTransparent financial primitives and modern market structure.StablecoinsCompliant settlement money and programmable payment infra..."}
+
+## 2026-09-25 07:05:17.409Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:05:18.274Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:05:19.350Z click
+- element: {"tag":"p","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Connected countries"}
+
+## 2026-09-25 07:05:19.516Z click
+- element: {"tag":"p","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Connected countries"}
+
+## 2026-09-25 07:05:20.612Z click
+- element: {"tag":"p","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Investment hubs"}
+
+## 2026-09-25 07:16:23.961Z load
+- url: http://localhost:3000/#team
+
+## 2026-09-25 07:16:28.304Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Team"}
+
+## 2026-09-25 07:16:28.305Z navigate
+- url: http://localhost:3000/#team
+- via: popstate
+
+## 2026-09-25 07:18:49.707Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:26:41.536Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Team"}
+
+## 2026-09-25 07:26:41.537Z navigate
+- url: http://localhost:3000/#team
+- via: popstate
+
+## 2026-09-25 07:26:58.886Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"LeadershipEngineers, operators, researchers.Executive OfficersVladyslav BlyzniukFounder, PartnerVadym NemyrytskyiChief Executive Officer, PartnerVadym YaroshevskyiManaging PartnerSerhii KrivenkoChief Investment OfficerSenior LeadershipMaya BeckerHead of Technical DiligenceYuki TanakaHead of ResearchYullia MitchellPartner, Investor Relations"}
+
+## 2026-09-25 07:28:47.795Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Serhii KrivenkoChief Investment Officer"}
+
+## 2026-09-25 07:28:48.011Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Serhii KrivenkoChief Investment Officer"}
+
+## 2026-09-25 07:28:50.493Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Vadym NemyrytskyiChief Executive Officer, Partner"}
+
+## 2026-09-25 07:28:50.675Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Vadym NemyrytskyiChief Executive Officer, Partner"}
+
+## 2026-09-25 07:28:52.281Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Serhii KrivenkoChief Investment Officer"}
+
+## 2026-09-25 07:28:52.463Z click
+- element: {"tag":"p","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Chief Investment Officer"}
+
+## 2026-09-25 07:28:53.451Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Serhii KrivenkoChief Investment Officer"}
+
+## 2026-09-25 07:28:53.633Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Serhii KrivenkoChief Investment Officer"}
+
+## 2026-09-25 07:28:54.669Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Serhii KrivenkoChief Investment Officer"}
+
+## 2026-09-25 07:28:54.852Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Serhii KrivenkoChief Investment Officer"}
+
+## 2026-09-25 07:28:56.027Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Vladyslav BlyzniukFounder, PartnerVadym NemyrytskyiChief Executive Officer, PartnerVadym YaroshevskyiManaging PartnerSerhii KrivenkoChief Investment Officer"}
+
+## 2026-09-25 07:28:56.214Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Vladyslav BlyzniukFounder, PartnerVadym NemyrytskyiChief Executive Officer, PartnerVadym YaroshevskyiManaging PartnerSerhii KrivenkoChief Investment Officer"}
+
+## 2026-09-25 07:28:57.265Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Vadym NemyrytskyiChief Executive Officer, Partner"}
+
+## 2026-09-25 07:28:57.454Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Vadym NemyrytskyiChief Executive Officer, Partner"}
+
+## 2026-09-25 07:28:58.455Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"LeadershipExecutive OfficersVladyslav BlyzniukFounder, PartnerVadym NemyrytskyiChief Executive Officer, PartnerVadym YaroshevskyiManaging PartnerSerhii KrivenkoChief Investment OfficerSenior LeadershipMaya BeckerHead of Technical DiligenceYuki TanakaHead of ResearchYullia MitchellPartner, Investor Relations"}
+
+## 2026-09-25 07:28:58.788Z click
+- element: {"tag":"p","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Founder, Partner"}
+
+## 2026-09-25 07:30:03.975Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:04.546Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:04.988Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:05.366Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:05.772Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:06.038Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:06.269Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:06.953Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:07.222Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Apply for Funding Explore Portfolio"}
+
+## 2026-09-25 07:30:07.747Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:08.433Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:09.333Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:09.768Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:12.176Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:12.510Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:12.852Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:13.210Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:13.617Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:14.017Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:14.335Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:14.863Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:15.286Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:15.688Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:16.092Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:16.382Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:16.570Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:16.772Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:16.951Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:17.121Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:17.341Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:17.532Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:17.715Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:37.088Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:38.301Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:38.795Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:39.077Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:30:39.604Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-25 07:31:16.934Z focus
+- element: {"tag":"input","role":null,"ariaLabel":null,"name":null,"type":"email","id":null,"placeholder":"Subscribe to our research","label":"Subscribe to our research","value":"","valueLength":0,"text":""}
+
+## 2026-09-25 07:31:17.057Z click
+- element: {"tag":"input","role":null,"ariaLabel":null,"name":null,"type":"email","id":null,"placeholder":"Subscribe to our research","label":"Subscribe to our research","value":"","valueLength":0,"text":""}
+
+## 2026-09-25 07:31:17.228Z click
+- element: {"tag":"input","role":null,"ariaLabel":null,"name":null,"type":"email","id":null,"placeholder":"Subscribe to our research","label":"Subscribe to our research","value":"","valueLength":0,"text":""}
+
+## 2026-09-25 07:31:17.411Z click
+- element: {"tag":"input","role":null,"ariaLabel":null,"name":null,"type":"email","id":null,"placeholder":"Subscribe to our research","label":"Subscribe to our research","value":"","valueLength":0,"text":""}
+
+## 2026-09-25 07:31:21.518Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Follow"}
+
+## 2026-09-25 07:31:24.036Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Follow"}
+

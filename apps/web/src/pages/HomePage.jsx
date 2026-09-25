@@ -79,12 +79,13 @@ const RESEARCH = [
 ];
 
 const TEAM_MEMBER_META = {
-    'Vladyslav Blyzniuk': { role: 'Founder, Partner' },
-    'Vadym Nemyrytskyi': { role: 'Chief Executive Officer, Partner' },
-    'Vadym Yaroshevskyi': { role: 'Managing Partner' },
-    'Maya Becker': { role: 'Head of Technical Diligence' },
-    'Yuki Tanaka': { role: 'Head of Research' },
-    'Yullia Mitchell': { role: 'Partner, Investor Relations' },
+    'Vladyslav Blyzniuk': { role: 'Founder, Partner', group: 'executive' },
+    'Vadym Nemyrytskyi': { role: 'Chief Executive Officer, Partner', group: 'executive' },
+    'Vadym Yaroshevskyi': { role: 'Managing Partner', group: 'executive' },
+    'Serhii Krivenko': { role: 'Chief Investment Officer', group: 'executive' },
+    'Maya Becker': { role: 'Head of Technical Diligence', group: 'senior' },
+    'Yuki Tanaka': { role: 'Head of Research', group: 'senior' },
+    'Yullia Mitchell': { role: 'Partner, Investor Relations', group: 'senior' },
 };
 
 const teamPhotoModules = import.meta.glob('../../../../teams_image/*.png', {
@@ -100,7 +101,7 @@ const TEAM = Object.entries(teamPhotoModules)
     .map(([path, url]) => {
         const file = path.split('/').pop() ?? '';
         const name = file.replace(/\.png$/i, '');
-        const meta = TEAM_MEMBER_META[name] ?? { role: 'Partner' };
+        const meta = TEAM_MEMBER_META[name] ?? { role: 'Partner', group: 'senior' };
         return { name, ...meta, img: url };
     })
     .sort((a, b) => {
@@ -151,10 +152,10 @@ function Stat({ stat }) {
     const display = stat.value % 1 !== 0 ? v.toFixed(1) : Math.round(v);
     return (
         <div ref={ref} className="text-center lg:text-left">
-            <div className="font-display text-4xl md:text-5xl font-semibold tracking-tight text-white">
+            <div className="font-display text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
                 {stat.prefix || ''}{display}{stat.suffix}
             </div>
-            <p className="mt-2 text-sm text-slate-400">{stat.label}</p>
+            <p className="mt-2 text-sm text-slate-500">{stat.label}</p>
         </div>
     );
 }
@@ -167,7 +168,7 @@ const SectionLabel = ({ children }) => (
 );
 
 const H2 = ({ children, className = '' }) => (
-    <h2 className={`font-display text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl ${className}`}>
+    <h2 className={`font-display text-4xl font-semibold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl ${className}`}>
         {children}
     </h2>
 );
@@ -175,7 +176,7 @@ const H2 = ({ children, className = '' }) => (
 const Logo = ({ dark }) => (
     <a href="#top" className="flex items-center gap-3">
         <img src="/logo-mark.png" alt={BRAND} className="h-14 w-14 rounded-xl object-contain shadow-[0_0_24px_-4px_rgba(56,189,248,0.75)] sm:h-16 sm:w-16" />
-        <span className={`font-display text-xl font-semibold tracking-tight sm:text-2xl ${dark ? 'text-white' : 'text-white'}`}>{BRAND}</span>
+        <span className={`font-display text-xl font-semibold tracking-tight sm:text-2xl ${dark ? 'text-slate-900' : 'text-white'}`}>{BRAND}</span>
     </a>
 );
 
@@ -188,7 +189,7 @@ function Nav() {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
     return (
-        <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? 'border-b border-white/10 bg-[#060a16]/85 backdrop-blur-xl' : 'bg-transparent'}`}>
+        <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? 'border-b border-white/10 bg-black/85 backdrop-blur-xl' : 'bg-transparent'}`}>
             <div className="mx-auto flex max-w-[92rem] items-center justify-between px-6 py-4 lg:px-12">
                 <Logo />
                 <nav className="hidden items-center gap-9 xl:flex">
@@ -197,7 +198,7 @@ function Nav() {
                     ))}
                 </nav>
                 <div className="hidden xl:block">
-                    <a href="#contact" className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#060a16] transition-all hover:gap-3 hover:shadow-[0_0_26px_-4px_rgba(255,255,255,0.5)]">
+                    <a href="#contact" className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition-all hover:gap-3 hover:shadow-[0_0_26px_-4px_rgba(255,255,255,0.45)]">
                         Apply <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} />
                     </a>
                 </div>
@@ -206,12 +207,12 @@ function Nav() {
                 </button>
             </div>
             {open && (
-                <div className="border-t border-white/10 bg-[#060a16]/95 backdrop-blur-xl xl:hidden">
+                <div className="border-t border-white/10 bg-black/95 backdrop-blur-xl xl:hidden">
                     <div className="flex flex-col px-6 py-4">
                         {NAV.map((n) => (
                             <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="border-b border-white/5 py-3 text-sm text-slate-300 last:border-0">{n.label}</a>
                         ))}
-                        <a href="#contact" onClick={() => setOpen(false)} className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#060a16]">
+                        <a href="#contact" onClick={() => setOpen(false)} className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black">
                             Apply for Funding <ArrowRight className="h-4 w-4" />
                         </a>
                     </div>
@@ -223,14 +224,14 @@ function Nav() {
 
 function Hero() {
     return (
-        <section id="top" className="relative flex min-h-[100dvh] items-center overflow-hidden bg-[#050813] text-white">
+        <section id="top" className="relative flex min-h-[100dvh] items-center overflow-hidden bg-black text-white">
             <div className="pointer-events-none absolute inset-0">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#070c1c] via-[#050813] to-[#04060f]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black via-[#050505] to-black" />
                 <div className="absolute -left-40 top-0 h-[40rem] w-[40rem] rounded-full bg-sky-600/20 blur-[150px] animate-float-slow" />
                 <div className="absolute -right-40 bottom-0 h-[38rem] w-[38rem] rounded-full bg-indigo-600/20 blur-[150px] animate-float-slow-2" />
             </div>
             <NetworkCanvas className="pointer-events-auto absolute inset-0 h-full w-full opacity-70" density={0.00013} />
-            <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(circle at 50% 40%, transparent 30%, #050813 85%)' }} />
+            <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(circle at 50% 40%, transparent 30%, #000000 85%)' }} />
             <div className="pointer-events-none relative mx-auto w-full max-w-[80rem] px-6 pt-32 pb-20 lg:px-12">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
                     <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs tracking-wide text-slate-300 backdrop-blur">
@@ -239,7 +240,7 @@ function Hero() {
                 </motion.div>
                 <motion.h1
                     initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                    className="mt-8 max-w-5xl font-display text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-[5.2rem]"
+                    className="mt-8 max-w-5xl font-display text-5xl font-semibold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[5.2rem]"
                 >
                     Investing in the <span className="bg-gradient-to-r from-sky-300 via-indigo-300 to-sky-200 bg-clip-text text-transparent">Architecture</span> of Tomorrow
                 </motion.h1>
@@ -253,7 +254,7 @@ function Hero() {
                     initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.34 }}
                     className="pointer-events-auto mt-10 flex flex-col gap-4 sm:flex-row"
                 >
-                    <a href="#contact" className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold text-[#050813] transition-all hover:gap-3 hover:shadow-[0_0_34px_-6px_rgba(255,255,255,0.6)]">
+                    <a href="#contact" className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold text-black transition-all hover:gap-3 hover:shadow-[0_0_34px_-6px_rgba(255,255,255,0.55)]">
                         Apply for Funding <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                     </a>
                     <a href="#portfolio" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-8 py-4 text-sm font-semibold text-white backdrop-blur transition-colors hover:border-sky-400/50 hover:bg-white/[0.07]">
@@ -269,7 +270,7 @@ function Marquee() {
     const items = ['Blockchain', 'Artificial Intelligence', 'Digital Finance', 'Zero-Knowledge', 'Stablecoins', 'Cybersecurity', 'Real World Assets', 'Developer Tools'];
     const row = [...items, ...items];
     return (
-        <div className="border-y border-white/10 bg-[#070c1c] py-5 overflow-hidden">
+        <div className="border-y border-slate-200 bg-[#e8eef6] py-5 overflow-hidden">
             <div className="flex w-max animate-marquee gap-12 whitespace-nowrap">
                 {row.map((t, i) => (
                     <span key={i} className="flex items-center gap-12 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
@@ -287,7 +288,7 @@ function Section({ id, children, className = '' }) {
 
 function About() {
     return (
-        <Section id="about" className="bg-[#050813]">
+        <Section id="about" className="bg-[#f4f7fb]">
             <div className="mx-auto max-w-[80rem] px-6 lg:px-12">
                 <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
                     <div className="lg:col-span-5">
@@ -298,17 +299,17 @@ function About() {
                     </div>
                     <div className="lg:col-span-7">
                         <Reveal delay={0.1}>
-                            <p className="text-lg leading-relaxed text-slate-300">
+                            <p className="text-lg leading-relaxed text-slate-600">
                                 {BRAND} funds and builds the foundational companies of the next digital era. We combine deep technical judgment with global reach, partnering with founders from first conviction through category leadership.
                             </p>
-                            <p className="mt-5 text-lg leading-relaxed text-slate-400">
+                            <p className="mt-5 text-lg leading-relaxed text-slate-500">
                                 We are engineers, operators, and researchers who believe open, verifiable technology will reshape finance, infrastructure, and intelligence itself. Founders choose us because we move with discipline, diligence honestly, and stay for the long term.
                             </p>
                         </Reveal>
                     </div>
                 </div>
                 <Reveal delay={0.15}>
-                    <div className="mt-24 grid grid-cols-2 gap-x-6 gap-y-12 border-t border-white/10 pt-14 md:grid-cols-3 lg:grid-cols-5">
+                    <div className="mt-24 grid grid-cols-2 gap-x-6 gap-y-12 border-t border-slate-200 pt-14 md:grid-cols-3 lg:grid-cols-5">
                         {STATS.map((s) => <Stat key={s.label} stat={s} />)}
                     </div>
                 </Reveal>
@@ -319,19 +320,19 @@ function About() {
 
 function GlobalNetwork() {
     return (
-        <Section id="network" className="overflow-hidden bg-[#04060f]">
-            <NetworkCanvas className="absolute inset-0 h-full w-full opacity-40" density={0.00009} interactive={false} />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#04060f] via-transparent to-[#04060f]" />
+        <Section id="network" className="overflow-hidden bg-black text-white">
+            <NetworkCanvas className="absolute inset-0 h-full w-full opacity-50" density={0.00009} interactive={false} />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
             <div className="relative mx-auto max-w-[80rem] px-6 lg:px-12">
                 <Reveal>
                     <SectionLabel>Our Global Investment Network</SectionLabel>
-                    <H2 className="mt-7 max-w-3xl">A living map of capital, founders, and infrastructure.</H2>
+                    <H2 className="mt-7 max-w-3xl !text-white">A living map of capital, founders, and infrastructure.</H2>
                     <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
                         Our investment ecosystem spans connected hubs across 38 countries — a real-time fabric of founders, institutions, and blockchain infrastructure.
                     </p>
                 </Reveal>
                 <Reveal delay={0.15}>
-                    <div className="relative mt-16 aspect-[16/8] overflow-hidden rounded-3xl border border-white/10 bg-[#060b1a]/60 backdrop-blur-sm">
+                    <div className="relative mt-16 aspect-[16/8] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-sm">
                         <NetworkCanvas className="absolute inset-0 h-full w-full opacity-80" density={0.00016} />
                         {HUBS.map((h) => (
                             <div key={h.city} className="absolute -translate-x-1/2 -translate-y-1/2" style={{ left: h.x, top: h.y }}>
@@ -352,7 +353,7 @@ function GlobalNetwork() {
                             { v: '400+', l: 'Founder network' },
                             { v: '24/7', l: 'Live coverage' },
                         ].map((s) => (
-                            <div key={s.l} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                            <div key={s.l} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
                                 <div className="font-display text-3xl font-semibold text-white">{s.v}</div>
                                 <p className="mt-1 text-sm text-slate-400">{s.l}</p>
                             </div>
@@ -366,7 +367,7 @@ function GlobalNetwork() {
 
 function Focus() {
     return (
-        <Section id="focus" className="bg-[#050813]">
+        <Section id="focus" className="bg-[#f4f7fb]">
             <div className="mx-auto max-w-[80rem] px-6 lg:px-12">
                 <Reveal>
                     <SectionLabel>Investment Focus</SectionLabel>
@@ -375,10 +376,10 @@ function Focus() {
                 <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                     {FOCUS.map((f, i) => (
                         <Reveal key={f.title} delay={(i % 5) * 0.05}>
-                            <div className="group h-full rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/40 hover:bg-white/[0.05] hover:shadow-[0_24px_60px_-24px_rgba(56,189,248,0.4)]">
+                            <div className="group h-full rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/40 hover:bg-slate-50 hover:shadow-[0_24px_60px_-24px_rgba(56,189,248,0.4)]">
                                 <img src={f.icon} alt="" className="h-12 w-12 object-contain drop-shadow-[0_8px_16px_rgba(56,189,248,0.18)] transition-transform duration-300 group-hover:scale-110" />
-                                <h3 className="mt-5 font-display text-base font-semibold text-white">{f.title}</h3>
-                                <p className="mt-2 text-sm leading-relaxed text-slate-400">{f.desc}</p>
+                                <h3 className="mt-5 font-display text-base font-semibold text-slate-900">{f.title}</h3>
+                                <p className="mt-2 text-sm leading-relaxed text-slate-500">{f.desc}</p>
                             </div>
                         </Reveal>
                     ))}
@@ -392,7 +393,7 @@ function Portfolio() {
     const [cat, setCat] = useState('All');
     const filtered = cat === 'All' ? PORTFOLIO : PORTFOLIO.filter((p) => p.industry === cat);
     return (
-        <Section id="portfolio" className="bg-[#04060f]">
+        <Section id="portfolio" className="bg-[#eef2f8]">
             <div className="mx-auto max-w-[80rem] px-6 lg:px-12">
                 <Reveal>
                     <SectionLabel>Portfolio Companies</SectionLabel>
@@ -403,7 +404,7 @@ function Portfolio() {
                         <button
                             key={c}
                             onClick={() => setCat(c)}
-                            className={`rounded-full px-4 py-2 text-sm transition-all ${cat === c ? 'bg-white text-[#04060f]' : 'border border-white/15 text-slate-300 hover:border-sky-400/40 hover:text-white'}`}
+                            className={`rounded-full px-4 py-2 text-sm transition-all ${cat === c ? 'bg-slate-900 text-white' : 'border border-slate-200 text-slate-600 hover:border-sky-400/40 hover:text-slate-900'}`}
                         >
                             {c}
                         </button>
@@ -420,20 +421,20 @@ function Portfolio() {
                             initial={{ opacity: 0, y: 16 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4 }}
-                            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:-translate-y-1 hover:border-sky-400/50 hover:bg-white/[0.06] hover:shadow-[0_28px_70px_-28px_rgba(56,189,248,0.5)]"
+                            className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-1 hover:border-sky-400/50 hover:bg-slate-50 hover:shadow-[0_28px_70px_-28px_rgba(56,189,248,0.5)]"
                         >
                             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-400/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                             <div className="flex items-center justify-between gap-3">
-                                <div className={`grid h-14 place-items-center overflow-hidden rounded-xl p-2 ${p.tile === 'dark' ? 'bg-[#0b1220] ring-1 ring-white/10' : 'bg-white'} ${p.logoWide ? 'w-[7.5rem]' : 'w-14'}`}>
+                                <div className={`grid h-14 place-items-center overflow-hidden rounded-xl p-2 ${p.tile === 'dark' ? 'bg-slate-100 ring-1 ring-slate-200' : 'bg-white ring-1 ring-slate-200'} ${p.logoWide ? 'w-[7.5rem]' : 'w-14'}`}>
                                     <img src={p.logo} alt={`${p.name} logo`} className={`h-full w-full ${p.logoWide ? 'object-contain object-left' : 'object-contain'}`} />
                                 </div>
-                                <ArrowUpRight className="h-5 w-5 shrink-0 text-slate-500 transition-all group-hover:text-sky-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                                <ArrowUpRight className="h-5 w-5 shrink-0 text-slate-500 transition-all group-hover:text-sky-600 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                             </div>
-                            <h3 className="mt-6 font-display text-xl font-semibold text-white">{p.name}</h3>
-                            <p className="mt-1 text-sm text-slate-400">{p.industry}</p>
-                            <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-white/10 pt-4 text-xs text-slate-400">
-                                <span className="rounded-full bg-white/5 px-2.5 py-1 text-slate-300">{p.stage}</span>
-                                <span className="rounded-full bg-sky-500/10 px-2.5 py-1 text-sky-300">{p.status}</span>
+                            <h3 className="mt-6 font-display text-xl font-semibold text-slate-900">{p.name}</h3>
+                            <p className="mt-1 text-sm text-slate-500">{p.industry}</p>
+                            <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-slate-200 pt-4 text-xs text-slate-500">
+                                <span className="rounded-full bg-slate-100 px-2.5 py-1 text-slate-600">{p.stage}</span>
+                                <span className="rounded-full bg-sky-500/10 px-2.5 py-1 text-sky-600">{p.status}</span>
                                 <span className="ml-auto flex items-center gap-1"><MapPin className="h-3 w-3" />{p.country}</span>
                             </div>
                         </motion.a>
@@ -446,7 +447,7 @@ function Portfolio() {
 
 function Why() {
     return (
-        <Section className="bg-[#050813]">
+        <Section className="bg-[#f4f7fb]">
             <div className="mx-auto max-w-[80rem] px-6 lg:px-12">
                 <Reveal>
                     <SectionLabel>Principles</SectionLabel>
@@ -455,10 +456,10 @@ function Why() {
                 <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {PRINCIPLES.map((p, i) => (
                         <Reveal key={p.title} delay={(i % 3) * 0.06}>
-                            <div className="h-full rounded-2xl border border-white/10 bg-white/[0.02] p-8 transition-all hover:border-sky-400/30 hover:bg-white/[0.05]">
+                            <div className="h-full rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:border-sky-400/30 hover:bg-slate-50">
                                 <p.icon className="h-6 w-6 text-sky-400" strokeWidth={1.75} />
-                                <h3 className="mt-5 font-display text-lg font-semibold text-white">{p.title}</h3>
-                                <p className="mt-2 leading-relaxed text-slate-400">{p.desc}</p>
+                                <h3 className="mt-5 font-display text-lg font-semibold text-slate-900">{p.title}</h3>
+                                <p className="mt-2 leading-relaxed text-slate-500">{p.desc}</p>
                             </div>
                         </Reveal>
                     ))}
@@ -470,7 +471,7 @@ function Why() {
 
 function Process() {
     return (
-        <Section id="process" className="bg-[#04060f]">
+        <Section id="process" className="bg-[#eef2f8]">
             <div className="mx-auto max-w-[80rem] px-6 lg:px-12">
                 <Reveal>
                     <SectionLabel>Investment Process</SectionLabel>
@@ -482,10 +483,10 @@ function Process() {
                             <div className="relative">
                                 <div className="flex items-center gap-3">
                                     <span className="font-display text-sm font-semibold text-sky-400">{p.n}</span>
-                                    <span className="h-px flex-1 bg-white/10" />
+                                    <span className="h-px flex-1 bg-slate-200" />
                                 </div>
-                                <h3 className="mt-5 font-display text-lg font-semibold text-white">{p.title}</h3>
-                                <p className="mt-2 text-sm leading-relaxed text-slate-400">{p.desc}</p>
+                                <h3 className="mt-5 font-display text-lg font-semibold text-slate-900">{p.title}</h3>
+                                <p className="mt-2 text-sm leading-relaxed text-slate-500">{p.desc}</p>
                             </div>
                         </Reveal>
                     ))}
@@ -497,7 +498,7 @@ function Process() {
 
 function Research() {
     return (
-        <Section id="research" className="bg-[#050813]">
+        <Section id="research" className="bg-[#f4f7fb]">
             <div className="mx-auto max-w-[80rem] px-6 lg:px-12">
                 <Reveal>
                     <div className="flex flex-wrap items-end justify-between gap-6">
@@ -505,7 +506,7 @@ function Research() {
                             <SectionLabel>Research &amp; Insights</SectionLabel>
                             <H2 className="mt-7">Intelligence from the frontier.</H2>
                         </div>
-                        <a href="#research" className="group inline-flex items-center gap-2 text-sm font-medium text-white">
+                        <a href="#research" className="group inline-flex items-center gap-2 text-sm font-medium text-slate-900">
                             View all research <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                         </a>
                     </div>
@@ -513,17 +514,17 @@ function Research() {
                 <div className="mt-16 grid gap-6 md:grid-cols-3">
                     {RESEARCH.map((r, i) => (
                         <Reveal key={r.title} delay={i * 0.08}>
-                            <article className="group h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] transition-all hover:-translate-y-1 hover:border-sky-400/40 hover:shadow-[0_28px_70px_-30px_rgba(56,189,248,0.4)]">
+                            <article className="group h-full overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:-translate-y-1 hover:border-sky-400/40 hover:shadow-[0_28px_70px_-30px_rgba(56,189,248,0.4)]">
                                 <div className="aspect-[16/10] overflow-hidden">
                                     <img src={r.img} alt={r.title} loading="lazy" className="h-full w-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" />
                                 </div>
                                 <div className="p-6">
-                                    <div className="flex items-center gap-3 text-xs text-slate-400">
+                                    <div className="flex items-center gap-3 text-xs text-slate-500">
                                         <span className="font-medium text-sky-400">{r.tag}</span>
-                                        <span className="h-1 w-1 rounded-full bg-white/20" />
+                                        <span className="h-1 w-1 rounded-full bg-slate-300" />
                                         <span>{r.read}</span>
                                     </div>
-                                    <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-white">{r.title}</h3>
+                                    <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-slate-900">{r.title}</h3>
                                 </div>
                             </article>
                         </Reveal>
@@ -534,29 +535,53 @@ function Research() {
     );
 }
 
-function Team() {
+function TeamCard({ m }) {
     return (
-        <Section id="team" className="bg-[#04060f]">
+        <div className="group rounded-2xl border border-slate-200 bg-white p-3 transition-all hover:border-sky-400/30 sm:p-4">
+            <div className="aspect-[3/4] overflow-hidden rounded-xl bg-slate-100">
+                <img src={m.img} alt={m.name} loading="lazy" className="h-full w-full object-cover object-top opacity-95 transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div className="px-1 pb-0.5 pt-4">
+                <h3 className="font-display text-sm font-semibold text-slate-900 sm:text-base">{m.name}</h3>
+                <p className="mt-1 text-xs text-sky-400 sm:text-sm">{m.role}</p>
+            </div>
+        </div>
+    );
+}
+
+function Team() {
+    const executives = TEAM.filter((m) => m.group === 'executive');
+    const seniors = TEAM.filter((m) => m.group !== 'executive');
+    return (
+        <Section id="team" className="bg-[#eef2f8]">
             <div className="mx-auto max-w-[80rem] px-6 lg:px-12">
                 <Reveal>
                     <SectionLabel>Leadership</SectionLabel>
-                    <H2 className="mt-7 max-w-3xl">Engineers, operators, researchers.</H2>
                 </Reveal>
-                <Reveal delay={0.1}>
-                    <div className="mt-16 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
-                        {TEAM.map((m) => (
-                            <div key={m.name} className="group rounded-2xl border border-white/10 bg-white/[0.02] p-3 transition-all hover:border-sky-400/30 sm:p-4">
-                                <div className="aspect-[3/4] overflow-hidden rounded-xl bg-white/5">
-                                    <img src={m.img} alt={m.name} loading="lazy" className="h-full w-full object-cover object-top opacity-95 transition-transform duration-700 group-hover:scale-105" />
-                                </div>
-                                <div className="px-1 pb-0.5 pt-4">
-                                    <h3 className="font-display text-sm font-semibold text-white sm:text-base">{m.name}</h3>
-                                    <p className="mt-1 text-xs text-sky-400 sm:text-sm">{m.role}</p>
-                                </div>
-                            </div>
-                        ))}
+
+                <Reveal delay={0.08}>
+                    <div className="mt-16">
+                        <h3 className="font-display text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">Executive Officers</h3>
+                        <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
+                            {executives.map((m) => (
+                                <TeamCard key={m.name} m={m} />
+                            ))}
+                        </div>
                     </div>
                 </Reveal>
+
+                {seniors.length > 0 && (
+                    <Reveal delay={0.12}>
+                        <div className="mt-16">
+                            <h3 className="font-display text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">Senior Leadership</h3>
+                            <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
+                                {seniors.map((m) => (
+                                    <TeamCard key={m.name} m={m} />
+                                ))}
+                            </div>
+                        </div>
+                    </Reveal>
+                )}
             </div>
         </Section>
     );
@@ -564,7 +589,7 @@ function Team() {
 
 function Testimonials() {
     return (
-        <Section className="bg-[#050813]">
+        <Section className="bg-[#f4f7fb]">
             <div className="mx-auto max-w-[80rem] px-6 lg:px-12">
                 <Reveal>
                     <SectionLabel>Testimonials</SectionLabel>
@@ -573,12 +598,12 @@ function Testimonials() {
                 <div className="mt-16 grid gap-6 lg:grid-cols-3">
                     {TESTIMONIALS.map((t, i) => (
                         <Reveal key={t.name} delay={i * 0.08}>
-                            <figure className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.02] p-8">
+                            <figure className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-8">
                                 <Quote className="h-7 w-7 text-sky-400/50" />
-                                <blockquote className="mt-4 flex-1 text-lg leading-relaxed text-slate-200">{t.quote}</blockquote>
-                                <figcaption className="mt-6 border-t border-white/10 pt-4">
-                                    <div className="font-display font-semibold text-white">{t.name}</div>
-                                    <div className="text-sm text-slate-400">{t.role}</div>
+                                <blockquote className="mt-4 flex-1 text-lg leading-relaxed text-slate-700">{t.quote}</blockquote>
+                                <figcaption className="mt-6 border-t border-slate-200 pt-4">
+                                    <div className="font-display font-semibold text-slate-900">{t.name}</div>
+                                    <div className="text-sm text-slate-500">{t.role}</div>
                                 </figcaption>
                             </figure>
                         </Reveal>
@@ -592,37 +617,37 @@ function Testimonials() {
 function Partners() {
     const partners = PORTFOLIO.filter((p) => p.name !== 'Vault Protocol');
     return (
-        <Section id="careers" className="bg-[#04060f]">
+        <Section id="careers" className="bg-[#eef2f8]">
             <div className="mx-auto max-w-[80rem] px-6 lg:px-12">
                 <Reveal>
                     <SectionLabel>Partner Companies</SectionLabel>
                     <H2 className="mt-7 max-w-3xl">Building alongside category leaders.</H2>
                 </Reveal>
-                <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 sm:grid-cols-4">
+                <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 sm:grid-cols-4">
                     {partners.map((p) => (
                         <a
                             key={p.name}
                             href={p.url}
                             target="_blank"
                             rel="noreferrer"
-                            className="group flex flex-col items-center justify-center gap-4 bg-[#050813] px-6 py-10 transition-colors hover:bg-white/[0.04]"
+                            className="group flex flex-col items-center justify-center gap-4 bg-white px-6 py-10 transition-colors hover:bg-slate-50"
                         >
                             <img
                                 src={p.logo}
                                 alt={`${p.name} logo`}
-                                className={`h-14 w-auto max-w-[8.5rem] object-contain ${p.name === 'Meridian Labs' ? 'brightness-0 invert' : ''}`}
+                                className="h-14 w-auto max-w-[8.5rem] object-contain"
                             />
-                            <span className="font-display text-sm font-semibold tracking-tight text-slate-400 transition-colors group-hover:text-white">{p.name}</span>
+                            <span className="font-display text-sm font-semibold tracking-tight text-slate-500 transition-colors group-hover:text-slate-900">{p.name}</span>
                         </a>
                     ))}
                 </div>
                 <Reveal delay={0.1}>
-                    <div className="mt-16 flex flex-col items-start justify-between gap-6 rounded-3xl border border-white/10 bg-gradient-to-br from-sky-500/10 to-indigo-500/10 p-10 sm:flex-row sm:items-center lg:p-14">
+                    <div className="mt-16 flex flex-col items-start justify-between gap-6 rounded-3xl border border-slate-200 bg-gradient-to-br from-sky-500/10 to-indigo-500/10 p-10 sm:flex-row sm:items-center lg:p-14">
                         <div>
-                            <h3 className="font-display text-2xl font-semibold text-white lg:text-3xl">Build the future with {BRAND}.</h3>
-                            <p className="mt-2 text-slate-300">We are always looking for exceptional investors, engineers, and researchers.</p>
+                            <h3 className="font-display text-2xl font-semibold text-slate-900 lg:text-3xl">Build the future with {BRAND}.</h3>
+                            <p className="mt-2 text-slate-600">We are always looking for exceptional investors, engineers, and researchers.</p>
                         </div>
-                        <a href="#contact" className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#050813] transition-all hover:gap-3">
+                        <a href="#contact" className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-slate-900 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:gap-3">
                             View open roles <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                         </a>
                     </div>
@@ -634,7 +659,7 @@ function Partners() {
 
 const Field = ({ label, children }) => (
     <label className="flex flex-col gap-2">
-        <span className="text-sm font-medium text-slate-200">{label}</span>
+        <span className="text-sm font-medium text-slate-700">{label}</span>
         {children}
     </label>
 );
@@ -647,29 +672,29 @@ function Contact() {
         { city: 'Singapore', line: 'Marina Bay Financial Centre' },
     ];
     return (
-        <Section id="contact" className="bg-[#050813]">
+        <Section id="contact" className="bg-[#f4f7fb]">
             <div className="mx-auto max-w-[80rem] px-6 lg:px-12">
                 <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
                     <div className="lg:col-span-5">
                         <Reveal>
                             <SectionLabel>Contact</SectionLabel>
                             <H2 className="mt-7">Building something ambitious?</H2>
-                            <p className="mt-6 text-lg leading-relaxed text-slate-400">
+                            <p className="mt-6 text-lg leading-relaxed text-slate-500">
                                 Tell us about your company. We read every application and respond within five business days.
                             </p>
                             <div className="mt-10 space-y-4">
-                                <a href="mailto:founders@vaultalpha.fund" className="flex items-center gap-3 text-slate-200 transition-colors hover:text-sky-300">
+                                <a href="mailto:founders@vaultalpha.fund" className="flex items-center gap-3 text-slate-700 transition-colors hover:text-sky-600">
                                     <Mail className="h-5 w-5 text-sky-400" /> founders@vaultalpha.fund
                                 </a>
-                                <div className="flex items-center gap-3 text-slate-200">
+                                <div className="flex items-center gap-3 text-slate-700">
                                     <Phone className="h-5 w-5 text-sky-400" /> +44 20 7946 0000
                                 </div>
                             </div>
                             <div className="mt-10 grid grid-cols-3 gap-4">
                                 {offices.map((o) => (
-                                    <div key={o.city} className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-                                        <div className="flex items-center gap-1.5 text-sm font-medium text-white"><MapPin className="h-4 w-4 text-sky-400" />{o.city}</div>
-                                        <p className="mt-1 text-xs text-slate-400">{o.line}</p>
+                                    <div key={o.city} className="rounded-xl border border-slate-200 bg-white p-4">
+                                        <div className="flex items-center gap-1.5 text-sm font-medium text-slate-900"><MapPin className="h-4 w-4 text-sky-400" />{o.city}</div>
+                                        <p className="mt-1 text-xs text-slate-500">{o.line}</p>
                                     </div>
                                 ))}
                             </div>
@@ -677,12 +702,12 @@ function Contact() {
                     </div>
                     <div className="lg:col-span-7">
                         <Reveal delay={0.1}>
-                            <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="rounded-2xl border border-white/10 bg-white/[0.02] p-7 lg:p-9">
+                            <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="rounded-2xl border border-slate-200 bg-white p-7 lg:p-9">
                                 {sent ? (
                                     <div className="flex flex-col items-center justify-center py-16 text-center">
-                                        <div className="grid h-14 w-14 place-items-center rounded-full bg-sky-500/15 text-sky-300"><Check className="h-7 w-7" /></div>
-                                        <h3 className="mt-5 font-display text-xl font-semibold text-white">Application received</h3>
-                                        <p className="mt-2 max-w-sm text-slate-400">Thank you. Our team will review your submission and respond within five business days.</p>
+                                        <div className="grid h-14 w-14 place-items-center rounded-full bg-sky-500/15 text-sky-600"><Check className="h-7 w-7" /></div>
+                                        <h3 className="mt-5 font-display text-xl font-semibold text-slate-900">Application received</h3>
+                                        <p className="mt-2 max-w-sm text-slate-500">Thank you. Our team will review your submission and respond within five business days.</p>
                                     </div>
                                 ) : (
                                     <div className="grid gap-5">
@@ -697,7 +722,7 @@ function Contact() {
                                         <Field label="Tell us about your company">
                                             <textarea required rows={4} className="field-input resize-none" placeholder="What are you building and why now?" />
                                         </Field>
-                                        <button type="submit" className="group mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[#050813] transition-all hover:gap-3">
+                                        <button type="submit" className="group mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:gap-3">
                                             Submit application <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                                         </button>
                                     </div>
@@ -744,7 +769,7 @@ function Footer() {
         },
     ];
     return (
-        <footer className="border-t border-white/10 bg-[#04060f] text-white">
+        <footer className="border-t border-white/10 bg-black text-white">
             <div className="mx-auto max-w-[80rem] px-6 py-16 lg:px-12">
                 <div className="grid gap-12 lg:grid-cols-12">
                     <div className="lg:col-span-4">
@@ -754,7 +779,7 @@ function Footer() {
                         </p>
                         <form onSubmit={(e) => e.preventDefault()} className="mt-6 flex max-w-sm gap-2">
                             <input type="email" required placeholder="Subscribe to our research" className="flex-1 rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-sky-400 focus:outline-none" />
-                            <button className="rounded-full bg-white px-4 py-2.5 text-sm font-medium text-[#04060f]">Join</button>
+                            <button className="rounded-full bg-white px-4 py-2.5 text-sm font-medium text-black">Join</button>
                         </form>
                     </div>
                     {cols.map((c) => (
@@ -795,7 +820,7 @@ const HomePage = () => {
     const { scrollYProgress } = useScroll();
     const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
     return (
-        <div className="bg-[#050813]">
+        <div className="bg-[#f4f7fb]">
             <motion.div style={{ scaleX }} className="fixed inset-x-0 top-0 z-[60] h-0.5 origin-left bg-gradient-to-r from-sky-400 to-indigo-500" />
             <Nav />
             <main>

@@ -256,7 +256,7 @@ function CookieSettingsPanel() {
 
     return (
         <div className="space-y-8">
-            <div className="space-y-4 text-base leading-relaxed text-slate-300">
+            <div className="space-y-4 text-base leading-relaxed text-slate-600">
                 <p>
                     We use cookies and similar technologies on {DOMAIN} to run the site securely and, with your consent, to understand how visitors use our pages. Essential cookies cannot be switched off.
                 </p>
@@ -270,11 +270,11 @@ function CookieSettingsPanel() {
                 {rows.map((row) => (
                     <div
                         key={row.key}
-                        className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:flex-row sm:items-center sm:justify-between"
+                        className="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5 sm:flex-row sm:items-center sm:justify-between"
                     >
                         <div className="max-w-xl">
-                            <h3 className="font-display text-lg font-semibold text-white">{row.title}</h3>
-                            <p className="mt-1 text-sm leading-relaxed text-slate-400">{row.desc}</p>
+                            <h3 className="font-display text-lg font-semibold text-slate-900">{row.title}</h3>
+                            <p className="mt-1 text-sm leading-relaxed text-slate-500">{row.desc}</p>
                         </div>
                         <button
                             type="button"
@@ -283,7 +283,7 @@ function CookieSettingsPanel() {
                             disabled={row.key === 'essential'}
                             onClick={() => toggle(row.key)}
                             className={`relative h-8 w-14 shrink-0 rounded-full transition-colors ${
-                                prefs[row.key] ? 'bg-sky-500' : 'bg-white/15'
+                                prefs[row.key] ? 'bg-sky-500' : 'bg-slate-200'
                             } ${row.key === 'essential' ? 'cursor-not-allowed opacity-80' : 'cursor-pointer'}`}
                         >
                             <span
@@ -300,26 +300,26 @@ function CookieSettingsPanel() {
                 <button
                     type="button"
                     onClick={save}
-                    className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#050813] transition-opacity hover:opacity-90"
+                    className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                 >
                     Save preferences
                 </button>
                 <button
                     type="button"
                     onClick={acceptAll}
-                    className="rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-sky-400/50"
+                    className="rounded-full border border-slate-300 px-6 py-3 text-sm font-medium text-slate-900 transition-colors hover:border-sky-400/50"
                 >
                     Accept all
                 </button>
                 <button
                     type="button"
                     onClick={rejectOptional}
-                    className="rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-slate-300 transition-colors hover:border-white/40 hover:text-white"
+                    className="rounded-full border border-slate-300 px-6 py-3 text-sm font-medium text-slate-600 transition-colors hover:border-slate-400 hover:text-slate-900"
                 >
                     Reject optional
                 </button>
                 {saved && (
-                    <span className="inline-flex items-center gap-1.5 text-sm text-sky-300">
+                    <span className="inline-flex items-center gap-1.5 text-sm text-sky-600">
                         <Check className="h-4 w-4" /> Saved in this browser
                     </span>
                 )}
@@ -353,13 +353,13 @@ export default function LegalPage() {
         : doc.subtitle;
 
     return (
-        <div className="min-h-screen bg-[#050813] text-white">
+        <div className="min-h-screen bg-[#f4f7fb] text-slate-900">
             <div className="pointer-events-none fixed inset-0 overflow-hidden">
-                <div className="absolute -left-32 top-0 h-[28rem] w-[28rem] rounded-full bg-sky-500/10 blur-3xl" />
-                <div className="absolute -right-24 top-40 h-[22rem] w-[22rem] rounded-full bg-indigo-600/10 blur-3xl" />
+                <div className="absolute -left-32 top-0 h-[28rem] w-[28rem] rounded-full bg-sky-400/20 blur-3xl" />
+                <div className="absolute -right-24 top-40 h-[22rem] w-[22rem] rounded-full bg-indigo-400/15 blur-3xl" />
             </div>
 
-            <header className="relative z-10 border-b border-white/10 bg-[#060a16]/80 backdrop-blur-xl">
+            <header className="relative z-10 border-b border-slate-200 bg-white/80 backdrop-blur-xl">
                 <div className="mx-auto flex max-w-[80rem] items-center justify-between px-6 py-4 lg:px-12">
                     <Link to="/" className="flex items-center gap-3">
                         <img
@@ -371,7 +371,7 @@ export default function LegalPage() {
                     </Link>
                     <Link
                         to="/"
-                        className="inline-flex items-center gap-2 text-sm text-slate-300 transition-colors hover:text-white"
+                        className="inline-flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-slate-900"
                     >
                         <ArrowLeft className="h-4 w-4" /> Back to site
                     </Link>
@@ -391,8 +391,8 @@ export default function LegalPage() {
                                         to={`/${item.slug}`}
                                         className={`block rounded-xl px-4 py-3 text-sm transition-colors ${
                                             active
-                                                ? 'bg-white/10 font-medium text-white'
-                                                : 'text-slate-400 hover:bg-white/[0.04] hover:text-white'
+                                                ? 'bg-slate-100 font-medium text-slate-900'
+                                                : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
                                         }`}
                                     >
                                         {item.label}
@@ -404,22 +404,22 @@ export default function LegalPage() {
 
                     <article className="lg:col-span-9">
                         <p className="text-xs text-slate-500">Last updated: {UPDATED}</p>
-                        <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                        <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
                             {title}
                         </h1>
-                        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-400">{subtitle}</p>
+                        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-500">{subtitle}</p>
 
-                        <div className="mt-12 border-t border-white/10 pt-10">
+                        <div className="mt-12 border-t border-slate-200 pt-10">
                             {isCookies ? (
                                 <CookieSettingsPanel />
                             ) : (
                                 <div className="space-y-10">
                                     {doc.body.map((section) => (
                                         <section key={section.heading}>
-                                            <h2 className="font-display text-xl font-semibold text-white">
+                                            <h2 className="font-display text-xl font-semibold text-slate-900">
                                                 {section.heading}
                                             </h2>
-                                            <div className="mt-3 space-y-3 text-base leading-relaxed text-slate-300">
+                                            <div className="mt-3 space-y-3 text-base leading-relaxed text-slate-600">
                                                 {section.paragraphs.map((p) => (
                                                     <p key={p.slice(0, 48)}>{p}</p>
                                                 ))}
