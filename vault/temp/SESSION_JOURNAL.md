@@ -858,3 +858,23 @@
 ## 2026-09-25 07:31:24.036Z click
 - element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Follow"}
 
+## 2026-09-25 07:50:25.224Z load
+- url: http://localhost:3000/#team
+
+## 2026-09-25 07:50:59.479Z click
+- element: {"tag":"canvas","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-09-28 01:40:06.082Z load
+- url: http://localhost:3000/
+
+## 2026-09-28 01:40:06.388Z navigate
+- url: http://localhost:3000/
+- via: replaceState
+
+## 2026-09-28 01:40:09.770Z load
+- url: http://localhost:3000/#team
+
+## 2026-09-28 01:40:09.918Z navigate
+- url: http://localhost:3000/#team
+- via: replaceState
+
