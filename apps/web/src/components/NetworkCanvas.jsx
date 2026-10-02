@@ -1,132 +1,142 @@
 import React, { useRef, useEffect } from 'react';
 
+const LINK = 150;
+const FRAME_MS = 1000 / 30;
+
 /**
- * Premium animated network visualization.
- * Glowing interconnected nodes, drifting particles, and live connection lines
- * that respond subtly to the pointer. GPU-friendly (transform/opacity only on
- * the container; canvas draws with alpha compositing). Honors reduced-motion.
+ * Faint drifting network behind the homepage hero. Decorative only, so it is
+ * kept off the critical path: it starts once the browser is idle after load,
+ * runs at 30fps, pauses while off-screen or in a hidden tab, and draws a
+ * single still frame when reduced motion is requested.
  */
-export default function NetworkCanvas({ density = 0.00012, className = '', interactive = true }) {
+export default function NetworkCanvas({ density = 0.00008, className = '' }) {
     const canvasRef = useRef(null);
-    const rafRef = useRef(0);
-    const mouseRef = useRef({ x: -9999, y: -9999 });
 
     useEffect(() => {
         const canvas = canvasRef.current;
-        if (!canvas) return;
+        if (!canvas) return undefined;
         const ctx = canvas.getContext('2d');
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         let width = 0;
         let height = 0;
         let nodes = [];
-        let dpr = Math.min(window.devicePixelRatio || 1, 2);
+        let raf = 0;
+        let last = 0;
+        let visible = true;
+        let started = false;
+        let disposed = false;
 
         const build = () => {
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
             const rect = canvas.getBoundingClientRect();
             width = rect.width;
             height = rect.height;
-            canvas.width = width * dpr;
-            canvas.height = height * dpr;
+            canvas.width = Math.round(width * dpr);
+            canvas.height = Math.round(height * dpr);
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-            const count = Math.max(28, Math.min(120, Math.floor(width * height * density)));
+            const count = Math.max(24, Math.min(90, Math.floor(width * height * density)));
             nodes = Array.from({ length: count }, () => ({
                 x: Math.random() * width,
                 y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.25,
-                vy: (Math.random() - 0.5) * 0.25,
-                r: Math.random() * 1.6 + 0.6,
-                pulse: Math.random() * Math.PI * 2,
-                hub: Math.random() > 0.9,
+                vx: (Math.random() - 0.5) * 0.35,
+                vy: (Math.random() - 0.5) * 0.35,
+                r: Math.random() * 1.4 + (Math.random() > 0.9 ? 1.6 : 0.8),
             }));
         };
 
-        const LINK = 150;
         const draw = () => {
             ctx.clearRect(0, 0, width, height);
-            const m = mouseRef.current;
+            ctx.lineWidth = 0.6;
+            ctx.strokeStyle = 'rgb(37, 99, 235)';
             for (let i = 0; i < nodes.length; i++) {
                 const a = nodes[i];
-                a.x += a.vx;
-                a.y += a.vy;
-                if (a.x < 0 || a.x > width) a.vx *= -1;
-                if (a.y < 0 || a.y > height) a.vy *= -1;
-                a.pulse += 0.02;
-
                 for (let j = i + 1; j < nodes.length; j++) {
                     const b = nodes[j];
                     const dx = a.x - b.x;
                     const dy = a.y - b.y;
-                    const dist = Math.hypot(dx, dy);
-                    if (dist < LINK) {
-                        const o = (1 - dist / LINK) * 0.5;
-                        ctx.strokeStyle = `rgba(37, 99, 235, ${o})`;
-                        ctx.lineWidth = 0.6;
+                    const d2 = dx * dx + dy * dy;
+                    if (d2 < LINK * LINK) {
+                        ctx.globalAlpha = (1 - Math.sqrt(d2) / LINK) * 0.5;
                         ctx.beginPath();
                         ctx.moveTo(a.x, a.y);
                         ctx.lineTo(b.x, b.y);
                         ctx.stroke();
                     }
                 }
-
-                if (interactive) {
-                    const mdx = a.x - m.x;
-                    const mdy = a.y - m.y;
-                    const md = Math.hypot(mdx, mdy);
-                    if (md < 190) {
-                        const o = (1 - md / 190) * 0.7;
-                        ctx.strokeStyle = `rgba(79, 70, 229, ${o})`;
-                        ctx.lineWidth = 0.8;
-                        ctx.beginPath();
-                        ctx.moveTo(a.x, a.y);
-                        ctx.lineTo(m.x, m.y);
-                        ctx.stroke();
-                    }
-                }
             }
+            ctx.globalAlpha = 0.8;
+            ctx.fillStyle = 'rgb(37, 99, 235)';
+            ctx.beginPath();
             for (const a of nodes) {
-                const glow = a.hub ? 4 : 2;
-                const pr = a.r + (Math.sin(a.pulse) + 1) * (a.hub ? 1.4 : 0.5);
-                ctx.beginPath();
-                const g = ctx.createRadialGradient(a.x, a.y, 0, a.x, a.y, pr * glow);
-                g.addColorStop(0, a.hub ? 'rgba(37,99,235,0.55)' : 'rgba(59,130,246,0.4)');
-                g.addColorStop(1, 'rgba(59,130,246,0)');
-                ctx.fillStyle = g;
-                ctx.arc(a.x, a.y, pr * glow, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.beginPath();
-                ctx.fillStyle = a.hub ? 'rgba(29,78,216,0.9)' : 'rgba(37,99,235,0.75)';
-                ctx.arc(a.x, a.y, pr, 0, Math.PI * 2);
-                ctx.fill();
+                ctx.moveTo(a.x + a.r, a.y);
+                ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
             }
-            rafRef.current = requestAnimationFrame(draw);
+            ctx.fill();
+            ctx.globalAlpha = 1;
         };
 
-        build();
-        if (reduce) {
+        const step = (now) => {
+            raf = requestAnimationFrame(step);
+            if (now - last < FRAME_MS) return;
+            last = now;
+            for (const a of nodes) {
+                a.x += a.vx * 2;
+                a.y += a.vy * 2;
+                if (a.x < 0 || a.x > width) a.vx *= -1;
+                if (a.y < 0 || a.y > height) a.vy *= -1;
+            }
             draw();
-            cancelAnimationFrame(rafRef.current);
-        } else {
-            draw();
-        }
-
-        const onResize = () => { dpr = Math.min(window.devicePixelRatio || 1, 2); build(); };
-        const onMove = (e) => {
-            const rect = canvas.getBoundingClientRect();
-            mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
         };
-        const onLeave = () => { mouseRef.current = { x: -9999, y: -9999 }; };
-        window.addEventListener('resize', onResize);
-        if (interactive) {
-            canvas.addEventListener('pointermove', onMove);
-            canvas.addEventListener('pointerleave', onLeave);
-        }
+
+        const play = () => {
+            if (!raf && started && visible && !document.hidden && !reduce) raf = requestAnimationFrame(step);
+        };
+        const pause = () => {
+            cancelAnimationFrame(raf);
+            raf = 0;
+        };
+
+        const io = new IntersectionObserver(([entry]) => {
+            visible = entry.isIntersecting;
+            if (visible) play();
+            else pause();
+        });
+        const onVisibility = () => (document.hidden ? pause() : play());
+        const onResize = () => {
+            build();
+            draw();
+        };
+
+        const start = () => {
+            if (disposed) return;
+            started = true;
+            build();
+            draw();
+            canvas.style.opacity = '';
+            io.observe(canvas);
+            window.addEventListener('resize', onResize);
+            document.addEventListener('visibilitychange', onVisibility);
+            play();
+        };
+
+        canvas.style.opacity = '0';
+        const idle = window.requestIdleCallback ?? ((cb) => setTimeout(cb, 200));
+        const cancelIdle = window.cancelIdleCallback ?? clearTimeout;
+        let idleId = 0;
+        const schedule = () => { idleId = idle(start, { timeout: 2500 }); };
+        if (document.readyState === 'complete') schedule();
+        else window.addEventListener('load', schedule, { once: true });
+
         return () => {
-            cancelAnimationFrame(rafRef.current);
+            disposed = true;
+            pause();
+            cancelIdle(idleId);
+            io.disconnect();
+            window.removeEventListener('load', schedule);
             window.removeEventListener('resize', onResize);
-            canvas.removeEventListener('pointermove', onMove);
-            canvas.removeEventListener('pointerleave', onLeave);
+            document.removeEventListener('visibilitychange', onVisibility);
         };
-    }, [density, interactive]);
+    }, [density]);
 
-    return <canvas ref={canvasRef} className={className} aria-hidden="true" />;
+    return <canvas ref={canvasRef} className={`transition-opacity duration-1000 ${className}`} aria-hidden="true" />;
 }

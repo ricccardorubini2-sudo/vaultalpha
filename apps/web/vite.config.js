@@ -7,8 +7,11 @@ import selectionModePlugin from './plugins/selection-mode/vite-plugin-selection-
 import iframeRouteRestorationPlugin from './plugins/vite-plugin-iframe-route-restoration.js';
 import pocketbaseAuthPlugin from './plugins/vite-plugin-pocketbase-auth.js';
 import sessionJournalPlugin from './plugins/session-journal/vite-plugin-session-journal.js';
+import seoPlugin from './plugins/vite-plugin-seo.js';
+import { imagetools } from 'vite-imagetools';
 
 import { readFileSync } from 'node:fs';
+import { STATS, STATS_PUBLISHED, formatStatValue } from './src/config/stats.js';
 
 const pkg = JSON.parse(readFileSync('./package.json', 'utf-8'));
 const allDeps = Object.keys(pkg.dependencies || {});
@@ -286,6 +289,11 @@ if (window.navigation && window.self !== window.top) {
 }
 `;
 
+// These handlers only report to the Horizons editor when the site runs inside
+// its preview iframe. Visitors skip them (they observe every DOM mutation and
+// wrap fetch/console, which adds main-thread work to each interaction).
+const onlyInEditorFrame = (code) => `if (window.self !== window.top) {\n${code}\n}`;
+
 const addTransformIndexHtml = {
 	name: 'add-transform-index-html',
 	transformIndexHtml(html) {
@@ -293,31 +301,31 @@ const addTransformIndexHtml = {
 			{
 				tag: 'script',
 				attrs: { type: 'module' },
-				children: configHorizonsRuntimeErrorHandler,
+				children: onlyInEditorFrame(configHorizonsRuntimeErrorHandler),
 				injectTo: 'head',
 			},
 			{
 				tag: 'script',
 				attrs: { type: 'module' },
-				children: configHorizonsViteErrorHandler,
+				children: onlyInEditorFrame(configHorizonsViteErrorHandler),
 				injectTo: 'head',
 			},
 			{
 				tag: 'script',
 				attrs: { type: 'module' },
-				children: configHorizonsConsoleErrorHandler,
+				children: onlyInEditorFrame(configHorizonsConsoleErrorHandler),
 				injectTo: 'head',
 			},
 			{
 				tag: 'script',
 				attrs: { type: 'module' },
-				children: configWindowFetchMonkeyPatch,
+				children: onlyInEditorFrame(configWindowFetchMonkeyPatch),
 				injectTo: 'head',
 			},
 			{
 				tag: 'script',
 				attrs: { type: 'module' },
-				children: configNavigationHandler,
+				children: onlyInEditorFrame(configNavigationHandler),
 				injectTo: 'head',
 			},
 		];
@@ -342,6 +350,27 @@ const addTransformIndexHtml = {
 	},
 };
 
+const escapeHtml = (s) =>
+	String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+
+// The app is client-rendered, so without this the raw HTML has no figures at all.
+const staticStatsFallback = {
+	name: 'static-stats-fallback',
+	transformIndexHtml() {
+		if (!STATS_PUBLISHED || STATS.length === 0) return [];
+		const items = STATS
+			.map((s) => `<div><dt>${escapeHtml(s.label)}</dt><dd style="margin:0;font-size:1.75rem;font-weight:600">${escapeHtml(formatStatValue(s))}</dd></div>`)
+			.join('');
+		return [
+			{
+				tag: 'noscript',
+				injectTo: 'body',
+				children: `<section aria-label="VaultAlpha Fund at a glance" style="max-width:64rem;margin:0 auto;padding:4rem 1.5rem;font-family:system-ui,sans-serif;color:#0f172a"><h1 style="font-size:2rem;margin:0 0 2rem">VaultAlpha Fund at a glance</h1><dl style="display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1.5rem;margin:0">${items}</dl></section>`,
+			},
+		];
+	},
+};
+
 console.warn = () => { };
 
 const logger = createLogger()
@@ -363,7 +392,10 @@ export default defineConfig({
 	plugins: [
 		...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), selectionModePlugin(), iframeRouteRestorationPlugin(), pocketbaseAuthPlugin(), sessionJournalPlugin()] : []),
 		react(),
-		addTransformIndexHtml
+		imagetools(),
+		addTransformIndexHtml,
+		staticStatsFallback,
+		seoPlugin()
 	],
 	server: {
 		port: 3000,
@@ -391,6 +423,8 @@ export default defineConfig({
 		},
 	},
 	build: {
+		// Read by vite-plugin-seo to preload each route's chunks; removed after the build.
+		manifest: true,
 		rollupOptions: {
 			external: [
 				'@babel/parser',

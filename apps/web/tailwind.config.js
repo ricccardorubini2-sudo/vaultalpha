@@ -6,6 +6,8 @@ module.exports = {
 		'./components/**/*.{js,jsx}',
 		'./app/**/*.{js,jsx}',
 		'./src/**/*.{js,jsx}',
+		// Unused shadcn/ui kit; scanning it only adds dead CSS.
+		'!./src/components/ui/**',
 	],
 	theme: {
 		container: {
@@ -17,8 +19,8 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				display: ['Sora', 'sans-serif'],
-				sans: ['Inter', 'sans-serif'],
+				display: ['Sora', 'Sora Fallback', 'sans-serif'],
+				sans: ['Inter', 'Inter Fallback', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
