@@ -58,12 +58,12 @@ const EMPTY_PROFILE = {
 };
 
 export const TEAM = [
-    { slug: 'maksym-kylchyk', name: 'Maksym Kylchyk', role: 'Founder, Partner', group: 'executive', photo: photo('Maksym Kylchyk.png'), ...EMPTY_PROFILE, active: true },
+    { slug: 'vladyslav-blyzniuk', name: 'Vladyslav Blyzniuk', role: 'Founding Partner', group: 'executive', photo: photo('Vladyslav Blyzniuk.png'), ...EMPTY_PROFILE, active: true },
     { slug: 'vadym-nemyrytskyi', name: 'Vadym Nemyrytskyi', role: 'Chief Executive Officer, Partner', group: 'executive', photo: photo('Vadym Nemyrytskyi.png'), ...EMPTY_PROFILE, active: true },
     { slug: 'vadym-yaroshevskyi', name: 'Vadym Yaroshevskyi', role: 'Managing Partner', group: 'executive', photo: photo('Vadym Yaroshevskyi.png'), ...EMPTY_PROFILE, active: true },
-    { slug: 'nazarii-fedinchuk', name: 'Nazarii Fedinchuk', role: 'Chief Investment Officer', group: 'executive', photo: photo('Nazarii Fedinchuk.png'), ...EMPTY_PROFILE, active: true },
+    { slug: 'oleksandr-pronoza', name: 'Oleksandr Pronoza', role: 'Chief Investment Officer', group: 'executive', photo: photo('Oleksandr Pronoza.png'), ...EMPTY_PROFILE, active: true },
+    { slug: 'yuliia-lohunkova', name: 'Yuliia Lohunkova', role: 'Chief Business Development Officer', group: 'executive', photo: photo('Yuliia Lohunkova.png'), ...EMPTY_PROFILE, active: true },
     { slug: 'vitalina-petrenko', name: 'Vitalina Petrenko', role: 'Investment Partner', group: 'senior', photo: photo('Vitalina Petrenko.png'), ...EMPTY_PROFILE, active: true },
-    { slug: 'maya-becker', name: 'Maya Becker', role: 'Head of Technical Diligence', group: 'senior', photo: photo('Maya Becker.png'), ...EMPTY_PROFILE, active: true },
     { slug: 'yuki-tanaka', name: 'Yuki Tanaka', role: 'Head of Research', group: 'senior', photo: photo('Yuki Tanaka.png'), ...EMPTY_PROFILE, active: true },
     { slug: 'yullia-mitchell', name: 'Yullia Mitchell', role: 'Partner, Investor Relations', group: 'senior', photo: photo('Yullia Mitchell.png'), ...EMPTY_PROFILE, active: true },
 ];

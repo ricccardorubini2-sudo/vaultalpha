@@ -21,7 +21,15 @@ function Stat({ stat }) {
  * variant: 'full' (About page: philosophy paragraphs, plus stats once published)
  *        | 'compact' (homepage thesis with a link to About)
  */
-export default function PhilosophySection({ className = 'bg-white', variant = 'full', spacing, showAboutLink = true }) {
+export default function PhilosophySection({
+    className = 'bg-white',
+    variant = 'full',
+    spacing,
+    showAboutLink = true,
+    label = 'Investment Philosophy',
+    title = PHILOSOPHY.title,
+    paragraphs = PHILOSOPHY.paragraphs,
+}) {
     const compact = variant === 'compact';
     const showStats = !compact && STATS_PUBLISHED && STATS.length > 0;
     return (
@@ -30,8 +38,8 @@ export default function PhilosophySection({ className = 'bg-white', variant = 'f
                 <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
                     <div className="lg:col-span-5">
                         <Reveal>
-                            <SectionLabel>Investment Philosophy</SectionLabel>
-                            <H2 className="mt-7">{PHILOSOPHY.title}</H2>
+                            <SectionLabel>{label}</SectionLabel>
+                            <H2 className="mt-7">{title}</H2>
                         </Reveal>
                     </div>
                     <div className="lg:col-span-7">
@@ -42,7 +50,7 @@ export default function PhilosophySection({ className = 'bg-white', variant = 'f
                                     {showAboutLink && <ArrowLink to="/about" className="mt-8">About {BRAND}</ArrowLink>}
                                 </>
                             ) : (
-                                PHILOSOPHY.paragraphs.map((p, i) => (
+                                paragraphs.map((p, i) => (
                                     <p key={i} className={`text-lg leading-relaxed ${i === 0 ? 'text-slate-600' : 'mt-5 text-slate-500'}`}>{p}</p>
                                 ))
                             )}

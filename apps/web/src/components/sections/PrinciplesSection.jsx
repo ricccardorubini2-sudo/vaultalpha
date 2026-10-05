@@ -3,12 +3,17 @@ import Reveal from '@/components/Reveal';
 import { Section, Container, SectionHeader } from '@/components/site/primitives';
 import { OPERATING_PRINCIPLES } from '@/config/about';
 
-export default function PrinciplesSection({ className = 'bg-white', spacing }) {
+export default function PrinciplesSection({
+    className = 'bg-white',
+    spacing,
+    label = 'Operating Principles',
+    title = 'The principles behind our decisions.',
+}) {
     return (
         <Section id="principles" className={className} spacing={spacing}>
             <Container>
                 <Reveal>
-                    <SectionHeader label="Operating Principles" title="The principles behind our decisions." />
+                    <SectionHeader label={label} title={title} />
                 </Reveal>
                 <Reveal delay={0.08}>
                     <ol className="mt-14 border-t border-slate-900">

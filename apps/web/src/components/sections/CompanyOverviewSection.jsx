@@ -3,8 +3,8 @@ import Reveal from '@/components/Reveal';
 import { Section, Container, SectionLabel } from '@/components/site/primitives';
 import { COMPANY_OVERVIEW } from '@/config/about';
 
-export default function CompanyOverviewSection({ className = 'bg-white', spacing = 'compact' }) {
-    const [lead, ...rest] = COMPANY_OVERVIEW;
+export default function CompanyOverviewSection({ className = 'bg-white', spacing = 'compact', paragraphs = COMPANY_OVERVIEW }) {
+    const [lead, ...rest] = paragraphs;
     return (
         <Section id="overview" className={className} spacing={spacing}>
             <Container>

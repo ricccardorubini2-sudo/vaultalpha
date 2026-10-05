@@ -2,13 +2,15 @@ import React from 'react';
 import PageHeader from '@/components/site/PageHeader';
 import { ArrowLink } from '@/components/site/primitives';
 import CompanyOverviewSection from '@/components/sections/CompanyOverviewSection';
-import PhilosophySection from '@/components/sections/PhilosophySection';
 import MissionSection from '@/components/sections/MissionSection';
+import HistorySection from '@/components/sections/HistorySection';
 import PrinciplesSection from '@/components/sections/PrinciplesSection';
+import PhilosophySection from '@/components/sections/PhilosophySection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import GlobalNetworkSection from '@/components/sections/GlobalNetworkSection';
 import NextStepsSection from '@/components/sections/NextStepsSection';
-import { FOUNDER_PARTNERSHIP_INTRO } from '@/config/about';
+import { COMPANY_OVERVIEW, PHILOSOPHY, WHY_VAULTALPHA, FOUNDER_PARTNERSHIP_INTRO } from '@/config/about';
+import { BRAND } from '@/config/site';
 
 const NEXT_STEPS = [
     {
@@ -27,6 +29,7 @@ const NEXT_STEPS = [
     },
 ];
 
+// Who we are → mission → history → values → why us, then how we work.
 export default function AboutPage() {
     return (
         <>
@@ -35,10 +38,17 @@ export default function AboutPage() {
                 title="About VaultAlpha"
                 intro="A technology investment firm backing founders in digital assets, payments, artificial intelligence and security infrastructure."
             />
-            <CompanyOverviewSection />
-            <PhilosophySection className="bg-white" spacing="compact" />
+            <CompanyOverviewSection paragraphs={[...COMPANY_OVERVIEW, ...PHILOSOPHY.paragraphs]} />
             <MissionSection />
-            <PrinciplesSection spacing="compact" />
+            <HistorySection />
+            <PrinciplesSection label="Our Values" title="The principles behind our decisions." spacing="compact" />
+            <PhilosophySection
+                className="bg-[#f5f6f8]"
+                spacing="compact"
+                label={`Why ${BRAND}`}
+                title={WHY_VAULTALPHA.title}
+                paragraphs={WHY_VAULTALPHA.paragraphs}
+            />
             <ProcessSection
                 className="bg-white"
                 label="How We Work with Founders"

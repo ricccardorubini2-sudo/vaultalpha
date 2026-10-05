@@ -132,7 +132,7 @@ const STATIC_PAGES = {
     '/about': {
         title: 'About',
         heading: 'About VaultAlpha',
-        description: `Who ${BRAND} is: our investment philosophy, mission, operating principles and how we work with founders building digital infrastructure.`,
+        description: `Who ${BRAND} is: our mission, values and approach to working with founders building digital infrastructure.`,
     },
     '/strategy': {
         title: 'Investment Strategy',

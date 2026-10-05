@@ -51,5 +51,16 @@ export const OPERATING_PRINCIPLES = [
     },
 ];
 
+// About page closing argument. Restates commitments already made elsewhere on
+// the site (principles, process); add no new claims or figures here.
+export const WHY_VAULTALPHA = {
+    title: 'Technical depth, applied with discipline.',
+    paragraphs: [
+        'Digital assets, payments, artificial intelligence and security infrastructure reward investors who understand the technology as well as the market.',
+        'Our engineers review architecture, security and protocol design, and each investment is assessed on its market, team, technology and terms through a structured review before we commit.',
+        'We invest with a multi-year horizon, remain engaged as companies scale and make introductions across our international network.',
+    ],
+};
+
 export const FOUNDER_PARTNERSHIP_INTRO =
     'Founders choose us because we move decisively, conduct rigorous diligence and remain committed for the long term.';
