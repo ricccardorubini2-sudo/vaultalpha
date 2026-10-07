@@ -5,13 +5,17 @@
 //   presented as an "office" unless its type says so.
 // - `address` and `description` are null unless confirmed.
 // - A location appears on the public site only when `verified: true` (its
-//   existence, city, and address are confirmed) and `active: true`.
+//   existence and city are confirmed) and `active: true`.
 //   `active: false` withdraws a verified location without losing its data.
 // - `coordinates` only positions the pin on the network map.
 //
-// TODO: Verify each location's status and type, then set `verified: true`.
+// Owner-confirmed (Step 7, 2026-10-06): main office in London, branches in
+// New York and Singapore, each with investment team presence. The owner asked
+// not to publish street addresses, so `address` stays null.
 
 export const LOCATION_TYPES = [
+    'Main Office',
+    'Branch Office',
     'Registered Office',
     'Investment Team',
     'Representative Office',
@@ -25,11 +29,10 @@ export const LOCATIONS = [
         id: 'london',
         city: 'London',
         country: 'United Kingdom',
-        // Carried over from the original site; unverified.
-        address: '1 Finsbury Avenue',
-        locationType: null,
-        description: null,
-        verified: false,
+        address: null,
+        locationType: 'Main Office',
+        description: 'Investment team',
+        verified: true,
         active: true,
         coordinates: { lat: 51.51, lon: -0.09 },
     },
@@ -37,11 +40,10 @@ export const LOCATIONS = [
         id: 'new-york',
         city: 'New York',
         country: 'United States',
-        // Carried over from the original site; unverified.
-        address: '200 Park Avenue',
-        locationType: null,
-        description: null,
-        verified: false,
+        address: null,
+        locationType: 'Branch Office',
+        description: 'Investment team',
+        verified: true,
         active: true,
         coordinates: { lat: 40.75, lon: -73.98 },
     },
@@ -49,11 +51,10 @@ export const LOCATIONS = [
         id: 'singapore',
         city: 'Singapore',
         country: 'Singapore',
-        // Carried over from the original site; unverified.
-        address: 'Marina Bay Financial Centre',
-        locationType: null,
-        description: null,
-        verified: false,
+        address: null,
+        locationType: 'Branch Office',
+        description: 'Investment team',
+        verified: true,
         active: true,
         coordinates: { lat: 1.28, lon: 103.85 },
     },

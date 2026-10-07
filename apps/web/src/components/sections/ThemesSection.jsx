@@ -13,7 +13,7 @@ export default function ThemesSection({ className = 'bg-white', spacing, showStr
                     <SectionHeader
                         label="Investment Themes"
                         title="Four themes where we build conviction."
-                        intro="We concentrate on the systems that issue, move and secure value — areas where technical depth is a meaningful advantage."
+                        intro="We concentrate on the systems that issue, move and secure value."
                         action={showStrategyLink && <ArrowLink to="/strategy" variant="solid">Explore Strategy</ArrowLink>}
                     />
                 </Reveal>

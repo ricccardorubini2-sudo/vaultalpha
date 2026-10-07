@@ -1,13 +1,16 @@
 // Single source of truth for public contact details.
 //
+// Owner-confirmed (Step 8, 2026-10-06): founders@vaultalpha.fund is the only
+// public contact. There is no partnerships inbox, general inbox or phone
+// number; do not add them without owner confirmation.
+//
 // Per contact path:
-// - `email`: leave empty until an address is confirmed. Empty paths fall back
-//   to the general inbox once that is set; otherwise a neutral label is shown.
-// - `phone`: leave empty. Only add a real, confirmed number; it is shown
-//   (with a tel: link) only when present.
+// - `email`: a confirmed address; a path with no address and no action is not shown.
 // - `subject`: pre-filled subject line for mailto links.
-// - `note`: optional one-line expectation (only statements already made on the site).
+// - `note`: optional one-line expectation (only statements the owner has confirmed).
 // - `action`: optional primary route, e.g. the founder application.
+
+export const APPLICATION_REVIEW_NOTE = 'We review every application.';
 
 export const CONTACT_CATEGORIES = [
     {
@@ -15,56 +18,22 @@ export const CONTACT_CATEGORIES = [
         label: 'Founders',
         description: 'Pitches and founder applications',
         email: 'founders@vaultalpha.fund',
-        phone: '',
         subject: 'Founder enquiry',
-        note: 'We review every application and respond within five business days.',
+        note: APPLICATION_REVIEW_NOTE,
         action: { label: 'Submit Your Company', to: '/founders#apply' },
     },
-    {
-        id: 'investors',
-        label: 'Investors / LPs',
-        description: 'Fund and limited partner relations',
-        email: '',
-        phone: '',
-        subject: 'Investor enquiry',
-        note: null,
-        action: null,
-    },
-    {
-        id: 'media',
-        label: 'Media',
-        description: 'Press, interviews and speaking requests',
-        email: '',
-        phone: '',
-        subject: 'Media enquiry',
-        note: null,
-        action: null,
-    },
-    {
-        id: 'general',
-        label: 'General inquiries',
-        description: 'Everything else',
-        email: '',
-        phone: '',
-        subject: 'General enquiry',
-        note: null,
-        action: null,
-    },
 ];
-
-export const CONTACT_EMAIL_PENDING_LABEL = 'Address coming soon';
 
 const findCategory = (id) => CONTACT_CATEGORIES.find((c) => c.id === id);
 
 export const getContactEmail = (id) => findCategory(id)?.email?.trim() || '';
 
-// A path's own address, else the general inbox (never another team's inbox).
-export const getContactEmailWithFallback = (id) => getContactEmail(id) || (id !== 'general' ? getContactEmail('general') : '');
-
-export const getContactPhone = (id) => findCategory(id)?.phone?.trim() || '';
+// Paths a visitor can actually use: an address or an action.
+export const getPublicContactCategories = () =>
+    CONTACT_CATEGORIES.filter((c) => getContactEmail(c.id) || c.action);
 
 export const buildMailto = (email, subject) =>
     `mailto:${email}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}`;
 
-// Used in legal pages; prefers the general inbox once it is configured.
-export const PRIMARY_CONTACT_EMAIL = getContactEmail('general') || getContactEmail('founders');
+// Used in legal pages.
+export const PRIMARY_CONTACT_EMAIL = getContactEmail('founders');

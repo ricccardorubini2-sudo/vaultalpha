@@ -10,7 +10,8 @@ import ProcessSection from '@/components/sections/ProcessSection';
 import GlobalNetworkSection from '@/components/sections/GlobalNetworkSection';
 import NextStepsSection from '@/components/sections/NextStepsSection';
 import { COMPANY_OVERVIEW, PHILOSOPHY, WHY_VAULTALPHA, FOUNDER_PARTNERSHIP_INTRO } from '@/config/about';
-import { BRAND } from '@/config/site';
+import { BRAND, FIRM_DESCRIPTOR } from '@/config/site';
+import { SECTOR_SUMMARY } from '@/config/themes';
 
 const NEXT_STEPS = [
     {
@@ -36,7 +37,7 @@ export default function AboutPage() {
             <PageHeader
                 label="About"
                 title="About VaultAlpha"
-                intro="A technology investment firm backing founders in digital assets, payments, artificial intelligence and security infrastructure."
+                intro={`A ${FIRM_DESCRIPTOR.toLowerCase()} backing founders in ${SECTOR_SUMMARY}.`}
             />
             <CompanyOverviewSection paragraphs={[...COMPANY_OVERVIEW, ...PHILOSOPHY.paragraphs]} />
             <MissionSection />

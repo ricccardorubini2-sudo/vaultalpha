@@ -11,7 +11,7 @@ import seoPlugin from './plugins/vite-plugin-seo.js';
 import { imagetools } from 'vite-imagetools';
 
 import { readFileSync } from 'node:fs';
-import { STATS, STATS_PUBLISHED, formatStatValue } from './src/config/stats.js';
+import { getPublicStats, formatStatValue } from './src/config/stats.js';
 
 const pkg = JSON.parse(readFileSync('./package.json', 'utf-8'));
 const allDeps = Object.keys(pkg.dependencies || {});
@@ -357,8 +357,9 @@ const escapeHtml = (s) =>
 const staticStatsFallback = {
 	name: 'static-stats-fallback',
 	transformIndexHtml() {
-		if (!STATS_PUBLISHED || STATS.length === 0) return [];
-		const items = STATS
+		const stats = getPublicStats();
+		if (stats.length === 0) return [];
+		const items = stats
 			.map((s) => `<div><dt>${escapeHtml(s.label)}</dt><dd style="margin:0;font-size:1.75rem;font-weight:600">${escapeHtml(formatStatValue(s))}</dd></div>`)
 			.join('');
 		return [

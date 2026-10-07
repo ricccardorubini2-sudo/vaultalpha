@@ -1,8 +1,8 @@
 import React from 'react';
 import NetworkCanvas from '@/components/NetworkCanvas';
 import { ArrowLink } from '@/components/site/primitives';
-import { BRAND, APPLY_LINK } from '@/config/site';
-import { THEMES } from '@/config/themes';
+import { BRAND, APPLY_LINK, FIRM_DESCRIPTOR } from '@/config/site';
+import { THEMES, SECTOR_SUMMARY } from '@/config/themes';
 
 const delay = (s) => ({ '--enter-delay': `${s}s` });
 
@@ -16,13 +16,13 @@ export default function HeroSection() {
 
             <div className="relative mx-auto flex w-full max-w-[80rem] flex-1 flex-col justify-center px-6 pb-14 pt-28 sm:pb-16 sm:pt-36 lg:px-12">
                 <p className="animate-enter text-xs font-medium uppercase tracking-[0.2em] text-slate-400">
-                    Global technology investment firm
+                    {FIRM_DESCRIPTOR}
                 </p>
                 <h1 className="mt-6 max-w-4xl font-display text-[2.25rem] font-medium leading-[1.05] tracking-[-0.03em] text-white min-[400px]:text-[2.6rem] sm:text-6xl lg:text-7xl">
                     Investing in the Infrastructure of the Digital Economy
                 </h1>
                 <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-400 sm:mt-8 sm:text-lg">
-                    {BRAND} backs founders building the systems that issue, move and secure value — across digital assets and blockchain infrastructure, digital finance, artificial intelligence and security.
+                    {BRAND} backs founders building the systems that issue, move and secure value — across {SECTOR_SUMMARY}.
                 </p>
                 <div className="animate-enter mt-10 flex flex-col gap-3 sm:flex-row" style={delay(0.15)}>
                     <ArrowLink to={APPLY_LINK.to} variant="light">{APPLY_LINK.longLabel}</ArrowLink>

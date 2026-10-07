@@ -1,23 +1,22 @@
 // Single source of truth for public-facing VaultAlpha figures.
 // Plain JS (no JSX, no `@/` imports) so vite.config.js can also read it
 // to emit the static no-JavaScript fallback.
+//
+// A figure renders only when STATS_PUBLISHED is true AND its own `verified`
+// flag is true. Owner-confirmed figures: Step 6, 2026-10-06 (see
+// SITE_CONTENT_DECISIONS.md).
 
-// Master switch for every public rendering of STATS, including the
-// no-JavaScript fallback. Keep false until each figure below is verified.
-export const STATS_PUBLISHED = false;
+export const STATS_PUBLISHED = true;
 
 export const STATS = [
-    // VERIFY before public release: assets under management.
-    { id: 'aum', value: 2.4, decimals: 1, prefix: '$', suffix: 'B+', label: 'Assets under management' },
-    // VERIFY before public release: number of portfolio companies.
-    { id: 'portfolioCompanies', value: 180, suffix: '+', label: 'Portfolio companies' },
-    // VERIFY before public release: number of countries.
-    { id: 'countries', value: 38, label: 'Countries' },
-    // VERIFY before public release: size of founder network.
-    { id: 'founderNetwork', value: 400, suffix: '+', label: 'Founder network' },
-    // VERIFY before public release: headcount of investment professionals.
-    { id: 'investmentProfessionals', value: 25, suffix: '+', label: 'Investment professionals' },
+    // Keep out of structured data (see seo/meta.js).
+    { id: 'aum', value: 750, prefix: '$', suffix: 'M', label: 'Assets under management', verified: true },
+    // Keep in step with the active entries in data/portfolio.js.
+    { id: 'portfolioCompanies', value: 15, label: 'Portfolio companies', verified: true },
+    { id: 'countries', value: 6, label: 'Portfolio countries', verified: true },
 ];
+
+export const getPublicStats = () => (STATS_PUBLISHED ? STATS.filter((s) => s.verified === true) : []);
 
 export const getStat = (id) => STATS.find((s) => s.id === id);
 

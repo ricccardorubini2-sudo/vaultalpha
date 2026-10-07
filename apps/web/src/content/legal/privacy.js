@@ -4,7 +4,7 @@
 // does (see config/siteTechnology.js). It has NOT been reviewed by lawyers.
 // Keep `status: 'draft'` until counsel has approved the final text.
 
-import { BRAND, DOMAIN } from '../../config/site.js';
+import { BRAND, DOMAIN, LEGAL_NAME } from '../../config/site.js';
 import { PRIMARY_CONTACT_EMAIL } from '../../config/contact.js';
 import { APPLICATION_ENDPOINT, APPLICATION_FALLBACK_EMAIL } from '../../config/founders.js';
 import { COOKIES, BROWSER_STORAGE, THIRD_PARTY_SERVICES, HOSTING_PROVIDER } from '../../config/siteTechnology.js';
@@ -24,8 +24,8 @@ export default {
             id: 'who-we-are',
             heading: 'Who we are',
             blocks: [
-                // TODO (counsel): insert the full legal entity name, registered address, and any data-protection representative.
-                `This website is operated by ${BRAND} (“we”, “us”). Questions about this policy may be sent to ${PRIMARY_CONTACT_EMAIL}.`,
+                // TODO (counsel): add the jurisdiction, registered address, and any data-protection representative.
+                `This website is operated by ${LEGAL_NAME} (“we”, “us”). Questions about this policy may be sent to ${PRIMARY_CONTACT_EMAIL}.`,
             ],
         },
         {

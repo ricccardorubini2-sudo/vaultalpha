@@ -4,7 +4,7 @@ import { Section, Container, SectionLabel, H2 } from '@/components/site/primitiv
 import { getPublicLocations, formatList } from '@/data/locations';
 import { getActivePortfolio, hasValue } from '@/data/portfolio';
 
-// Plain facts rather than a decorative map: verified locations (none yet) and
+// Plain facts rather than a decorative map: verified office cities and
 // the countries represented in the listed portfolio.
 export default function GlobalNetworkSection() {
     const locations = getPublicLocations();
@@ -12,10 +12,10 @@ export default function GlobalNetworkSection() {
     const cities = formatList(locations.map((l) => l.city));
     const summary = [
         portfolioCountries.length > 0 && `portfolio companies in ${portfolioCountries.length} countries`,
-        locations.length > 0 && `locations in ${cities}`,
+        locations.length > 0 && `offices in ${cities}`,
     ].filter(Boolean);
     const facts = [
-        locations.length > 0 && { id: 'locations', label: locations.length === 1 ? 'Location' : 'Locations', value: cities },
+        locations.length > 0 && { id: 'locations', label: locations.length === 1 ? 'Office' : 'Offices', value: cities },
         portfolioCountries.length > 0 && { id: 'portfolioCountries', label: 'Portfolio countries', value: formatList(portfolioCountries) },
     ].filter(Boolean);
 

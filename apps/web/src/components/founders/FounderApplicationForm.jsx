@@ -16,6 +16,7 @@ import {
     APPLICATION_LIMITS,
     APPLICATION_FALLBACK_EMAIL,
 } from '@/config/founders';
+import { APPLICATION_REVIEW_NOTE } from '@/config/contact';
 
 function Field({ id, label, optional, hint, error, children, className = '' }) {
     return (
@@ -131,7 +132,7 @@ export default function FounderApplicationForm() {
         return (
             <div className={card}>
                 <ResultPanel icon={Check} title="Application received" onReset={startOver}>
-                    <p>Thank you. Our team reviews every application and responds within five business days.</p>
+                    <p>Thank you. {APPLICATION_REVIEW_NOTE}</p>
                 </ResultPanel>
             </div>
         );

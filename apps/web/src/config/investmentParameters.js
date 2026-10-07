@@ -9,6 +9,8 @@ import { getPublicLocations, formatList } from '../data/locations.js';
 //
 // Never fill a field with an estimate. Leave it null until confirmed, and only
 // set `confirmed: true` once the partners have approved the wording.
+//
+// Owner-confirmed (Step 2, 2026-10-06). See SITE_CONTENT_DECISIONS.md.
 
 const locationCities = getPublicLocations().map((l) => l.city);
 
@@ -16,46 +18,38 @@ export const INVESTMENT_PARAMETERS = [
     {
         id: 'stage',
         label: 'Investment stage',
-        // TODO: Confirm actual VaultAlpha investment stage(s) before publication.
-        // The portfolio currently lists companies from Seed to Series C, but
-        // that is not a stated mandate.
-        value: null,
+        value: ['Pre-seed', 'Seed', 'Series A', 'Token rounds'],
         detail: null,
-        confirmed: false,
+        confirmed: true,
     },
     {
         id: 'checkSize',
         label: 'Initial check size',
-        // TODO: Confirm actual VaultAlpha check-size range before publication.
-        value: null,
-        detail: null,
-        confirmed: false,
+        // The owner chose not to publish a minimum or a typical range.
+        value: 'Sized to each round',
+        detail: 'No fixed minimum.',
+        confirmed: true,
     },
     {
         id: 'geography',
         label: 'Geography',
-        // TODO: Confirm geographic mandate before publication. "Global" reflects
-        // existing site copy ("Global technology investment firm"), not a
-        // confirmed mandate.
         value: 'Global',
-        detail: locationCities.length ? `Locations in ${formatList(locationCities)}.` : null,
-        confirmed: false,
+        detail: locationCities.length ? `Offices in ${formatList(locationCities)}.` : null,
+        confirmed: true,
     },
     {
         id: 'instruments',
         label: 'Investment instruments',
-        // TODO: Confirm actual VaultAlpha investment instruments before publication.
-        value: null,
+        value: 'Hybrid equity and token structures',
         detail: null,
-        confirmed: false,
+        confirmed: true,
     },
     {
         id: 'leadFollow',
         label: 'Lead / follow',
-        // TODO: Confirm lead/follow preference before publication.
-        value: null,
-        detail: null,
-        confirmed: false,
+        value: 'Lead and co-invest',
+        detail: 'Depending on the round.',
+        confirmed: true,
     },
     {
         id: 'themes',

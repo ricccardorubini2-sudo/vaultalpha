@@ -2,6 +2,7 @@ import React from 'react';
 import Reveal from '@/components/Reveal';
 import { Section, Container, SectionLabel, H2, ArrowLink } from '@/components/site/primitives';
 import { APPLY_LINK } from '@/config/site';
+import { APPLICATION_REVIEW_NOTE } from '@/config/contact';
 
 export default function FounderCtaSection({ spacing = 'compact' }) {
     return (
@@ -13,7 +14,7 @@ export default function FounderCtaSection({ spacing = 'compact' }) {
                             <SectionLabel>For Founders</SectionLabel>
                             <H2 className="mt-5 !text-white">Tell us what you are building.</H2>
                             <p className="mt-5 text-lg leading-relaxed text-slate-400">
-                                Share an overview of your company. Our team reviews every application and responds within five business days.
+                                Share an overview of your company. {APPLICATION_REVIEW_NOTE}
                             </p>
                         </div>
                         <div className="flex flex-col gap-3 sm:flex-row">

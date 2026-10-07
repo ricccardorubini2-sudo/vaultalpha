@@ -1,176 +1,56 @@
 // Single source of truth for portfolio companies.
 //
+// Owner-confirmed (Step 5, 2026-10-06): VaultAlpha has invested in every
+// company below. See SITE_CONTENT_DECISIONS.md. Websites were checked on
+// 2026-10-06; descriptions summarise each company's own public description.
+//
 // Field rules:
-// - Use null for anything not yet verified. Never fill a field with an estimate.
+// - Use null for anything not yet confirmed. Never fill a field with an estimate.
+// - The owner asked not to classify companies by type, so `sector` stays null.
+// - `investmentStage`, `geography` and `investmentYear` stay null until the
+//   owner confirms them for publication.
 // - `active: false` keeps an entry in the data layer but hides it everywhere
-//   on the public site (grids, partner logos, and /portfolio/[slug]).
+//   on the public site (grids and /portfolio/[slug]).
 // - `featured: true` entries appear on the homepage, in array order, capped at
 //   HOMEPAGE_PORTFOLIO_LIMIT.
-// - `investmentStage` currently holds the stage label the site already showed;
-//   it is not yet confirmed whether that is VaultAlpha's entry stage or the
-//   company's latest round, so it is labelled "Stage" rather than
-//   "Investment stage" on the public site.
+// - `logo` stays null (initials are shown) until official logo files are
+//   supplied with permission to use them.
 // - `founders` is optional: null or [{ name, role, verified }]. Only founders
 //   with `verified: true` are shown publicly.
-// - `investmentYear`, `shortDescription`, and `investmentRationale` stay null
-//   until confirmed; sections without content are omitted, never filled in.
-//
-// TODO: Verify every entry (relationship, stage, geography, website) before
-// publication. Set `active: false` for any entry that cannot be verified.
+
+const company = (slug, companyName, companyWebsite, shortDescription, featured = false) => ({
+    slug,
+    companyName,
+    logo: null,
+    shortDescription,
+    sector: null,
+    investmentStage: null,
+    geography: null,
+    investmentYear: null,
+    companyWebsite,
+    featured,
+    active: true,
+    investmentRationale: null,
+    founders: null,
+});
 
 export const PORTFOLIO = [
-    {
-        slug: 'meridian-labs',
-        companyName: 'Meridian Labs',
-        logo: { src: '/portfolio/meridian-labs-icon.svg', tile: 'light', wide: false },
-        shortDescription: null,
-        sector: 'Infrastructure',
-        investmentStage: 'Series B',
-        geography: 'United States',
-        investmentYear: null,
-        status: 'Active',
-        companyWebsite: 'https://meridianlabs.ai',
-        featured: true,
-        active: true,
-        investmentRationale: null,
-        // Taken from the testimonial attribution on the homepage.
-        founders: [{ name: 'Elena Vasquez', role: 'Founder & CEO', verified: false }],
-    },
-    {
-        slug: 'halcyon-ai',
-        companyName: 'Halcyon AI',
-        // TODO: Logo file is missing from public/portfolio.
-        logo: { src: '/portfolio/halcyon-ai-icon.png', tile: 'light', wide: false },
-        shortDescription: null,
-        sector: 'Artificial Intelligence',
-        // TODO: Homepage testimonial refers to a Series B; resolve before publication.
-        investmentStage: 'Series A',
-        geography: 'United Kingdom',
-        investmentYear: null,
-        status: 'Active',
-        companyWebsite: 'https://www.halcyon.ai',
-        // Not featured until the missing logo and stage conflict are resolved.
-        featured: false,
-        active: true,
-        investmentRationale: null,
-        // Taken from the testimonial attribution on the homepage.
-        founders: [{ name: 'David Kim', role: 'Co-founder', verified: false }],
-    },
-    {
-        slug: 'vault-protocol',
-        companyName: 'Vault Protocol',
-        logo: { src: '/portfolio/vault-protocol.svg', tile: 'dark', wide: true },
-        shortDescription: null,
-        sector: 'Digital Finance',
-        investmentStage: 'Seed',
-        geography: 'Singapore',
-        investmentYear: null,
-        status: 'Active',
-        companyWebsite: 'https://vaultprotocol.ai',
-        featured: true,
-        active: true,
-        investmentRationale: null,
-        founders: null,
-    },
-    {
-        slug: 'aurora-chain',
-        companyName: 'Aurora Chain',
-        logo: { src: '/portfolio/aurora-chain.svg', tile: 'light', wide: false },
-        shortDescription: null,
-        sector: 'Infrastructure',
-        investmentStage: 'Series A',
-        geography: 'Germany',
-        investmentYear: null,
-        status: 'Active',
-        companyWebsite: 'https://aurora.dev',
-        featured: true,
-        active: true,
-        investmentRationale: null,
-        founders: null,
-    },
-    {
-        slug: 'ledgerlyne',
-        companyName: 'Ledgerlyne',
-        // TODO: Logo file is missing from public/portfolio.
-        logo: { src: '/portfolio/ledgerlyne.webp', tile: 'light', wide: false },
-        shortDescription: null,
-        sector: 'Digital Assets',
-        investmentStage: 'Series B',
-        geography: 'Switzerland',
-        investmentYear: null,
-        status: 'Active',
-        // TODO: Website domain (ledgerly.com) does not match the company name.
-        companyWebsite: 'https://www.ledgerly.com',
-        // Not featured until the missing logo and website mismatch are resolved.
-        featured: false,
-        active: true,
-        investmentRationale: null,
-        founders: null,
-    },
-    {
-        slug: 'ciphergrid',
-        companyName: 'Ciphergrid',
-        logo: { src: '/portfolio/ciphergrid.svg', tile: 'dark', wide: false },
-        shortDescription: null,
-        sector: 'Cybersecurity',
-        investmentStage: 'Seed',
-        geography: 'Israel',
-        investmentYear: null,
-        status: 'Active',
-        companyWebsite: 'https://ciphergrid.ai',
-        featured: true,
-        active: true,
-        investmentRationale: null,
-        founders: null,
-    },
-    {
-        slug: 'northwind-ai',
-        companyName: 'Northwind AI',
-        logo: { src: '/portfolio/northwind-ai.svg', tile: 'light', wide: false },
-        shortDescription: null,
-        sector: 'Artificial Intelligence',
-        investmentStage: 'Series C',
-        geography: 'Canada',
-        investmentYear: null,
-        status: 'Growth',
-        companyWebsite: 'https://northwind.ai',
-        featured: true,
-        active: true,
-        investmentRationale: null,
-        founders: null,
-    },
-    {
-        slug: 'terrafi',
-        companyName: 'Terrafi',
-        logo: { src: '/portfolio/terrafi.svg', tile: 'dark', wide: false },
-        shortDescription: null,
-        sector: 'Digital Finance',
-        investmentStage: 'Series A',
-        geography: 'United Arab Emirates',
-        investmentYear: null,
-        status: 'Active',
-        companyWebsite: 'https://www.terrafi.in',
-        featured: true,
-        active: true,
-        investmentRationale: null,
-        founders: null,
-    },
-    {
-        slug: 'proofstack',
-        companyName: 'Proofstack',
-        logo: { src: '/portfolio/proofstack-official.svg', tile: 'light', wide: false },
-        shortDescription: null,
-        sector: 'Cybersecurity',
-        investmentStage: 'Seed',
-        geography: 'Estonia',
-        investmentYear: null,
-        status: 'Active',
-        companyWebsite: 'https://proofstack.io',
-        featured: false,
-        active: true,
-        investmentRationale: null,
-        founders: null,
-    },
+    company('bvnk', 'BVNK', 'https://www.bvnk.com/', 'Stablecoin payments infrastructure for enterprises.', true),
+    company('centrifuge', 'Centrifuge', 'https://centrifuge.io/', 'Infrastructure to tokenize, manage and invest in real-world assets onchain.', true),
+    company('layerzero', 'LayerZero', 'https://www.layerzero.org/', 'An interoperability protocol for moving messages and assets between blockchains.', true),
+    company('privy', 'Privy', 'https://www.privy.io/', 'Wallet and digital-asset infrastructure for financial products.', true),
+    company('maple-finance', 'Maple Finance', 'https://maple.finance/', 'Onchain asset management and lending for institutions.', true),
+    company('morpho', 'Morpho', 'https://morpho.org/', 'An open credit network connecting lenders and borrowers onchain.', true),
+    company('turnkey', 'Turnkey', 'https://www.turnkey.com/', 'Wallet and private-key infrastructure delivered through a single API.'),
+    company('zerohash', 'zerohash', 'https://zerohash.com/', 'API-first infrastructure for launching crypto and stablecoin products.'),
+    company('fireblocks', 'Fireblocks', 'https://www.fireblocks.com/', 'Enterprise infrastructure for digital assets and stablecoins.'),
+    company('anchorage-digital', 'Anchorage Digital', 'https://www.anchorage.com/', 'An institutional crypto platform for custody and related services.'),
+    company('figment', 'Figment', 'https://www.figment.io/', 'Staking infrastructure for institutions.'),
+    company('copper', 'Copper', 'https://copper.co/', 'Custody, trading, settlement and collateral infrastructure for institutions.'),
+    company('plume', 'Plume', 'https://www.plume.org/', 'A blockchain for bringing institutional assets onchain.'),
+    // eigenlayer.xyz now redirects to eigencloud.xyz (the company's current brand).
+    company('eigenlayer', 'EigenLayer', 'https://www.eigenlayer.xyz/', "A restaking protocol that extends Ethereum's security to other services."),
+    company('wormhole', 'Wormhole', 'https://wormhole.com/', 'Open-source infrastructure for moving tokens, data and assets between blockchains.'),
 ];
 
 export const HOMEPAGE_PORTFOLIO_LIMIT = 6;

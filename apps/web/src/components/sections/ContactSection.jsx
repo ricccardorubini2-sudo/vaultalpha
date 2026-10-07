@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, Check, Copy, Phone } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Check, Copy } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import { Section, Container, SectionLabel } from '@/components/site/primitives';
-import {
-    CONTACT_CATEGORIES,
-    CONTACT_EMAIL_PENDING_LABEL,
-    getContactEmailWithFallback,
-    getContactPhone,
-    buildMailto,
-} from '@/config/contact';
+import { getPublicContactCategories, getContactEmail, buildMailto } from '@/config/contact';
 import { getPublicLocations, getLocationTypeLabel } from '@/data/locations';
 import { hasValue } from '@/data/portfolio';
 
@@ -38,8 +32,7 @@ function CopyButton({ value, label }) {
 }
 
 function ContactPath({ category, index }) {
-    const email = getContactEmailWithFallback(category.id);
-    const phone = getContactPhone(category.id);
+    const email = getContactEmail(category.id);
     return (
         <li className="grid gap-6 py-10 md:grid-cols-12 md:gap-10">
             <div className="md:col-span-4">
@@ -49,20 +42,13 @@ function ContactPath({ category, index }) {
             </div>
 
             <div className="md:col-span-5">
-                {email ? (
+                {email && (
                     <div className="flex items-center gap-2">
                         <a href={buildMailto(email, category.subject)} className="break-all font-display text-lg text-slate-900 underline-offset-4 hover:underline">
                             {email}
                         </a>
                         <CopyButton value={email} label={`${category.label} email address`} />
                     </div>
-                ) : (
-                    <p className="text-slate-400">{CONTACT_EMAIL_PENDING_LABEL}</p>
-                )}
-                {phone && (
-                    <a href={`tel:${phone.replace(/[^\d+]/g, '')}`} className="mt-3 flex items-center gap-2 text-slate-700 hover:text-slate-900">
-                        <Phone className="h-4 w-4 text-slate-400" aria-hidden="true" />{phone}
-                    </a>
                 )}
                 {category.note && <p className="mt-3 text-sm leading-relaxed text-slate-500">{category.note}</p>}
             </div>
@@ -85,7 +71,7 @@ function ContactPath({ category, index }) {
 function Locations({ locations }) {
     return (
         <div className="mt-20">
-            <SectionLabel as="h2">{locations.length === 1 ? 'Address' : 'Addresses'}</SectionLabel>
+            <SectionLabel as="h2">{locations.length === 1 ? 'Office' : 'Offices'}</SectionLabel>
             <ul className="mt-8 grid gap-px overflow-hidden border-y border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-3">
                 {locations.map((l) => {
                     const type = getLocationTypeLabel(l);
@@ -97,7 +83,7 @@ function Locations({ locations }) {
                             {type && <p className="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-slate-500">{type}</p>}
                             <address className="mt-4 text-sm not-italic leading-relaxed text-slate-600">
                                 {hasValue(l.address) && <>{l.address}<br /></>}
-                                {l.country !== l.city && l.country}
+                                {l.country}
                             </address>
                             {hasValue(l.description) && <p className="mt-3 text-sm text-slate-500">{l.description}</p>}
                         </li>
@@ -116,7 +102,7 @@ export default function ContactSection({ className = 'bg-white', spacing = 'comp
             <Container>
                 <Reveal>
                     <ul className="divide-y divide-slate-200 border-y border-slate-200">
-                        {CONTACT_CATEGORIES.map((c, i) => <ContactPath key={c.id} category={c} index={i} />)}
+                        {getPublicContactCategories().map((c, i) => <ContactPath key={c.id} category={c} index={i} />)}
                     </ul>
                 </Reveal>
                 {locations.length > 0 && (

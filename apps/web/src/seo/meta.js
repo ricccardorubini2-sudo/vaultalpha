@@ -10,8 +10,9 @@
 // on the site. Never add AUM, offices/addresses, telephone numbers, founding
 // date, fund size, or regulatory status here.
 
-import { BRAND, DOMAIN, FOOTER_DESCRIPTION, getVerifiedSocialLinks } from '../config/site.js';
+import { BRAND, DOMAIN, LEGAL_NAME, FIRM_DESCRIPTOR, FOOTER_DESCRIPTION, getVerifiedSocialLinks } from '../config/site.js';
 import { CONTACT_CATEGORIES, getContactEmail } from '../config/contact.js';
+import { SECTOR_SUMMARY } from '../config/themes.js';
 import { getActivePortfolio, getPortfolioCompany, portfolioPath, hasValue } from '../data/portfolio.js';
 import { getActiveTeam, getTeamMember, teamPath } from '../data/team.js';
 import { getPublishedArticles, getArticle, articlePath, getAuthor, getCategory } from '../data/research.js';
@@ -50,6 +51,7 @@ export function organizationSchema() {
         '@type': 'Organization',
         '@id': ORG_ID,
         name: BRAND,
+        legalName: LEGAL_NAME,
         url: `${SITE_URL}/`,
         logo: { '@type': 'ImageObject', url: absoluteUrl('/logo-mark.png'), width: 680, height: 680 },
         description: FOOTER_DESCRIPTION,
@@ -127,7 +129,7 @@ const STATIC_PAGES = {
     '/': {
         fullTitle: `${BRAND}${TITLE_SEPARATOR}Investing in the Infrastructure of the Digital Economy`,
         heading: 'Investing in the Infrastructure of the Digital Economy',
-        description: `${BRAND} is a technology investment firm backing founders in digital assets, payments, artificial intelligence and security infrastructure.`,
+        description: `${BRAND} is a ${FIRM_DESCRIPTOR.toLowerCase()} backing founders in ${SECTOR_SUMMARY}.`,
     },
     '/about': {
         title: 'About',
@@ -137,22 +139,22 @@ const STATIC_PAGES = {
     '/strategy': {
         title: 'Investment Strategy',
         heading: 'Investment Strategy',
-        description: 'Our investment themes across digital assets and blockchain infrastructure, digital finance, artificial intelligence and security — what we look for and how our process works.',
+        description: `Our investment themes across ${SECTOR_SUMMARY}: what we look for, the stages we invest at and how our process works.`,
     },
     '/portfolio': {
         title: 'Portfolio',
         heading: 'Portfolio companies',
-        description: `A selection of the companies ${BRAND} backs across infrastructure, digital finance, artificial intelligence and security.`,
+        description: `A selection of the companies ${BRAND} backs.`,
     },
     '/team': {
         title: 'Team',
         heading: 'The people behind VaultAlpha',
-        description: `Meet the ${BRAND} team: engineers, operators and researchers working with founders for the long term.`,
+        description: `Meet the ${BRAND} leadership team working with founders for the long term.`,
     },
     '/research': {
         title: 'Research',
         heading: 'Research',
-        description: `Perspectives from the ${BRAND} investment team on blockchain, stablecoins, artificial intelligence, markets, tokenization and security.`,
+        description: `Perspectives from the ${BRAND} investment team on blockchain, stablecoins, tokenization and market structure.`,
         // Thin, empty listing pages should not be indexed.
         noindex: () => getPublishedArticles().length === 0,
     },
@@ -164,7 +166,7 @@ const STATIC_PAGES = {
     '/contact': {
         title: 'Contact',
         heading: 'Contact',
-        description: `Contact ${BRAND}: separate contact paths for founders, investors and LPs, media and general inquiries.`,
+        description: `Contact ${BRAND}: submit your company or email the founders team. Offices in London, New York and Singapore.`,
     },
 };
 
@@ -232,9 +234,10 @@ function portfolioCompanyPage(slug) {
     const company = getPortfolioCompany(slug);
     if (!company) return null;
     const path = portfolioPath(company);
+    const portfolioLine = `${company.companyName}${hasValue(company.sector) ? `, ${company.sector},` : ''} is part of the ${BRAND} portfolio.`;
     const description = hasValue(company.shortDescription)
-        ? company.shortDescription
-        : `${company.companyName}${hasValue(company.sector) ? `, ${company.sector},` : ''} is part of the ${BRAND} portfolio.`;
+        ? `${company.shortDescription} ${portfolioLine}`
+        : portfolioLine;
     return basePage(path, {
         title: `${company.companyName}${TITLE_SEPARATOR}Portfolio`,
         heading: company.companyName,

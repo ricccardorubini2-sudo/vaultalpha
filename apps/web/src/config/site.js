@@ -1,21 +1,31 @@
+import { SECTOR_SUMMARY } from './themes.js';
+import { getPublishedArticles } from '../data/research.js';
+
+// Research is linked from navigation only once an article is published.
+const HAS_RESEARCH = getPublishedArticles().length > 0;
+
 export const BRAND = 'VaultAlpha Fund';
 export const DOMAIN = 'vaultalpha.fund';
+
+// Owner-confirmed (Step 1, 2026-10-06). See SITE_CONTENT_DECISIONS.md.
+export const LEGAL_NAME = 'VaultAlpha Fund';
+export const FIRM_DESCRIPTOR = 'Digital-asset and technology investment firm';
 
 export const NAV_LINKS = [
     { label: 'About', to: '/about' },
     { label: 'Strategy', to: '/strategy' },
     { label: 'Portfolio', to: '/portfolio' },
     { label: 'Team', to: '/team' },
-    { label: 'Research', to: '/research' },
+    HAS_RESEARCH && { label: 'Research', to: '/research' },
     { label: 'Founders', to: '/founders' },
-];
+].filter(Boolean);
 
 export const NAV_CTA = { label: 'Contact', to: '/contact' };
 
 export const APPLY_LINK = { label: 'Apply', longLabel: 'Submit Your Company', to: '/founders' };
 
 export const FOOTER_DESCRIPTION =
-    'A global technology investment firm backing founders in digital assets and blockchain, payments and stablecoins, artificial intelligence and security infrastructure.';
+    `A ${FIRM_DESCRIPTOR.toLowerCase()} backing founders in ${SECTOR_SUMMARY}.`;
 
 export const FOOTER_COLUMNS = [
     {
@@ -27,7 +37,7 @@ export const FOOTER_COLUMNS = [
             { label: 'Team', to: '/team' },
         ],
     },
-    {
+    HAS_RESEARCH && {
         title: 'Insights',
         links: [{ label: 'Research', to: '/research' }],
     },
@@ -47,7 +57,7 @@ export const FOOTER_COLUMNS = [
             { label: 'Cookies', to: '/cookies' },
         ],
     },
-];
+].filter(Boolean);
 
 // Official firm profiles. A link is shown only when `url` is set AND
 // `verified` is true (confirmed as the firm's own account). Never guess URLs.

@@ -26,7 +26,7 @@ export default function TeamPage() {
             <PageHeader
                 label="Team"
                 title="The people behind VaultAlpha"
-                intro="Engineers, operators and researchers working with founders for the long term."
+                intro="The leadership team working with founders for the long term."
             />
             <TeamSection className="bg-white" showHeader={false} showBios />
             <NextStepsSection items={NEXT_STEPS} label="Next Steps" className="bg-[#f5f6f8]" />

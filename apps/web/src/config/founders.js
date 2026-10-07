@@ -1,44 +1,35 @@
 import { THEMES } from './themes.js';
 import { getContactEmail } from './contact.js';
 
-// What founders can expect from VaultAlpha. Each entry restates support the
-// site already describes (see `basis`); do not add categories without a basis.
+// What founders can expect from VaultAlpha beyond capital. Owner-confirmed
+// (Step 3, 2026-10-06); see SITE_CONTENT_DECISIONS.md. Recruiting,
+// go-to-market and follow-on fundraising support were not confirmed; do not
+// add categories without owner confirmation.
 export const FOUNDER_SUPPORT = [
     {
         id: 'capital',
         title: 'Capital',
         desc: 'Investment in companies that fit our themes and pass our review.',
-        basis: 'Core activity described throughout the site.',
     },
     {
-        id: 'strategic',
-        title: 'Strategic support',
-        desc: 'Ongoing engagement on go-to-market and company building as the business scales.',
-        basis: 'Process step "Long-Term Partnership": go-to-market support; principle "Long-term partnership".',
+        id: 'introductions',
+        title: 'Introductions',
+        desc: 'Introductions to institutions, partners and customers across our international network.',
     },
     {
-        id: 'technical',
-        title: 'Technical diligence',
-        desc: 'Our engineers review architecture, security and protocol design as part of every investment decision.',
-        basis: 'Process step "Technical Diligence"; principle "Technical understanding".',
+        id: 'partnerships',
+        title: 'Strategic partnerships',
+        desc: 'Connections with exchanges, payment providers and asset issuers relevant to the business.',
     },
     {
-        id: 'network',
-        title: 'Network access',
-        desc: 'Introductions to talent and institutions across our international network.',
-        basis: 'Principle "Global perspective".',
+        id: 'liquidity',
+        title: 'Liquidity support',
+        desc: 'Introductions to market makers and exchanges when a token or asset comes to market.',
     },
     {
-        id: 'recruiting',
-        title: 'Recruiting support',
-        desc: 'Help with hiring as the team grows.',
-        basis: 'Process step "Long-Term Partnership": hiring support.',
-    },
-    {
-        id: 'follow-on',
-        title: 'Follow-on support',
-        desc: 'Support with follow-on financing as the company raises subsequent rounds.',
-        basis: 'Process step "Long-Term Partnership": follow-on financing.',
+        id: 'token-design',
+        title: 'Token design',
+        desc: 'Input on token design and token economics where a token is part of the model.',
     },
 ];
 
@@ -60,7 +51,7 @@ export const APPLICATION_ENDPOINT = import.meta.env?.VITE_FOUNDER_APPLICATION_EN
 export const APPLICATION_FALLBACK_EMAIL = getContactEmail('founders');
 
 export const APPLICATION_SECTOR_OPTIONS = [...THEMES.map((t) => t.title), 'Other'];
-export const APPLICATION_STAGE_OPTIONS = ['Pre-seed', 'Seed', 'Series A', 'Series B', 'Series C or later'];
+export const APPLICATION_STAGE_OPTIONS = ['Pre-seed', 'Seed', 'Series A', 'Token round', 'Series B or later'];
 
 export const APPLICATION_LIMITS = {
     descriptionMin: 50,

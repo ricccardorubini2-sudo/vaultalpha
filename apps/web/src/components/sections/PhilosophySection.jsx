@@ -2,9 +2,11 @@ import React from 'react';
 import Reveal from '@/components/Reveal';
 import AnimatedStatValue from '@/components/AnimatedStatValue';
 import { Section, Container, SectionLabel, H2, ArrowLink } from '@/components/site/primitives';
-import { STATS, STATS_PUBLISHED } from '@/config/stats';
+import { getPublicStats } from '@/config/stats';
 import { PHILOSOPHY } from '@/config/about';
 import { BRAND } from '@/config/site';
+
+const STAT_COLUMNS = { 2: 'md:grid-cols-4', 3: 'md:grid-cols-3', 4: 'md:grid-cols-4' };
 
 function Stat({ stat }) {
     return (
@@ -31,7 +33,8 @@ export default function PhilosophySection({
     paragraphs = PHILOSOPHY.paragraphs,
 }) {
     const compact = variant === 'compact';
-    const showStats = !compact && STATS_PUBLISHED && STATS.length > 0;
+    const stats = compact ? [] : getPublicStats();
+    const showStats = stats.length > 0;
     return (
         <Section className={className} spacing={spacing}>
             <Container>
@@ -59,8 +62,8 @@ export default function PhilosophySection({
                 </div>
                 {showStats && (
                     <Reveal delay={0.15}>
-                        <div className="mt-24 grid grid-cols-2 gap-x-6 gap-y-12 border-t border-slate-200 pt-14 md:grid-cols-3 lg:grid-cols-5">
-                            {STATS.map((s) => <Stat key={s.id} stat={s} />)}
+                        <div className={`mt-24 grid grid-cols-2 gap-x-6 gap-y-12 border-t border-slate-200 pt-14 ${STAT_COLUMNS[stats.length] ?? 'md:grid-cols-3 lg:grid-cols-5'}`}>
+                            {stats.map((s) => <Stat key={s.id} stat={s} />)}
                         </div>
                     </Reveal>
                 )}

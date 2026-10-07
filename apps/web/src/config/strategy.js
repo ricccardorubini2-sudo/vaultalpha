@@ -1,8 +1,10 @@
 // Copy for the Strategy page. These are evaluation criteria, not claims about
 // outcomes; keep them free of figures unless confirmed.
 
+import { SECTOR_SUMMARY } from './themes.js';
+
 export const STRATEGY_INTRO =
-    'We back founders building the systems that issue, move and secure value — across digital assets and blockchain infrastructure, digital finance, artificial intelligence and security.';
+    `We back founders building the systems that issue, move and secure value — across ${SECTOR_SUMMARY}.`;
 
 // `qualifier` marks criteria that apply only to some companies.
 export const INVESTMENT_CRITERIA = [
@@ -14,7 +16,7 @@ export const INVESTMENT_CRITERIA = [
     {
         id: 'technology',
         title: 'Technology',
-        desc: 'Sound architecture and engineering decisions that hold up under independent technical review.',
+        desc: 'Sound architecture and engineering decisions that hold up under scrutiny.',
     },
     {
         id: 'market-structure',

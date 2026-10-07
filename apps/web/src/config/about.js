@@ -1,22 +1,25 @@
-import { BRAND } from './site.js';
+import { BRAND, FIRM_DESCRIPTOR } from './site.js';
+import { SECTOR_SUMMARY } from './themes.js';
 
 // Copy for the About page and the homepage thesis. Positioning only: never add
 // founding dates, regulatory status, AUM, returns, fund size, or office counts
 // here unless they have been confirmed for publication.
+//
+// Claims that the firm's engineers review every investment were withdrawn by
+// the owner (Step 1, 2026-10-06); do not reintroduce them without confirmation.
 
 export const COMPANY_OVERVIEW = [
-    `${BRAND} is a global technology investment firm backing founders in digital assets and blockchain, payments and stablecoins, artificial intelligence and security infrastructure.`,
+    `${BRAND} is a ${FIRM_DESCRIPTOR.toLowerCase()} backing founders in ${SECTOR_SUMMARY}.`,
     'We invest in companies building core infrastructure for digital finance and technology.',
 ];
 
 export const PHILOSOPHY = {
     title: 'A long-term partner to technical founders.',
     // Homepage summary.
-    thesis: `${BRAND} invests in companies building core infrastructure for digital finance and technology. We pair technical judgment with an international network and work with founders from early conviction through later stages of growth.`,
+    thesis: `${BRAND} invests in companies building core infrastructure for digital finance and technology, from pre-seed through Series A, including token rounds.`,
     // About page.
     paragraphs: [
-        'We pair technical judgment with an international network and work with founders from early conviction through later stages of growth.',
-        'Our team includes engineers, operators and researchers who expect open, verifiable systems to play a growing role in finance and infrastructure.',
+        'We expect open, verifiable systems to play a growing role in finance and infrastructure.',
     ],
 };
 
@@ -35,11 +38,6 @@ export const OPERATING_PRINCIPLES = [
         desc: 'We invest with a multi-year horizon and remain engaged with founding teams as their companies scale.',
     },
     {
-        id: 'technical',
-        title: 'Technical understanding',
-        desc: 'Our engineers review architecture, security and protocol design, and that review informs every investment decision.',
-    },
-    {
         id: 'global',
         title: 'Global perspective',
         desc: 'We work with founders and institutions internationally and make introductions across our network.',
@@ -54,13 +52,13 @@ export const OPERATING_PRINCIPLES = [
 // About page closing argument. Restates commitments already made elsewhere on
 // the site (principles, process); add no new claims or figures here.
 export const WHY_VAULTALPHA = {
-    title: 'Technical depth, applied with discipline.',
+    title: 'Disciplined capital for long-term builders.',
     paragraphs: [
-        'Digital assets, payments, artificial intelligence and security infrastructure reward investors who understand the technology as well as the market.',
-        'Our engineers review architecture, security and protocol design, and each investment is assessed on its market, team, technology and terms through a structured review before we commit.',
+        'Digital assets, payments, tokenized real-world assets and trading infrastructure are complex markets that reward patience and careful underwriting.',
+        'Each investment is assessed on its market, team, technology and terms through a structured review before we commit.',
         'We invest with a multi-year horizon, remain engaged as companies scale and make introductions across our international network.',
     ],
 };
 
 export const FOUNDER_PARTNERSHIP_INTRO =
-    'Founders choose us because we move decisively, conduct rigorous diligence and remain committed for the long term.';
+    'We aim to move decisively and remain committed for the long term.';

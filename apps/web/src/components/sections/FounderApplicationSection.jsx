@@ -3,6 +3,7 @@ import Reveal from '@/components/Reveal';
 import { Section, Container, SectionLabel, H2 } from '@/components/site/primitives';
 import { APPLICATION_FALLBACK_EMAIL } from '@/config/founders';
 import { INVESTMENT_PROCESS } from '@/config/process';
+import { APPLICATION_REVIEW_NOTE } from '@/config/contact';
 
 // The form carries its validation libraries (zod, react-hook-form), so it is a
 // separate chunk. It starts downloading once the browser is idle, long before
@@ -31,7 +32,7 @@ export default function FounderApplicationSection({ className = 'bg-white', spac
                             <SectionLabel>Submit Your Company</SectionLabel>
                             <H2 className="mt-5">Tell us what you are building.</H2>
                             <p className="mt-6 leading-relaxed text-slate-500">
-                                Our team reviews every application and responds within five business days.
+                                {APPLICATION_REVIEW_NOTE}
                             </p>
                             {INVESTMENT_PROCESS.length > 1 && (
                                 <div className="mt-10 border-t border-slate-200 pt-6">
