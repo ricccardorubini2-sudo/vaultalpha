@@ -9,9 +9,10 @@
 //   `active: false` withdraws a verified location without losing its data.
 // - `coordinates` only positions the pin on the network map.
 //
-// Owner-confirmed (Step 7, 2026-10-06): main office in London, branches in
-// New York and Singapore, each with investment team presence. The owner asked
-// not to publish street addresses, so `address` stays null.
+// Owner-confirmed (2026-10-07): main office in St. Petersburg, Florida; branch
+// offices in London and Singapore. New York is withdrawn (`active: false`).
+// Office street addresses are not published; the registered address appears
+// only in the legal pages (config/company.js).
 
 export const LOCATION_TYPES = [
     'Main Office',
@@ -26,11 +27,23 @@ export const LOCATION_TYPES = [
 
 export const LOCATIONS = [
     {
+        id: 'st-petersburg',
+        city: 'St. Petersburg',
+        region: 'Florida',
+        country: 'United States',
+        address: null,
+        locationType: 'Main Office',
+        description: null,
+        verified: true,
+        active: true,
+        coordinates: { lat: 27.77, lon: -82.64 },
+    },
+    {
         id: 'london',
         city: 'London',
         country: 'United Kingdom',
         address: null,
-        locationType: 'Main Office',
+        locationType: 'Branch Office',
         description: 'Investment team',
         verified: true,
         active: true,
@@ -44,7 +57,7 @@ export const LOCATIONS = [
         locationType: 'Branch Office',
         description: 'Investment team',
         verified: true,
-        active: true,
+        active: false,
         coordinates: { lat: 40.75, lon: -73.98 },
     },
     {

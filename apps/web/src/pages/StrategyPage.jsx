@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '@/components/site/PageHeader';
+import { HEADER_IMAGES } from '@/config/headerImages';
 import AlternatingSections from '@/components/site/AlternatingSections';
 import PhilosophySection from '@/components/sections/PhilosophySection';
 import MarketThesisSection from '@/components/sections/MarketThesisSection';
@@ -16,7 +17,7 @@ export default function StrategyPage() {
 
     return (
         <>
-            <PageHeader label="Strategy" title="Investment Strategy" intro={STRATEGY_INTRO} />
+            <PageHeader image={HEADER_IMAGES.strategy} label="Strategy" title="Investment Strategy" intro={STRATEGY_INTRO} />
             <AlternatingSections
                 sections={[
                     { key: 'philosophy', render: (bg) => <PhilosophySection variant="compact" showAboutLink={false} className={bg} spacing="compact" /> },

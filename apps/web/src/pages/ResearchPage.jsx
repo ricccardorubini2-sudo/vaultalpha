@@ -2,6 +2,7 @@ import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Reveal from '@/components/Reveal';
 import PageHeader from '@/components/site/PageHeader';
+import { HEADER_IMAGES } from '@/config/headerImages';
 import { Section, Container, ArrowLink } from '@/components/site/primitives';
 import ArticleCard from '@/components/research/ArticleCard';
 import { getPublishedArticles, getFeaturedArticle, RESEARCH_CATEGORIES } from '@/data/research';
@@ -55,7 +56,7 @@ export default function ResearchPage() {
 
     return (
         <>
-            <PageHeader label="Research & Insights" title="Research" intro="Perspectives from our investment team." />
+            <PageHeader image={HEADER_IMAGES.research} label="Research & Insights" title="Research" intro="Perspectives from our investment team." />
             <Section id="research" className="bg-canvas" spacing="compact">
                 <Container>
                     {articles.length === 0 ? (

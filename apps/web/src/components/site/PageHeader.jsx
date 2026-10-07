@@ -4,7 +4,7 @@ import { SectionLabel } from './primitives';
 
 // Dark page intro with atmospheric architecture wash. The headline renders
 // visible from the first paint (LCP); the optional aside fades in.
-export default function PageHeader({ label, title, intro, before, aside, children }) {
+export default function PageHeader({ label, title, intro, before, aside, image, children }) {
     const text = (
         <div>
             {before}
@@ -18,7 +18,7 @@ export default function PageHeader({ label, title, intro, before, aside, childre
     );
     return (
         <section className="relative overflow-hidden border-b border-white/10 bg-ink text-white">
-            <Atmosphere intensity="soft" />
+            <Atmosphere src={image} intensity="soft" />
             <div className="relative mx-auto max-w-[80rem] px-6 pb-16 pt-28 sm:pb-20 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-44">
                 {aside ? (
                     <div className="grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-16">

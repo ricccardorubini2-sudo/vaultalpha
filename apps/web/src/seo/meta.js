@@ -10,7 +10,7 @@
 // on the site. Never add AUM, offices/addresses, telephone numbers, founding
 // date, fund size, or regulatory status here.
 
-import { BRAND, DOMAIN, LEGAL_NAME, FIRM_DESCRIPTOR, FOOTER_DESCRIPTION, getVerifiedSocialLinks } from '../config/site.js';
+import { BRAND, DOMAIN, LEGAL_NAME, FIRM_DESCRIPTOR, FOOTER_DESCRIPTION, getSocialProfileUrls } from '../config/site.js';
 import { CONTACT_CATEGORIES, getContactEmail } from '../config/contact.js';
 import { SECTOR_SUMMARY } from '../config/themes.js';
 import { getActivePortfolio, getPortfolioCompany, portfolioPath, hasValue } from '../data/portfolio.js';
@@ -45,7 +45,7 @@ export function organizationSchema() {
         .map((c) => ({ c, email: getContactEmail(c.id) }))
         .filter(({ email }) => email)
         .map(({ c, email }) => ({ '@type': 'ContactPoint', contactType: c.label, email }));
-    const sameAs = getVerifiedSocialLinks().map((s) => s.url);
+    const sameAs = getSocialProfileUrls();
 
     return {
         '@type': 'Organization',
@@ -167,7 +167,7 @@ const STATIC_PAGES = {
     '/contact': {
         title: 'Contact',
         heading: 'Contact',
-        description: `Contact ${BRAND}: submit your company or email the founders team. Offices in London, New York and Singapore.`,
+        description: `Contact ${BRAND}: submit your company or email the founders team. Main office in St. Petersburg, Florida, with branch offices in London and Singapore.`,
     },
 };
 

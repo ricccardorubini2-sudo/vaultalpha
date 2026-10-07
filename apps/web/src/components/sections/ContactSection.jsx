@@ -83,7 +83,7 @@ function Locations({ locations }) {
                             {type && <p className="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-slate-500">{type}</p>}
                             <address className="mt-4 text-sm not-italic leading-relaxed text-slate-600">
                                 {hasValue(l.address) && <>{l.address}<br /></>}
-                                {l.country}
+                                {[l.region, l.country].filter(hasValue).join(', ')}
                             </address>
                             {hasValue(l.description) && <p className="mt-3 text-sm text-slate-500">{l.description}</p>}
                         </li>

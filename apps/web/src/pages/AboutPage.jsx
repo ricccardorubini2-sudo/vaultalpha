@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '@/components/site/PageHeader';
+import { HEADER_IMAGES } from '@/config/headerImages';
 import { ArrowLink } from '@/components/site/primitives';
 import CompanyOverviewSection from '@/components/sections/CompanyOverviewSection';
 import MissionSection from '@/components/sections/MissionSection';
@@ -33,7 +34,7 @@ const NEXT_STEPS = [
 export default function AboutPage() {
     return (
         <>
-            <PageHeader
+            <PageHeader image={HEADER_IMAGES.about}
                 label="About"
                 title="About VaultAlpha"
                 intro={`Founded in March 2025. A ${FIRM_DESCRIPTOR.toLowerCase()} started with our own capital, built to grow a larger fund and a lasting network in digital finance.`}

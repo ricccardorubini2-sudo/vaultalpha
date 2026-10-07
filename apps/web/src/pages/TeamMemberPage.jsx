@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import PageHeader from '@/components/site/PageHeader';
+import { HEADER_IMAGES } from '@/config/headerImages';
 import { Section, Container } from '@/components/site/primitives';
 import TeamPhoto from '@/components/team/TeamPhoto';
 import TeamContactLinks from '@/components/team/TeamContactLinks';
@@ -39,7 +40,7 @@ export default function TeamMemberPage() {
 
     return (
         <>
-            <PageHeader
+            <PageHeader image={HEADER_IMAGES.team}
                 label={group?.label ?? 'Team'}
                 title={member.name}
                 intro={member.role}

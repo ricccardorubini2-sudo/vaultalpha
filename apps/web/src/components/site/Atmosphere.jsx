@@ -1,11 +1,12 @@
 import React from 'react';
+import { HEADER_IMAGES } from '@/config/headerImages';
 
 /**
  * Full-bleed atmosphere for dark heroes and page headers.
  * Photoreal European architecture under a navy wash — institutional, not flashy.
  */
 export default function Atmosphere({
-    src = '/hero-atmosphere.jpg',
+    src,
     className = '',
     intensity = 'default',
 }) {
@@ -18,7 +19,7 @@ export default function Atmosphere({
     return (
         <div aria-hidden="true" className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}>
             <img
-                src={src}
+                src={src || HEADER_IMAGES.default}
                 alt=""
                 decoding="async"
                 fetchPriority="high"

@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '@/components/site/PageHeader';
+import { HEADER_IMAGES } from '@/config/headerImages';
 import AlternatingSections from '@/components/site/AlternatingSections';
 import ThemesSection from '@/components/sections/ThemesSection';
 import InvestmentParametersSection from '@/components/sections/InvestmentParametersSection';
@@ -17,7 +18,7 @@ export default function FoundersPage() {
 
     return (
         <>
-            <PageHeader
+            <PageHeader image={HEADER_IMAGES.founders}
                 label="For Founders"
                 title="Partner With VaultAlpha"
                 intro="What we invest in, what we look for and what to expect — so you can judge whether we are the right partner before you apply."

@@ -2800,3 +2800,168 @@
 - url: http://localhost:3000/portfolio
 - via: pushState
 
+## 2026-10-07 14:16:06.293Z load
+- url: http://localhost:3000/portfolio
+- title: VaultAlpha Fund
+
+## 2026-10-07 14:16:06.598Z console.error
+- text: 
+    Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s fetchPriority fetchpriority 
+        at img
+        at div
+        at Atmosphere (http://localhost:3000/src/components/site/Atmosphere.jsx:4:3)
+        at section
+        at PageHeader (http://localhost:3000/src/components/site/PageHeader.jsx?t=1791367296682:5:38)
+        at PortfolioPage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7502:26)
+        at Suspense
+        at main
+        at div
+        at SiteLayout
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:10816:3)
+        at App
+
+## 2026-10-07 14:35:57.788Z window.error
+- message: Uncaught ReferenceError: HEADER_IMAGES is not defined
+- source: http://localhost:3000/src/components/site/Atmosphere.jsx?t=1791383757722
+- line: 17
+- col: 21
+- stack: 
+    ReferenceError: HEADER_IMAGES is not defined
+        at Atmosphere (http://localhost:3000/src/components/site/Atmosphere.jsx?t=1791383757722:17:21)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:11596:26)
+        at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:14630:28)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:15972:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:19190:13)
+
+## 2026-10-07 14:35:57.788Z window.error
+- message: Uncaught ReferenceError: HEADER_IMAGES is not defined
+- source: http://localhost:3000/src/components/site/Atmosphere.jsx?t=1791383757722
+- line: 17
+- col: 21
+- stack: 
+    ReferenceError: HEADER_IMAGES is not defined
+        at Atmosphere (http://localhost:3000/src/components/site/Atmosphere.jsx?t=1791383757722:17:21)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:11596:26)
+        at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:14630:28)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:15972:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:19190:13)
+
+## 2026-10-07 14:35:57.789Z console.error
+- text: 
+    The above error occurred in the <Atmosphere> component:
+    
+        at Atmosphere (http://localhost:3000/src/components/site/Atmosphere.jsx?t=1791383757722:4:3)
+        at section
+        at PageHeader (http://localhost:3000/src/components/site/PageHeader.jsx?t=1791383757300:5:38)
+        at PortfolioPage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7502:26)
+        at Suspense
+        at main
+        at div
+        at SiteLayout
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:10816:3)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-10-07 14:35:57.790Z unhandledrejection
+- message: HEADER_IMAGES is not defined
+- stack: 
+    ReferenceError: HEADER_IMAGES is not defined
+        at Atmosphere (http://localhost:3000/src/components/site/Atmosphere.jsx?t=1791383757722:17:21)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:11596:26)
+        at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:14630:28)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:15972:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=cbc490b3:18932:28)
+
+## 2026-10-07 14:35:58.101Z root.empty
+- url: http://localhost:3000/portfolio
+
+## 2026-10-07 14:36:09.983Z load
+- url: http://localhost:3000/portfolio
+- title: VaultAlpha Fund
+
+## 2026-10-07 14:36:10.155Z console.error
+- text: 
+    Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s fetchPriority fetchpriority 
+        at img
+        at div
+        at Atmosphere (http://localhost:3000/src/components/site/Atmosphere.jsx?t=1791383758708:5:3)
+        at section
+        at PageHeader (http://localhost:3000/src/components/site/PageHeader.jsx?t=1791383763342:5:38)
+        at PortfolioPage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7502:26)
+        at Suspense
+        at main
+        at div
+        at SiteLayout
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:10816:3)
+        at App
+
+## 2026-10-07 14:41:48.026Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Contact"}
+
+## 2026-10-07 14:41:48.027Z navigate
+- url: http://localhost:3000/contact
+- via: pushState
+
+## 2026-10-07 14:42:10.585Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Disclosures"}
+
+## 2026-10-07 14:42:10.586Z navigate
+- url: http://localhost:3000/disclosures
+- via: pushState
+
+## 2026-10-07 14:42:32.172Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Cookies"}
+
+## 2026-10-07 14:42:32.173Z navigate
+- url: http://localhost:3000/cookies
+- via: pushState
+
+## 2026-10-07 14:42:41.366Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Privacy"}
+
+## 2026-10-07 14:42:41.366Z navigate
+- url: http://localhost:3000/privacy
+- via: pushState
+
+## 2026-10-07 14:43:47.221Z click
+- element: {"tag":"button","role":null,"ariaLabel":"Open menu","name":null,"type":"button","id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-10-07 14:43:48.657Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"About"}
+
+## 2026-10-07 14:43:48.658Z navigate
+- url: http://localhost:3000/about
+- via: pushState
+

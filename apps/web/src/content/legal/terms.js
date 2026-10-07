@@ -4,8 +4,9 @@
 // Keep `status: 'draft'` until counsel has approved the final text.
 // Governing law and jurisdiction are intentionally omitted until confirmed.
 
-import { BRAND, DOMAIN } from '../../config/site.js';
+import { BRAND, DOMAIN, LEGAL_NAME } from '../../config/site.js';
 import { PRIMARY_CONTACT_EMAIL } from '../../config/contact.js';
+import { companyInformationSection } from '../../config/company.js';
 
 export default {
     slug: 'terms',
@@ -70,6 +71,7 @@ export default {
             heading: 'Changes',
             blocks: ['We may update these terms from time to time. Changes take effect when published on this page.'],
         },
+        companyInformationSection(LEGAL_NAME),
         {
             id: 'contact',
             heading: 'Contact',

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import PageHeader from '@/components/site/PageHeader';
+import { HEADER_IMAGES } from '@/config/headerImages';
 import { Section, Container, SectionHeader, ArrowLink } from '@/components/site/primitives';
 import PortfolioLogo from '@/components/portfolio/PortfolioLogo';
 import PortfolioDetail from '@/components/portfolio/PortfolioDetail';
@@ -19,7 +20,7 @@ export default function PortfolioCompanyPage() {
 
     return (
         <>
-            <PageHeader
+            <PageHeader image={HEADER_IMAGES.portfolio}
                 label={hasValue(company.sector) ? company.sector : 'Portfolio'}
                 title={company.companyName}
                 before={

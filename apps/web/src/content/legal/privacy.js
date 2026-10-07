@@ -8,6 +8,7 @@ import { BRAND, DOMAIN, LEGAL_NAME } from '../../config/site.js';
 import { PRIMARY_CONTACT_EMAIL } from '../../config/contact.js';
 import { APPLICATION_ENDPOINT, APPLICATION_FALLBACK_EMAIL } from '../../config/founders.js';
 import { COOKIES, BROWSER_STORAGE, THIRD_PARTY_SERVICES, HOSTING_PROVIDER } from '../../config/siteTechnology.js';
+import { COMPANY_REGISTRATION, formatRegisteredAddress, companyInformationSection } from '../../config/company.js';
 
 const applicationChannel = APPLICATION_ENDPOINT
     ? 'Applications submitted through the form are sent securely to our form-processing provider, who stores them on our behalf.'
@@ -24,10 +25,11 @@ export default {
             id: 'who-we-are',
             heading: 'Who we are',
             blocks: [
-                // TODO (counsel): add the jurisdiction, registered address, and any data-protection representative.
-                `This website is operated by ${LEGAL_NAME} (“we”, “us”). Questions about this policy may be sent to ${PRIMARY_CONTACT_EMAIL}.`,
+                // TODO (counsel): add any data-protection representative required for the UK or EU.
+                `This website is operated by ${LEGAL_NAME} (“we”, “us”), a ${COMPANY_REGISTRATION.entityType} registered in ${COMPANY_REGISTRATION.jurisdiction} (document number ${COMPANY_REGISTRATION.documentNumber}), with its registered address at ${formatRegisteredAddress()}. Questions about this policy may be sent to ${PRIMARY_CONTACT_EMAIL}.`,
             ],
         },
+        companyInformationSection(LEGAL_NAME),
         {
             id: 'what-we-collect',
             heading: 'Information we collect',

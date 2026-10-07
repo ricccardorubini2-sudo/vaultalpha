@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '@/components/site/PageHeader';
+import { HEADER_IMAGES } from '@/config/headerImages';
 import TeamSection from '@/components/sections/TeamSection';
 import NextStepsSection from '@/components/sections/NextStepsSection';
 
@@ -23,7 +24,7 @@ const NEXT_STEPS = [
 export default function TeamPage() {
     return (
         <>
-            <PageHeader
+            <PageHeader image={HEADER_IMAGES.team}
                 label="Team"
                 title="The people behind VaultAlpha"
                 intro="The leadership team working with founders for the long term."

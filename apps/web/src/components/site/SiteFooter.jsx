@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Logo } from './primitives';
+import { SOCIAL_ICONS } from './SocialIcons';
 import { BRAND, DOMAIN, FOOTER_COLUMNS, FOOTER_DESCRIPTION, getVerifiedSocialLinks } from '@/config/site';
 import { prefetchPath } from '@/routes';
 
-const SOCIAL_ICONS = { linkedin: Linkedin };
+const socialLabel = (s) =>
+    s.profile
+        ? `${BRAND} on ${s.label}${s.handle ? ` (${s.handle})` : ''} (opens in a new tab)`
+        : `Message us on ${s.label}${s.handle ? ` at ${s.handle}` : ''} (opens in a new tab)`;
+
 const FOCUS_RING = 'rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black';
 
 export default function SiteFooter() {
@@ -20,7 +25,7 @@ export default function SiteFooter() {
                         <Logo />
                         <p className="mt-6 max-w-sm text-sm leading-relaxed text-slate-400">{FOOTER_DESCRIPTION}</p>
                         {socials.length > 0 && (
-                            <ul className="mt-6 flex gap-2" aria-label="Social media">
+                            <ul className="mt-6 flex gap-2" aria-label="Social media and messaging">
                                 {socials.map((s) => {
                                     const Icon = SOCIAL_ICONS[s.id] ?? ArrowUpRight;
                                     return (
@@ -29,8 +34,9 @@ export default function SiteFooter() {
                                                 href={s.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                aria-label={`${BRAND} on ${s.label} (opens in a new tab)`}
-                                                className="grid h-11 w-11 place-items-center rounded-md border border-white/15 text-slate-400 transition-colors hover:border-white/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+                                                aria-label={socialLabel(s)}
+                                                title={s.handle ? `${s.label} ${s.handle}` : s.label}
+                                                className="grid h-11 w-11 place-items-center rounded-sm border border-white/15 text-slate-400 transition-colors duration-300 hover:border-[hsl(var(--champagne))] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
                                             >
                                                 <Icon className="h-4 w-4" aria-hidden />
                                             </a>

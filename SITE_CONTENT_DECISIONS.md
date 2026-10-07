@@ -38,8 +38,10 @@ Last updated: 2026-10-07 (strategy core thesis and About history).
 | AUM | $750M | Owner, Step 6 | Same as above; kept out of structured data by rule |
 | Founder network, Investment professionals | Remove | Owner, Step 6 | Removed |
 
-| Offices | London, United Kingdom (main office); New York, United States and Singapore (branch offices); investment team at each | Owner, Step 7 | `data/locations.js`: Contact "Offices", About Global Network, Geography parameter detail |
+| Offices | St. Petersburg, Florida, United States (main office); London, United Kingdom and Singapore (branch offices). New York withdrawn | Owner, 2026-10-07 (replaces Step 7) | `data/locations.js`: Contact "Offices", About Global Network, Geography parameter detail, Contact meta description |
 | Office addresses | Not published (city and country only) | Owner, Step 7 | `address: null`; offices kept out of structured data |
+| Company registration | Florida LLC, document number L26000508741; registered address 7901 4th St N, Ste 300, Saint Petersburg, FL 33702 | Owner, 2026-10-07 | `config/company.js`: "Company information" section on Privacy, Terms and Disclosures; kept out of structured data |
+| Footer channels | X @vaultalpha_fund; LinkedIn company page; Telegram @Yuli_Hello; WhatsApp +1 249 536 1789 | Owner, 2026-10-07 | `SOCIAL_LINKS` in `config/site.js`; X and LinkedIn also in Organization `sameAs` |
 
 | Founders email | founders@vaultalpha.fund (real, monitored) | Owner, Step 8 | Contact page, application fallback, legal pages, Organization schema |
 | Partnerships / general email, phone | None; fields removed | Owner, Step 8 | `config/contact.js` |
@@ -101,8 +103,6 @@ Note: the owner's prompt file (`VaultAlpha_15_Real_Crypto_Companies_Cursor_Promp
 | Investment parameters: stage, check size, instruments, lead/follow | `apps/web/src/config/investmentParameters.js` | No values supplied |
 | Three research article titles and covers (no text) | `apps/web/src/data/research.js` | No article text |
 | Firm history and timeline | `apps/web/src/config/history.js` | No confirmed history |
-| Firm LinkedIn | `apps/web/src/config/site.js` | No URL supplied |
-
 ## Removed claims
 
 Step 8 (2026-10-06):
@@ -183,3 +183,4 @@ Earlier passes:
 - 2026-10-06 (Step 9): Deferred by owner; legal pages unchanged (draft).
 - 2026-10-06 (Step 10): Full-site audit of 36 routes at 1440px and 375px (titles, descriptions, Open Graph image, canonical, one h1 per page, alt text, accessible names, `target="_blank"` rel, horizontal overflow, demo text, internal links, console errors): no issues except a short meta description on `/portfolio/figment`. Fixes: company-page descriptions now append "<Company> is part of the VaultAlpha Fund portfolio."; Research is hidden from the header and footer while no article is published (the page was already noindex). Files: `seo/meta.js`, `config/site.js`. Build passes; re-audit clean.
 - 2026-10-07: Strategy rebuilt around Payments & Stablecoins as the core theme (others adjacent); added a market-structure thesis (no fund-performance claims). About: published founding story (March 2025, angel investors, own capital, ambition for a larger fund and network). Files: `config/themes.js`, `config/strategy.js`, `config/history.js`, `config/about.js`, `components/sections/MarketThesisSection.jsx`, `ThemesSection.jsx`, `HistorySection.jsx`, `HeroSection.jsx`, `pages/StrategyPage.jsx`, `pages/AboutPage.jsx`, `pages/HomePage.jsx`, `seo/meta.js`.
+- 2026-10-07: Main office moved to St. Petersburg, Florida; London and Singapore are branches; New York withdrawn. Added Florida LLC registration (document number, registered address) to the legal pages. Added X, LinkedIn, Telegram and WhatsApp icons to the footer. Each page header now has its own background photo (`config/headerImages.js`, `public/headers/*`). Files: `data/locations.js`, `config/company.js`, `config/site.js`, `config/headerImages.js`, `content/legal/{privacy,terms,disclosures}.js`, `components/site/{SiteFooter,SocialIcons,PageHeader,Atmosphere}.jsx`, `components/sections/ContactSection.jsx`, page components, `seo/meta.js`.

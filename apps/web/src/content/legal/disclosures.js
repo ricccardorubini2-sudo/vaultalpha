@@ -7,8 +7,9 @@
 // Do not add any regulatory licence, registration, authorisation, or
 // exemption (or imply one exists) unless counsel has confirmed it in writing.
 
-import { BRAND, DOMAIN } from '../../config/site.js';
+import { BRAND, DOMAIN, LEGAL_NAME } from '../../config/site.js';
 import { PRIMARY_CONTACT_EMAIL } from '../../config/contact.js';
+import { companyInformationSection } from '../../config/company.js';
 
 export default {
     slug: 'disclosures',
@@ -90,6 +91,7 @@ export default {
                 // TODO (counsel): add any jurisdiction-specific restrictions or notices required.
             ],
         },
+        companyInformationSection(LEGAL_NAME),
         {
             id: 'contact',
             heading: 'Questions',

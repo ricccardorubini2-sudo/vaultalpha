@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AlertTriangle, Check } from 'lucide-react';
 import PageHeader from '@/components/site/PageHeader';
+import { HEADER_IMAGES } from '@/config/headerImages';
 import { Container } from '@/components/site/primitives';
 import { LEGAL_DOCUMENTS, getLegalDocument } from '@/content/legal';
 import { BROWSER_STORAGE, COOKIES, LEGACY_STORAGE_KEYS } from '@/config/siteTechnology';
@@ -30,9 +31,9 @@ function Block({ block }) {
     }
     if (block.type === 'table') {
         return (
-            <div className="overflow-x-auto border-y border-slate-200 bg-white">
+            <div className="overflow-x-auto border-y border-slate-200 bg-[hsl(var(--card))]">
                 <table className="w-full min-w-[36rem] text-left text-sm">
-                    <thead className="border-b border-slate-200 bg-slate-50 text-xs uppercase tracking-[0.14em] text-slate-500">
+                    <thead className="border-b border-slate-200 bg-mist text-xs uppercase tracking-[0.14em] text-slate-500">
                         <tr>{block.columns.map((c) => <th key={c} scope="col" className="px-4 py-3 font-medium">{c}</th>)}</tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100">
@@ -88,7 +89,7 @@ export default function LegalPage({ slug }) {
 
     return (
         <>
-            <PageHeader label="Legal" title={doc.title} intro={doc.subtitle}>
+            <PageHeader image={HEADER_IMAGES.legal} label="Legal" title={doc.title} intro={doc.subtitle}>
                 {isDraft && <DraftNotice />}
             </PageHeader>
 

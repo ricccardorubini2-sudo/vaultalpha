@@ -59,10 +59,15 @@ export const FOOTER_COLUMNS = [
     },
 ].filter(Boolean);
 
-// Official firm profiles. A link is shown only when `url` is set AND
-// `verified` is true (confirmed as the firm's own account). Never guess URLs.
+// Owner-confirmed footer channels (2026-10-07). A link is shown only when `url`
+// is set AND `verified` is true. `profile: true` marks the firm's own social
+// profiles, which also go into structured data (sameAs); messaging contacts do not.
 export const SOCIAL_LINKS = [
-    { id: 'linkedin', label: 'LinkedIn', url: '', verified: false },
+    { id: 'x', label: 'X', handle: '@vaultalpha_fund', url: 'https://x.com/vaultalpha_fund', verified: true, profile: true },
+    { id: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/company/vaultalpha-fund/', verified: true, profile: true },
+    { id: 'telegram', label: 'Telegram', handle: '@Yuli_Hello', url: 'https://t.me/Yuli_Hello', verified: true, profile: false },
+    { id: 'whatsapp', label: 'WhatsApp', handle: '+1 249 536 1789', url: 'https://wa.me/12495361789', verified: true, profile: false },
 ];
 
 export const getVerifiedSocialLinks = () => SOCIAL_LINKS.filter((s) => s.verified && s.url);
+export const getSocialProfileUrls = () => getVerifiedSocialLinks().filter((s) => s.profile).map((s) => s.url);
