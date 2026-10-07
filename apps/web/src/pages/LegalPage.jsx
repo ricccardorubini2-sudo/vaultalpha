@@ -92,7 +92,7 @@ export default function LegalPage({ slug }) {
                 {isDraft && <DraftNotice />}
             </PageHeader>
 
-            <section className="bg-white py-16 lg:py-24">
+            <section className="bg-canvas py-16 lg:py-24">
                 <Container>
                     <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
                         <aside className="min-w-0 lg:col-span-3">

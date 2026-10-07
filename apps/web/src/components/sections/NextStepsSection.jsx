@@ -5,7 +5,7 @@ import Reveal from '@/components/Reveal';
 import { Section, Container, SectionLabel } from '@/components/site/primitives';
 
 // items: [{ to, eyebrow, title, desc, cta }]
-export default function NextStepsSection({ items, label = 'Learn More', className = 'bg-white', spacing = 'compact' }) {
+export default function NextStepsSection({ items, label = 'Learn More', className = 'bg-canvas', spacing = 'compact' }) {
     if (!items?.length) return null;
     return (
         <Section id="next-steps" className={className} spacing={spacing}>

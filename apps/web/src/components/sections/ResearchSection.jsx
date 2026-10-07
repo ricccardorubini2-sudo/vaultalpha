@@ -5,7 +5,7 @@ import { Section, Container, SectionHeader, ArrowLink } from '@/components/site/
 import { getLatestArticles, HOMEPAGE_RESEARCH_LIMIT } from '@/data/research';
 
 // Latest published articles. Renders nothing until at least one is published.
-export default function ResearchSection({ className = 'bg-white', spacing, limit = HOMEPAGE_RESEARCH_LIMIT }) {
+export default function ResearchSection({ className = 'bg-canvas', spacing, limit = HOMEPAGE_RESEARCH_LIMIT }) {
     const articles = getLatestArticles(limit);
     if (articles.length === 0) return null;
     return (

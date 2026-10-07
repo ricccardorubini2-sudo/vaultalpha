@@ -45,7 +45,7 @@ export default function PortfolioCompanyPage() {
                 )}
             </PageHeader>
 
-            <Section className="bg-white" spacing="compact">
+            <Section className="bg-canvas" spacing="compact">
                 <Container>
                     <div className="mx-auto max-w-[64rem]">
                         <PortfolioDetail company={company} />
@@ -54,7 +54,7 @@ export default function PortfolioCompanyPage() {
             </Section>
 
             {related.length > 0 && (
-                <Section className="bg-[#f5f6f8]" spacing="compact">
+                <Section className="bg-mist" spacing="compact">
                     <Container>
                         <SectionHeader
                             label="More from the portfolio"

@@ -13,7 +13,7 @@ export default function SiteFooter() {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="border-t border-white/10 bg-black text-white">
+        <footer className="border-t border-white/10 bg-ink-gradient text-white">
             <div className="mx-auto max-w-[80rem] px-6 pb-10 pt-16 lg:px-12 lg:pt-20">
                 <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-4 lg:grid-cols-12">
                     <div className="col-span-2 sm:col-span-4 lg:col-span-4 lg:pr-8">

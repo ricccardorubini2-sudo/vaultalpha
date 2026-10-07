@@ -11,7 +11,7 @@ import { getActiveTeam, TEAM_GROUPS, teamPath } from '@/data/team';
  * showBios:        show each member's shortBio on the card, when one exists
  */
 export default function TeamSection({
-    className = 'bg-[#f5f6f8]',
+    className = 'bg-mist',
     spacing,
     label = 'Leadership',
     showHeader = true,

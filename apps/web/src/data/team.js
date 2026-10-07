@@ -6,6 +6,7 @@ import { getPortfolioCompany } from './portfolio.js';
 // - `photo`: file name in /teams_image, resolved below; null shows initials.
 // - `shortBio`: one or two sentences for cards, or null.
 // - `longBio`: array of paragraphs for the profile page, or null.
+// - `email`: work email shown as a mailto link, or null.
 // - `linkedinUrl`: full profile URL, or null.
 // - `areasOfExpertise`: array of short labels.
 // - `selectedInvestments`: [{ portfolioSlug, verified }]. Shown only when
@@ -50,6 +51,7 @@ const photo = (file) => {
 const EMPTY_PROFILE = {
     shortBio: null,
     longBio: null,
+    email: null,
     linkedinUrl: null,
     areasOfExpertise: [],
     selectedInvestments: [],
@@ -58,12 +60,52 @@ const EMPTY_PROFILE = {
 };
 
 export const TEAM = [
-    { slug: 'vladyslav-blyzniuk', name: 'Vladyslav Blyzniuk', role: 'Founding Partner', group: 'executive', photo: photo('Vladyslav Blyzniuk.png'), ...EMPTY_PROFILE, active: true },
-    { slug: 'vadym-nemyrytskyi', name: 'Vadym Nemyrytskyi', role: 'Chief Executive Officer, Partner', group: 'executive', photo: photo('Vadym Nemyrytskyi.png'), ...EMPTY_PROFILE, active: true },
-    { slug: 'vadym-yaroshevskyi', name: 'Vadym Yaroshevskyi', role: 'Managing Partner', group: 'executive', photo: photo('Vadym Yaroshevskyi.png'), ...EMPTY_PROFILE, active: true },
-    { slug: 'oleksandr-pronoza', name: 'Oleksandr Pronoza', role: 'Chief Investment Officer', group: 'executive', photo: photo('Oleksandr Pronoza.png'), ...EMPTY_PROFILE, active: true },
-    { slug: 'yuliia-lohunkova', name: 'Yuliia Lohunkova', role: 'Chief Business Development Officer', group: 'executive', photo: photo('Yuliia Lohunkova.png'), ...EMPTY_PROFILE, active: true },
-    { slug: 'vitalina-petrenko', name: 'Vitalina Petrenko', role: 'Investment Partner', group: 'senior', photo: photo('Vitalina Petrenko.png'), ...EMPTY_PROFILE, active: true },
+    {
+        slug: 'vladyslav-blyzniuk',
+        name: 'Vladyslav Blyzniuk',
+        role: 'Founding Partner',
+        group: 'executive',
+        photo: photo('Vladyslav Blyzniuk.png'),
+        ...EMPTY_PROFILE,
+        email: 'founders@vaultalpha.fund',
+        linkedinUrl: 'https://www.linkedin.com/in/vladyslav-blyzniuk-718413278/',
+        active: true,
+    },
+    {
+        slug: 'vadym-nemyrytskyi',
+        name: 'Vadym Nemyrytskyi',
+        role: 'Chief Executive Officer, Partner',
+        group: 'executive',
+        photo: photo('Vadym Nemyrytskyi.png'),
+        ...EMPTY_PROFILE,
+        email: 'vadym.nemyrytskyi@vaultalpha.fund',
+        linkedinUrl: 'https://www.linkedin.com/in/vadym-nemyrytskyi-48780740b/',
+        active: true,
+    },
+    {
+        slug: 'vadym-yaroshevskyi',
+        name: 'Vadym Yaroshevskyi',
+        role: 'Managing Partner',
+        group: 'executive',
+        photo: photo('Vadym Yaroshevskyi.png'),
+        ...EMPTY_PROFILE,
+        email: 'vadym@vaultalpha.fund',
+        linkedinUrl: 'https://www.linkedin.com/in/vadym-yaroshevskyi-b479123a6/',
+        active: true,
+    },
+    {
+        slug: 'oleksandr-pronoza',
+        name: 'Oleksandr Pronoza',
+        role: 'Chief Investment Officer',
+        group: 'executive',
+        photo: photo('Oleksandr Pronoza.png'),
+        ...EMPTY_PROFILE,
+        email: 'oleksandr@vaultalpha.fund',
+        linkedinUrl: 'https://www.linkedin.com/in/oleksandr-pronoza-vault/',
+        active: true,
+    },
+    { slug: 'yuliia-lohunkova', name: 'Yuliia Lohunkova', role: 'Chief Business Development Officer', group: 'executive', photo: photo('Yuliia Lohunkova.png'), ...EMPTY_PROFILE, active: false },
+    { slug: 'vitalina-petrenko', name: 'Vitalina Petrenko', role: 'Investment Partner', group: 'senior', photo: photo('Vitalina Petrenko.png'), ...EMPTY_PROFILE, active: false },
     { slug: 'yuki-tanaka', name: 'Yuki Tanaka', role: 'Head of Research', group: 'senior', photo: photo('Yuki Tanaka.png'), ...EMPTY_PROFILE, active: true },
     { slug: 'yullia-mitchell', name: 'Yullia Mitchell', role: 'Partner, Investor Relations', group: 'senior', photo: photo('Yullia Mitchell.png'), ...EMPTY_PROFILE, active: true },
 ];

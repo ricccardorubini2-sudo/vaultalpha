@@ -20,23 +20,23 @@ export const Container = ({ children, className = '' }) => (
 );
 
 // `as="h2"` when the label is the only heading of its section.
-export const SectionLabel = ({ children, as: Tag = 'div', id }) => (
-    <Tag id={id} className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500 [.bg-black_&]:text-slate-400">
+export const SectionLabel = ({ children, as: Tag = 'div', id, className = '' }) => (
+    <Tag id={id} className={`text-[0.7rem] font-medium uppercase tracking-[0.26em] text-slate-500 [.bg-black_&]:text-white/50 [.bg-ink_&]:text-white/50 [.bg-ink-gradient_&]:text-champagne/70 ${className}`}>
         {children}
     </Tag>
 );
 
 export const H2 = ({ children, className = '', id }) => (
-    <h2 id={id} className={`max-w-3xl font-display text-3xl font-medium leading-[1.15] tracking-[-0.02em] text-slate-900 sm:text-4xl lg:text-[2.75rem] ${className}`}>
+    <h2 id={id} className={`max-w-3xl font-display text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-slate-900 sm:text-4xl lg:text-[2.85rem] ${className}`}>
         {children}
     </h2>
 );
 
 const ARROW_LINK_STYLES = {
-    solid: 'rounded-md bg-slate-900 px-5 py-3 font-medium text-white hover:bg-slate-700',
-    light: 'rounded-md bg-white px-6 py-3.5 font-medium text-black hover:bg-slate-200',
-    outline: 'rounded-md border border-white/25 px-6 py-3.5 font-medium text-white hover:border-white/60',
-    text: '-my-2 py-2 font-medium text-slate-900 underline-offset-[6px] hover:underline',
+    solid: 'rounded-sm bg-[hsl(215_42%_12%)] px-5 py-3 font-medium text-white transition-all hover:bg-[hsl(215_42%_18%)]',
+    light: 'rounded-sm bg-white px-6 py-3.5 font-medium text-[hsl(215_42%_10%)] transition-all hover:bg-white/90',
+    outline: 'rounded-sm border border-white/30 px-6 py-3.5 font-medium text-white transition-all hover:border-champagne/60 hover:bg-white/5',
+    text: '-my-2 py-2 font-medium text-slate-900 underline-offset-[6px] transition-colors hover:underline',
 };
 
 export const ArrowLink = ({ to, children, variant = 'text', className = '' }) => (
@@ -60,6 +60,6 @@ export const SectionHeader = ({ label, title, intro, action, className = '' }) =
 export const Logo = ({ dark }) => (
     <Link to="/" className="flex items-center gap-3">
         <img src={logoSrc} srcSet={logoSrcSet} sizes="48px" alt="" width="48" height="48" decoding="async" className="h-11 w-11 object-contain sm:h-12 sm:w-12" />
-        <span className={`font-display text-lg font-medium tracking-tight sm:text-xl ${dark ? 'text-slate-900' : 'text-white'}`}>{BRAND}</span>
+        <span className={`text-lg font-semibold tracking-[-0.02em] sm:text-xl ${dark ? 'text-slate-900' : 'text-white'}`}>{BRAND}</span>
     </Link>
 );

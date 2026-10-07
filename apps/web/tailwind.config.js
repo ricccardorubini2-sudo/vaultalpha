@@ -19,8 +19,8 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				display: ['Sora', 'Sora Fallback', 'sans-serif'],
-				sans: ['Inter', 'Inter Fallback', 'sans-serif'],
+				display: ['Instrument Serif', 'Georgia', 'Times New Roman', 'serif'],
+				sans: ['Manrope Variable', 'Manrope', 'Helvetica Neue', 'Arial', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

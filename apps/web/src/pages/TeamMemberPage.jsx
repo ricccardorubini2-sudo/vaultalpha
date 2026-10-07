@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, Linkedin } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import PageHeader from '@/components/site/PageHeader';
 import { Section, Container } from '@/components/site/primitives';
 import TeamPhoto from '@/components/team/TeamPhoto';
+import TeamContactLinks from '@/components/team/TeamContactLinks';
 import PortfolioCard from '@/components/portfolio/PortfolioCard';
 import TeamSection from '@/components/sections/TeamSection';
 import { getTeamMember, getTeamGroup, getVerifiedInvestments } from '@/data/team';
@@ -33,8 +34,8 @@ export default function TeamMemberPage() {
     const investments = getVerifiedInvestments(member);
     const previous = listOf(member.previousCompanies, (c) => hasValue(c?.name));
     const education = listOf(member.education, (e) => hasValue(e?.institution));
-    const linkedin = hasValue(member.linkedinUrl) ? member.linkedinUrl : null;
     const hasProfile = paragraphs.length || expertise.length || investments.length || previous.length || education.length;
+    const hasContact = hasValue(member.email) || hasValue(member.linkedinUrl);
 
     return (
         <>
@@ -49,21 +50,11 @@ export default function TeamMemberPage() {
                 }
                 aside={<TeamPhoto member={member} size="profile" className="w-full max-w-[15rem] sm:max-w-xs lg:ml-auto lg:max-w-sm" />}
             >
-                {linkedin && (
-                    <a
-                        href={linkedin}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-8 inline-flex items-center gap-2 rounded-md border border-white/25 px-5 py-3 text-sm font-medium text-white transition-colors hover:border-white/60"
-                    >
-                        <Linkedin className="h-4 w-4" aria-hidden="true" /> LinkedIn
-                        <span className="sr-only"> profile of {member.name} (opens in a new tab)</span>
-                    </a>
-                )}
+                {hasContact && <TeamContactLinks member={member} variant="dark" className="mt-8" />}
             </PageHeader>
 
             {hasProfile ? (
-                <Section className="bg-white" spacing="compact">
+                <Section className="bg-canvas" spacing="compact">
                     <Container>
                         <div className="mx-auto max-w-[64rem] divide-y divide-slate-200 [&>*:first-child>section]:pt-0">
                             {paragraphs.length > 0 && (
@@ -121,7 +112,7 @@ export default function TeamMemberPage() {
             ) : null}
 
             <TeamSection
-                className={hasProfile ? 'bg-[#f5f6f8]' : 'bg-white'}
+                className={hasProfile ? 'bg-mist' : 'bg-canvas'}
                 spacing="compact"
                 label="More from the team"
                 excludeSlug={member.slug}

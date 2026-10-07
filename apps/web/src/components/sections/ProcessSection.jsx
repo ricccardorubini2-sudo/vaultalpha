@@ -42,7 +42,7 @@ function TimelineSteps({ steps }) {
  * steps:  defaults to INVESTMENT_PROCESS in config/process.js
  */
 export default function ProcessSection({
-    className = 'bg-[#f5f6f8]',
+    className = 'bg-mist',
     spacing,
     label = 'Investment Process',
     title = 'From first conversation to long-term partnership.',

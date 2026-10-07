@@ -56,7 +56,7 @@ export default function ResearchPage() {
     return (
         <>
             <PageHeader label="Research & Insights" title="Research" intro="Perspectives from our investment team." />
-            <Section id="research" className="bg-white" spacing="compact">
+            <Section id="research" className="bg-canvas" spacing="compact">
                 <Container>
                     {articles.length === 0 ? (
                         <EmptyState />

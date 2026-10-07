@@ -5,7 +5,7 @@ import PortfolioLogo from './PortfolioLogo';
 import { hasValue } from '@/data/portfolio';
 
 // A directory cell: sits inside a hairline grid, so it has no border or radius of its own.
-const CARD_CLASS = 'group flex h-full flex-col bg-white p-6 transition-colors hover:bg-slate-50 sm:p-7 lg:p-8';
+const CARD_CLASS = 'group flex h-full flex-col bg-[hsl(var(--card))] p-6 transition-colors duration-300 hover:bg-[hsl(38_16%_96%)] sm:p-7 lg:p-8';
 
 /**
  * href: optional internal route (e.g. `/portfolio/${slug}`). Without it the
@@ -22,7 +22,7 @@ export default function PortfolioCard({ company, href }) {
             <div className="flex items-start justify-between gap-3">
                 <PortfolioLogo company={company} />
                 {(href || website) && (
-                    <ArrowUpRight className="h-4 w-4 shrink-0 text-slate-300 transition-colors group-hover:text-slate-900" strokeWidth={1.75} aria-hidden="true" />
+                    <ArrowUpRight className="h-4 w-4 shrink-0 text-slate-300 transition-colors duration-300 group-hover:text-champagne" strokeWidth={1.75} aria-hidden="true" />
                 )}
             </div>
             <h3 className="mt-6 font-display sm:mt-8 text-xl font-medium tracking-tight text-slate-900">{companyName}</h3>

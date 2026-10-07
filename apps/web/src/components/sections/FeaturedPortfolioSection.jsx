@@ -4,7 +4,7 @@ import PortfolioGrid from '@/components/portfolio/PortfolioGrid';
 import { Section, Container, SectionHeader, ArrowLink } from '@/components/site/primitives';
 import { getFeaturedPortfolio, HOMEPAGE_PORTFOLIO_LIMIT, portfolioPath } from '@/data/portfolio';
 
-export default function FeaturedPortfolioSection({ className = 'bg-[#f5f6f8]', spacing, limit = HOMEPAGE_PORTFOLIO_LIMIT }) {
+export default function FeaturedPortfolioSection({ className = 'bg-mist', spacing, limit = HOMEPAGE_PORTFOLIO_LIMIT }) {
     const featured = getFeaturedPortfolio(limit);
     if (featured.length === 0) return null;
     return (

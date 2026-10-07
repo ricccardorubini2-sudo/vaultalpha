@@ -10,7 +10,7 @@ export default function PortfolioPage() {
     return (
         <>
             <PageHeader label="Portfolio" title="Portfolio companies" intro="A selection of the companies we back." />
-            <Section id="portfolio" className="bg-white" spacing="compact">
+            <Section id="portfolio" className="bg-canvas" spacing="compact">
                 <Container>
                     <h2 className="sr-only">All portfolio companies</h2>
                     {companies.length > 0 ? (

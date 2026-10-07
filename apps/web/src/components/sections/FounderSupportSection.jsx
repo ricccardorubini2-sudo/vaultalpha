@@ -3,7 +3,7 @@ import Reveal from '@/components/Reveal';
 import { Section, Container, SectionHeader } from '@/components/site/primitives';
 import { FOUNDER_SUPPORT } from '@/config/founders';
 
-export default function FounderSupportSection({ className = 'bg-white', spacing }) {
+export default function FounderSupportSection({ className = 'bg-canvas', spacing }) {
     if (FOUNDER_SUPPORT.length === 0) return null;
     return (
         <Section id="support" className={className} spacing={spacing}>

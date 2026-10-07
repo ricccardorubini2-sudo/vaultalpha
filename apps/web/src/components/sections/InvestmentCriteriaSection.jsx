@@ -3,7 +3,7 @@ import Reveal from '@/components/Reveal';
 import { Section, Container, SectionHeader } from '@/components/site/primitives';
 import { INVESTMENT_CRITERIA } from '@/config/strategy';
 
-export default function InvestmentCriteriaSection({ className = 'bg-white', spacing }) {
+export default function InvestmentCriteriaSection({ className = 'bg-canvas', spacing }) {
     if (INVESTMENT_CRITERIA.length === 0) return null;
     return (
         <Section id="criteria" className={className} spacing={spacing}>

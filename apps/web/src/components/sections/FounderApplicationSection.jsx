@@ -15,7 +15,7 @@ const FormPlaceholder = () => (
     <div aria-hidden="true" className="min-h-[88rem] rounded-lg border border-slate-200 bg-white sm:min-h-[64rem] lg:min-h-[58rem]" />
 );
 
-export default function FounderApplicationSection({ className = 'bg-white', spacing }) {
+export default function FounderApplicationSection({ className = 'bg-canvas', spacing }) {
     useEffect(() => {
         const idle = window.requestIdleCallback ?? ((cb) => setTimeout(cb, 1));
         const cancel = window.cancelIdleCallback ?? clearTimeout;

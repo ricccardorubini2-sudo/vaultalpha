@@ -4,7 +4,7 @@ import TestimonialCard from '@/components/TestimonialCard';
 import { Section, Container, SectionLabel, H2 } from '@/components/site/primitives';
 import { getPublicTestimonials } from '@/data/testimonials';
 
-export default function TestimonialsSection({ className = 'bg-white', testimonials = getPublicTestimonials() }) {
+export default function TestimonialsSection({ className = 'bg-canvas', testimonials = getPublicTestimonials() }) {
     if (testimonials.length === 0) return null;
     return (
         <Section id="testimonials" className={className} aria-labelledby="testimonials-heading">

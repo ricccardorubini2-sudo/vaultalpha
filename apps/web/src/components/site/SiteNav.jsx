@@ -127,7 +127,7 @@ export default function SiteNav() {
                 Skip to content
             </a>
 
-            <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${solid ? 'border-b border-white/10 bg-black/90 backdrop-blur-md' : 'border-b border-transparent bg-transparent'}`}>
+            <header className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500 ${solid ? 'border-b border-white/10 bg-[hsl(215_42%_8%_/_0.82)] backdrop-blur-xl' : 'border-b border-transparent bg-transparent'}`}>
                 <div className="mx-auto flex max-w-[92rem] items-center justify-between gap-6 px-6 py-4 lg:px-12">
                     <Logo />
 
@@ -186,7 +186,7 @@ export default function SiteNav() {
                     aria-label="Site menu"
                     data-state={open ? 'open' : 'closing'}
                     {...(open ? {} : { inert: '' })}
-                    className="menu-panel fixed inset-0 z-40 overflow-y-auto overflow-x-hidden overscroll-contain bg-black lg:hidden"
+                    className="menu-panel fixed inset-0 z-40 overflow-y-auto overflow-x-hidden overscroll-contain bg-ink lg:hidden"
                 >
                     <nav aria-label="Main" className="relative mx-auto flex min-h-full max-w-[92rem] flex-col px-6 pb-10 pt-28 sm:pt-32 [@media(max-height:640px)]:pb-6 [@media(max-height:640px)]:pt-24">
                         <ul className="flex flex-col">

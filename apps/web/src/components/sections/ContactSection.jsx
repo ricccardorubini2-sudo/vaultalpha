@@ -76,7 +76,7 @@ function Locations({ locations }) {
                 {locations.map((l) => {
                     const type = getLocationTypeLabel(l);
                     return (
-                        <li key={l.id} className="bg-white p-7">
+                        <li key={l.id} className="bg-[hsl(var(--card))] p-7">
                             <div className="font-display text-lg font-medium tracking-tight text-slate-900">
                                 {l.city}
                             </div>
@@ -95,7 +95,7 @@ function Locations({ locations }) {
 }
 
 // Contact paths from config/contact.js, plus verified addresses when any exist.
-export default function ContactSection({ className = 'bg-white', spacing = 'compact' }) {
+export default function ContactSection({ className = 'bg-canvas', spacing = 'compact' }) {
     const locations = getPublicLocations();
     return (
         <Section id="contact" className={className} spacing={spacing}>

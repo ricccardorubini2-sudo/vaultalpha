@@ -8,7 +8,7 @@ Status key: **Confirmed** (owner-supplied), **Unverified** (on the live site,
 no evidence yet), **Hidden** (in the codebase but not rendered publicly),
 **Removed**.
 
-Last updated: 2026-10-06 (Step 2: investment strategy).
+Last updated: 2026-10-07 (strategy core thesis and About history).
 
 ## Confirmed facts
 
@@ -18,7 +18,10 @@ Last updated: 2026-10-06 (Step 2: investment strategy).
 | Primary audience | Founders seeking capital; strategic partners second | Owner, Step 1 | Contact paths (`config/contact.js`) |
 | Legal / operating name (publishable) | VaultAlpha Fund | Owner, Step 1 | `LEGAL_NAME` in `config/site.js`: Privacy "Who we are", Organization schema `legalName`, footer copyright |
 | Placeholder claims | "Our engineers review every investment" and all technical-diligence claims | Owner, Step 1 | Removed (see below) |
-| Sectors | Digital Assets & Blockchain; Payments & Stablecoins; Real-World Assets (tokenization); Exchanges & Trading Infrastructure | Owner, Step 2 | `THEMES` and `SECTOR_SUMMARY` in `config/themes.js`: hero, theme sections, Strategy, About, footer, meta, application form sectors |
+| Sectors | Payments & Stablecoins (core); Digital Assets & Blockchain, Real-World Assets, Exchanges & Trading Infrastructure (adjacent) | Owner, Step 2; core vs branch, 2026-10-07 | `THEMES` `role` in `config/themes.js`; Strategy market thesis |
+| Founded | March 2025 | Owner, 2026-10-07 | About intro, `config/history.js` |
+| Origin | Angel investors formed the team and started with their own capital | Owner, 2026-10-07 | About history and overview |
+| Ambition | Grow a larger fund, network and role in the future of finance | Owner, 2026-10-07 | About history (stated as direction, not a completed fact) |
 | Stages | Pre-seed, Seed, Series A, token rounds | Owner, Step 2 | `config/investmentParameters.js`, About thesis, application form |
 | Minimum investment | No fixed minimum | Owner, Step 2 | Check size detail |
 | Typical range | Varies by round; not published | Owner, Step 2 | Shown only as "Sized to each round" |
@@ -151,7 +154,7 @@ Earlier passes:
 
 - Recommendation: add an "as of" date for the figures (none given yet).
 - Portfolio companies have no `geography` set, so the 6 portfolio countries cannot be listed by name; supply them if they should appear in the Global Network section.
-- Portfolio (optional): investment stage / year per company, official logos with permission, short VaultAlpha thesis per company.
+- Portfolio (optional): investment stage / year per company; short VaultAlpha thesis per company. Logos: public site icons/wordmarks were added 2026-10-06 (Privy and a few others are low-res favicons — replace with official brand packs if available).
 - Build script: `npm run build` fails on Windows because `tools/generate-llms.js` is missing and `|| true` is not valid in cmd; `npx vite build` works.
 - Pre-existing lint errors: `primitives.jsx` (imagetools query imports) and `TeamPhoto.jsx` (`fetchpriority`).
 - Research filter still has an "Artificial Intelligence" category (`data/research.js`); research is hidden, so revisit with research content.
@@ -170,6 +173,8 @@ Earlier passes:
 - 2026-10-06 (Step 2): Replaced themes with the four confirmed sectors; added `SECTOR_SUMMARY` so every sector list reads from one place; published stage, check size, geography, instruments and lead / co-invest parameters; updated the About thesis and application stage options. Files: `config/themes.js`, `config/investmentParameters.js`, `config/site.js`, `config/about.js`, `config/strategy.js`, `config/founders.js`, `seo/meta.js`, `components/sections/HeroSection.jsx`, `pages/AboutPage.jsx`. Tested: `/`, `/about`, `/strategy`, `/founders`, `/contact`, `/portfolio`, desktop and mobile (parameters render, no console errors, lint clean).
 - 2026-10-06 (Step 3): Rebuilt "What Founders Can Expect" from confirmed capabilities (Capital, Introductions, Strategic partnerships, Liquidity support, Token design); updated the Long-Term Partnership process step; removed the technical-judgment sentence and technical-depth intro; softened the founder partnership line. Files: `config/founders.js`, `config/process.js`, `config/about.js`, `components/sections/ThemesSection.jsx`. Tested: `/`, `/about`, `/strategy`, `/founders` (no removed wording, no console errors, lint clean).
 - 2026-10-06 (Step 4): Team kept as is by owner decision; no changes.
+- 2026-10-07: Hid Yuliia Lohunkova and Vitalina Petrenko (`active: false` in `data/team.js`).
+- 2026-10-07: Added owner-confirmed email and LinkedIn for the four Executive Officers (Vladyslav Blyzniuk, Vadym Nemyrytskyi, Vadym Yaroshevskyi, Oleksandr Pronoza). Icons on Team cards and profile pages via `TeamContactLinks`.
 - 2026-10-06 (Step 5): Replaced the portfolio with the 15 owner-confirmed companies (name, website, one-line description; no sector, stage, geography or logo). Removed old logos, fake testimonials and the unused Careers section. Files: `data/portfolio.js`, `data/testimonials.js`, `public/portfolio/*` (deleted), `components/sections/CareersSection.jsx` (deleted). Tested: `/`, `/portfolio`, `/portfolio/fireblocks`, `/about`, desktop and mobile; production build emits 15 company pages and sitemap entries; no console errors.
 - 2026-10-06 (Step 6): Published 15 portfolio companies and 6 countries; AUM held back pending unit; removed founder network and headcount figures. Added per-figure `verified` flag and `getPublicStats()`; stat grid adapts to the number of figures. Files: `config/stats.js`, `components/sections/PhilosophySection.jsx`, `vite.config.js`. Tested: `/`, `/about`, `/strategy`; build no-JS fallback contains the figures.
 - 2026-10-06 (Step 6, follow-up): Published AUM as $750M; relabelled "Countries" as "Portfolio countries". Confirmed AUM is absent from JSON-LD. File: `config/stats.js`.
@@ -177,3 +182,4 @@ Earlier passes:
 - 2026-10-06 (Step 8): Contact reduced to the founders path; removed partners, general and phone fields; replaced the five-business-day promise with `APPLICATION_REVIEW_NOTE`; legal pages now cite founders@vaultalpha.fund; added `apps/web/.env.example` for the form endpoint. Files: `config/contact.js`, `components/sections/ContactSection.jsx`, `FounderApplicationSection.jsx`, `FounderCtaSection.jsx`, `components/founders/FounderApplicationForm.jsx`, `seo/meta.js`, `apps/web/.env.example`. Tested: `/`, `/contact`, `/founders`, `/strategy`, `/privacy`, `/terms`; build passes.
 - 2026-10-06 (Step 9): Deferred by owner; legal pages unchanged (draft).
 - 2026-10-06 (Step 10): Full-site audit of 36 routes at 1440px and 375px (titles, descriptions, Open Graph image, canonical, one h1 per page, alt text, accessible names, `target="_blank"` rel, horizontal overflow, demo text, internal links, console errors): no issues except a short meta description on `/portfolio/figment`. Fixes: company-page descriptions now append "<Company> is part of the VaultAlpha Fund portfolio."; Research is hidden from the header and footer while no article is published (the page was already noindex). Files: `seo/meta.js`, `config/site.js`. Build passes; re-audit clean.
+- 2026-10-07: Strategy rebuilt around Payments & Stablecoins as the core theme (others adjacent); added a market-structure thesis (no fund-performance claims). About: published founding story (March 2025, angel investors, own capital, ambition for a larger fund and network). Files: `config/themes.js`, `config/strategy.js`, `config/history.js`, `config/about.js`, `components/sections/MarketThesisSection.jsx`, `ThemesSection.jsx`, `HistorySection.jsx`, `HeroSection.jsx`, `pages/StrategyPage.jsx`, `pages/AboutPage.jsx`, `pages/HomePage.jsx`, `seo/meta.js`.

@@ -4,7 +4,7 @@ import { Section, Container, SectionHeader } from '@/components/site/primitives'
 import { OPERATING_PRINCIPLES } from '@/config/about';
 
 export default function PrinciplesSection({
-    className = 'bg-white',
+    className = 'bg-canvas',
     spacing,
     label = 'Operating Principles',
     title = 'The principles behind our decisions.',

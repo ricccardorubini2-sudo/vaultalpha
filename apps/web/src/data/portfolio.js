@@ -13,15 +13,15 @@
 //   on the public site (grids and /portfolio/[slug]).
 // - `featured: true` entries appear on the homepage, in array order, capped at
 //   HOMEPAGE_PORTFOLIO_LIMIT.
-// - `logo` stays null (initials are shown) until official logo files are
-//   supplied with permission to use them.
+// - `logo`: { src, tile: 'light'|'dark', wide?: boolean }. Files live in
+//   /public/portfolio and were taken from each company's public site icons.
 // - `founders` is optional: null or [{ name, role, verified }]. Only founders
 //   with `verified: true` are shown publicly.
 
-const company = (slug, companyName, companyWebsite, shortDescription, featured = false) => ({
+const company = (slug, companyName, companyWebsite, shortDescription, logo, featured = false) => ({
     slug,
     companyName,
-    logo: null,
+    logo,
     shortDescription,
     sector: null,
     investmentStage: null,
@@ -34,23 +34,26 @@ const company = (slug, companyName, companyWebsite, shortDescription, featured =
     founders: null,
 });
 
+const mark = (file, tile = 'light') => ({ src: `/portfolio/${file}`, tile, wide: false });
+const wordmark = (file, tile = 'light') => ({ src: `/portfolio/${file}`, tile, wide: true });
+
 export const PORTFOLIO = [
-    company('bvnk', 'BVNK', 'https://www.bvnk.com/', 'Stablecoin payments infrastructure for enterprises.', true),
-    company('centrifuge', 'Centrifuge', 'https://centrifuge.io/', 'Infrastructure to tokenize, manage and invest in real-world assets onchain.', true),
-    company('layerzero', 'LayerZero', 'https://www.layerzero.org/', 'An interoperability protocol for moving messages and assets between blockchains.', true),
-    company('privy', 'Privy', 'https://www.privy.io/', 'Wallet and digital-asset infrastructure for financial products.', true),
-    company('maple-finance', 'Maple Finance', 'https://maple.finance/', 'Onchain asset management and lending for institutions.', true),
-    company('morpho', 'Morpho', 'https://morpho.org/', 'An open credit network connecting lenders and borrowers onchain.', true),
-    company('turnkey', 'Turnkey', 'https://www.turnkey.com/', 'Wallet and private-key infrastructure delivered through a single API.'),
-    company('zerohash', 'zerohash', 'https://zerohash.com/', 'API-first infrastructure for launching crypto and stablecoin products.'),
-    company('fireblocks', 'Fireblocks', 'https://www.fireblocks.com/', 'Enterprise infrastructure for digital assets and stablecoins.'),
-    company('anchorage-digital', 'Anchorage Digital', 'https://www.anchorage.com/', 'An institutional crypto platform for custody and related services.'),
-    company('figment', 'Figment', 'https://www.figment.io/', 'Staking infrastructure for institutions.'),
-    company('copper', 'Copper', 'https://copper.co/', 'Custody, trading, settlement and collateral infrastructure for institutions.'),
-    company('plume', 'Plume', 'https://www.plume.org/', 'A blockchain for bringing institutional assets onchain.'),
+    company('bvnk', 'BVNK', 'https://www.bvnk.com/', 'Stablecoin payments infrastructure for enterprises.', mark('bvnk.png'), true),
+    company('centrifuge', 'Centrifuge', 'https://centrifuge.io/', 'Infrastructure to tokenize, manage and invest in real-world assets onchain.', mark('centrifuge.png'), true),
+    company('layerzero', 'LayerZero', 'https://www.layerzero.org/', 'An interoperability protocol for moving messages and assets between blockchains.', mark('layerzero.png'), true),
+    company('privy', 'Privy', 'https://www.privy.io/', 'Wallet and digital-asset infrastructure for financial products.', mark('privy.png'), true),
+    company('maple-finance', 'Maple Finance', 'https://maple.finance/', 'Onchain asset management and lending for institutions.', mark('maple-finance.png'), true),
+    company('morpho', 'Morpho', 'https://morpho.org/', 'An open credit network connecting lenders and borrowers onchain.', mark('morpho.svg'), true),
+    company('turnkey', 'Turnkey', 'https://www.turnkey.com/', 'Wallet and private-key infrastructure delivered through a single API.', mark('turnkey.png')),
+    company('zerohash', 'zerohash', 'https://zerohash.com/', 'API-first infrastructure for launching crypto and stablecoin products.', mark('zerohash.png')),
+    company('fireblocks', 'Fireblocks', 'https://www.fireblocks.com/', 'Enterprise infrastructure for digital assets and stablecoins.', mark('fireblocks.png')),
+    company('anchorage-digital', 'Anchorage Digital', 'https://www.anchorage.com/', 'An institutional crypto platform for custody and related services.', mark('anchorage-digital.png')),
+    company('figment', 'Figment', 'https://www.figment.io/', 'Staking infrastructure for institutions.', wordmark('figment.svg')),
+    company('copper', 'Copper', 'https://copper.co/', 'Custody, trading, settlement and collateral infrastructure for institutions.', mark('copper.svg')),
+    company('plume', 'Plume', 'https://www.plume.org/', 'A blockchain for bringing institutional assets onchain.', mark('plume.png')),
     // eigenlayer.xyz now redirects to eigencloud.xyz (the company's current brand).
-    company('eigenlayer', 'EigenLayer', 'https://www.eigenlayer.xyz/', "A restaking protocol that extends Ethereum's security to other services."),
-    company('wormhole', 'Wormhole', 'https://wormhole.com/', 'Open-source infrastructure for moving tokens, data and assets between blockchains.'),
+    company('eigenlayer', 'EigenLayer', 'https://www.eigenlayer.xyz/', "A restaking protocol that extends Ethereum's security to other services.", mark('eigenlayer.png')),
+    company('wormhole', 'Wormhole', 'https://wormhole.com/', 'Open-source infrastructure for moving tokens, data and assets between blockchains.', mark('wormhole.png')),
 ];
 
 export const HOMEPAGE_PORTFOLIO_LIMIT = 6;

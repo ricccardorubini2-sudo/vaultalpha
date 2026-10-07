@@ -8,7 +8,7 @@ function FilterRow({ filter, companies, filters, selected, onSelect }) {
     const countFor = (value) =>
         companies.filter((c) => matchesFilters(c, filters, selected, filter.id) && filter.getValue(c) === value).length;
     const pill = (active) =>
-        `rounded-md border px-3 py-1.5 text-sm transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${active ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400 hover:text-slate-900'}`;
+        `rounded-sm border px-3 py-1.5 text-sm transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-40 ${active ? 'border-[hsl(215_42%_12%)] bg-[hsl(215_42%_12%)] text-white' : 'border-[hsl(var(--border))] bg-[hsl(var(--card))] text-slate-600 hover:border-[hsl(215_20%_55%)] hover:text-slate-900'}`;
     return (
         <div role="group" aria-labelledby={`filter-${filter.id}`} className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
             <span id={`filter-${filter.id}`} className="w-20 shrink-0 text-sm text-slate-500">{filter.label}</span>

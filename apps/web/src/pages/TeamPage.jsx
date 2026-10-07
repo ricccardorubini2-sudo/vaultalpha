@@ -28,8 +28,8 @@ export default function TeamPage() {
                 title="The people behind VaultAlpha"
                 intro="The leadership team working with founders for the long term."
             />
-            <TeamSection className="bg-white" showHeader={false} showBios />
-            <NextStepsSection items={NEXT_STEPS} label="Next Steps" className="bg-[#f5f6f8]" />
+            <TeamSection className="bg-canvas" showHeader={false} showBios />
+            <NextStepsSection items={NEXT_STEPS} label="Next Steps" className="bg-mist" />
         </>
     );
 }

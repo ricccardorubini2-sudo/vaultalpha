@@ -9,16 +9,15 @@ import PhilosophySection from '@/components/sections/PhilosophySection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import GlobalNetworkSection from '@/components/sections/GlobalNetworkSection';
 import NextStepsSection from '@/components/sections/NextStepsSection';
-import { COMPANY_OVERVIEW, PHILOSOPHY, WHY_VAULTALPHA, FOUNDER_PARTNERSHIP_INTRO } from '@/config/about';
+import { COMPANY_OVERVIEW, WHY_VAULTALPHA, FOUNDER_PARTNERSHIP_INTRO } from '@/config/about';
 import { BRAND, FIRM_DESCRIPTOR } from '@/config/site';
-import { SECTOR_SUMMARY } from '@/config/themes';
 
 const NEXT_STEPS = [
     {
         to: '/strategy',
         eyebrow: 'Investment Strategy',
         title: 'What we invest in',
-        desc: 'Our four investment themes, investment parameters and process.',
+        desc: 'Why we centre on payments and stablecoins, and how we underwrite around that thesis.',
         cta: 'Explore Strategy',
     },
     {
@@ -30,28 +29,28 @@ const NEXT_STEPS = [
     },
 ];
 
-// Who we are → mission → history → values → why us, then how we work.
+// Who we are → history → mission → values → why us, then how we work.
 export default function AboutPage() {
     return (
         <>
             <PageHeader
                 label="About"
                 title="About VaultAlpha"
-                intro={`A ${FIRM_DESCRIPTOR.toLowerCase()} backing founders in ${SECTOR_SUMMARY}.`}
+                intro={`Founded in March 2025. A ${FIRM_DESCRIPTOR.toLowerCase()} started with our own capital, built to grow a larger fund and a lasting network in digital finance.`}
             />
-            <CompanyOverviewSection paragraphs={[...COMPANY_OVERVIEW, ...PHILOSOPHY.paragraphs]} />
+            <CompanyOverviewSection paragraphs={COMPANY_OVERVIEW} />
+            <HistorySection className="bg-mist" />
             <MissionSection />
-            <HistorySection />
             <PrinciplesSection label="Our Values" title="The principles behind our decisions." spacing="compact" />
             <PhilosophySection
-                className="bg-[#f5f6f8]"
+                className="bg-mist"
                 spacing="compact"
                 label={`Why ${BRAND}`}
                 title={WHY_VAULTALPHA.title}
                 paragraphs={WHY_VAULTALPHA.paragraphs}
             />
             <ProcessSection
-                className="bg-white"
+                className="bg-canvas"
                 label="How We Work with Founders"
                 intro={FOUNDER_PARTNERSHIP_INTRO}
                 spacing="compact"

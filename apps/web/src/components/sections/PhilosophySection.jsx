@@ -24,7 +24,7 @@ function Stat({ stat }) {
  *        | 'compact' (homepage thesis with a link to About)
  */
 export default function PhilosophySection({
-    className = 'bg-white',
+    className = 'bg-canvas',
     variant = 'full',
     spacing,
     showAboutLink = true,

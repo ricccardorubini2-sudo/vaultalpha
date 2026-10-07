@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
 // Two white sections (divided by a hairline, see index.css), then a tinted band.
-const DEFAULT_BACKGROUNDS = ['bg-white', 'bg-white', 'bg-[#f5f6f8]'];
+const DEFAULT_BACKGROUNDS = ['bg-canvas', 'bg-canvas', 'bg-mist'];
 
 /**
  * Cycles light backgrounds over the sections that actually render.

@@ -18,7 +18,7 @@ export default function ResearchArticlePage() {
 
     return (
         <>
-            <article className="bg-white pb-24 pt-36 lg:pt-44">
+            <article className="bg-canvas pb-24 pt-36 lg:pt-44">
                 <Container>
                     <header className="mx-auto max-w-3xl">
                         <Link to="/research" className="inline-flex items-center gap-2 text-sm text-slate-500 transition-colors hover:text-slate-900">
@@ -53,7 +53,7 @@ export default function ResearchArticlePage() {
             </article>
 
             {related.length > 0 && (
-                <Section className="bg-[#f5f6f8]" spacing="compact">
+                <Section className="bg-mist" spacing="compact">
                     <Container>
                         <SectionHeader label="Further reading" action={<ArrowLink to="/research" variant="solid">Read Research</ArrowLink>} />
                         <ul className="mt-10 grid gap-6 md:grid-cols-3">

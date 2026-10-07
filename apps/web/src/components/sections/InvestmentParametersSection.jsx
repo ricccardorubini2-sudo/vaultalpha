@@ -5,7 +5,7 @@ import { Section, Container, SectionHeader } from '@/components/site/primitives'
 import { getPublicParameters, STRATEGY_PARAMETER_FIELDS } from '@/config/investmentParameters';
 
 // Renders nothing until at least one of `fields` is confirmed.
-export default function InvestmentParametersSection({ className = 'bg-white', spacing, fields = STRATEGY_PARAMETER_FIELDS }) {
+export default function InvestmentParametersSection({ className = 'bg-canvas', spacing, fields = STRATEGY_PARAMETER_FIELDS }) {
     if (getPublicParameters(fields).length === 0) return null;
     return (
         <Section id="parameters" className={className} spacing={spacing}>

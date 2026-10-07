@@ -18,15 +18,15 @@ export default function HomePage() {
         <>
             <HeroSection />
             <PhilosophySection variant="compact" spacing="compact" />
-            <ThemesSection className="bg-white" spacing="compact" showStrategyLink>
+            <ThemesSection className="bg-canvas" spacing="compact" showStrategyLink variant="core">
                 <Reveal delay={0.1}>
                     <InvestmentParameters variant="compact" fields={PARAMETER_SUMMARY_FIELDS} className="mt-10" />
                 </Reveal>
             </ThemesSection>
-            <FeaturedPortfolioSection className="bg-[#f5f6f8]" spacing="compact" />
-            <ProcessSection className="bg-white" label="How We Partner" spacing="compact" showParameters={false} />
-            <TeamSection className="bg-white" spacing="compact" groupIds={['executive']} showAllTeamLink />
-            <ResearchSection className="bg-[#f5f6f8]" spacing="compact" />
+            <FeaturedPortfolioSection className="bg-mist" spacing="compact" />
+            <ProcessSection className="bg-canvas" label="How We Partner" spacing="compact" showParameters={false} />
+            <TeamSection className="bg-canvas" spacing="compact" groupIds={['executive']} showAllTeamLink />
+            <ResearchSection className="bg-mist" spacing="compact" />
             <FounderCtaSection />
         </>
     );

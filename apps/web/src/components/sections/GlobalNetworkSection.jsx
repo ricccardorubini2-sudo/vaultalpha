@@ -20,13 +20,13 @@ export default function GlobalNetworkSection() {
     ].filter(Boolean);
 
     return (
-        <Section id="network" className="bg-black text-white" spacing="compact">
+        <Section id="network" className="bg-ink-gradient text-white" spacing="compact">
             <Container>
                 <Reveal className="grid gap-12 lg:grid-cols-12 lg:gap-16">
                     <div className="lg:col-span-7">
                         <SectionLabel>Global Network</SectionLabel>
                         <H2 className="mt-5 !text-white">An international network of founders, investors and institutions.</H2>
-                        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-400">
+                        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/55">
                             We work with founders, institutions and specialist talent internationally{summary.length > 0 && <>, with {summary.join(' and ')}</>}.
                         </p>
                     </div>
@@ -34,8 +34,8 @@ export default function GlobalNetworkSection() {
                         <dl className="self-end border-t border-white/15 lg:col-span-5">
                             {facts.map((f) => (
                                 <div key={f.id} className="grid gap-2 border-b border-white/10 py-5 sm:grid-cols-3">
-                                    <dt className="text-sm text-slate-500">{f.label}</dt>
-                                    <dd className="text-slate-200 sm:col-span-2">{f.value}</dd>
+                                    <dt className="text-sm text-white/40">{f.label}</dt>
+                                    <dd className="text-white/80 sm:col-span-2">{f.value}</dd>
                                 </div>
                             ))}
                         </dl>

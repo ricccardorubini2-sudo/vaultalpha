@@ -28,7 +28,7 @@ export default function TeamPhoto({ member, size = 'card', className = '' }) {
     const priority = size === 'profile';
 
     return (
-        <div className={`relative aspect-[3/4] overflow-hidden bg-slate-100 ${SIZES[size]} ${className}`}>
+        <div className={`group/photo relative aspect-[3/4] overflow-hidden bg-[hsl(var(--mist))] ${SIZES[size]} ${className}`}>
             {showImage ? (
                 <picture>
                     {Object.entries(picture.sources ?? {}).map(([format, srcSet]) => (
@@ -43,7 +43,7 @@ export default function TeamPhoto({ member, size = 'card', className = '' }) {
                         fetchpriority={priority ? 'high' : undefined}
                         decoding={priority ? undefined : 'async'}
                         onError={() => setFailed(true)}
-                        className="h-full w-full object-cover object-top"
+                        className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover/photo:scale-[1.03] group-hover:scale-[1.03]"
                     />
                 </picture>
             ) : (

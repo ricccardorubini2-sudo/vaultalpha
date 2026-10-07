@@ -114,6 +114,7 @@ function profileSchema(member, url, image) {
             url,
             ...(image && { image }),
             worksFor: { '@id': ORG_ID },
+            ...(hasValue(member.email) && { email: member.email }),
             ...(hasValue(member.linkedinUrl) && { sameAs: [member.linkedinUrl] }),
         },
     };
@@ -134,12 +135,12 @@ const STATIC_PAGES = {
     '/about': {
         title: 'About',
         heading: 'About VaultAlpha',
-        description: `Who ${BRAND} is: our mission, values and approach to working with founders building digital infrastructure.`,
+        description: `${BRAND} was founded in March 2025 by angel investors who began with their own capital. Mission, history and how we work with founders.`,
     },
     '/strategy': {
         title: 'Investment Strategy',
         heading: 'Investment Strategy',
-        description: `Our investment themes across ${SECTOR_SUMMARY}: what we look for, the stages we invest at and how our process works.`,
+        description: `${BRAND} centres on payments and stablecoins — why digital dollars are becoming market infrastructure, and the adjacent themes around that thesis.`,
     },
     '/portfolio': {
         title: 'Portfolio',

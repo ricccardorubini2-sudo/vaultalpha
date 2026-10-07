@@ -1,61 +1,14 @@
 /*
-  TEMPLATE STYLES: These styles are used as a base template.
-  AI is allowed to modify these styles as needed.
+  VaultAlpha visual system: European institutional — stone paper, ink navy,
+  champagne accent, serif display. AI may refine these tokens as needed.
 */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Self-hosted variable fonts (OFL, see /fonts). The latin files are preloaded in index.html. */
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("/fonts/inter-latin-wght.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("/fonts/inter-latin-ext-wght.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: "Sora";
-  font-style: normal;
-  font-weight: 100 800;
-  font-display: swap;
-  src: url("/fonts/sora-latin-wght.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Sora";
-  font-style: normal;
-  font-weight: 100 800;
-  font-display: swap;
-  src: url("/fonts/sora-latin-ext-wght.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* Arial tuned to each font's metrics, so text does not reflow when the web font swaps in. */
-@font-face {
-  font-family: "Inter Fallback";
-  src: local("Arial"), local("Helvetica"), local("Liberation Sans");
-  size-adjust: 107.82%;
-  ascent-override: 89.85%;
-  descent-override: 22.37%;
-  line-gap-override: 0%;
-}
-@font-face {
-  font-family: "Sora Fallback";
-  src: local("Arial"), local("Helvetica"), local("Liberation Sans");
-  size-adjust: 114.05%;
-  ascent-override: 85.05%;
-  descent-override: 25.43%;
-  line-gap-override: 0%;
-}
+@import "@fontsource-variable/manrope/wght.css";
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/instrument-serif/400-italic.css";
 
 html {
   scroll-behavior: smooth;
@@ -63,42 +16,60 @@ html {
 }
 
 body {
-  font-family: "Inter", "Inter Fallback", sans-serif;
+  font-family: "Manrope Variable", Manrope, "Manrope Fallback", sans-serif;
   overflow-x: clip;
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Long unbroken names, URLs and emails must wrap rather than widen their column. */
+/* Soft paper grain on the whole site — quiet, European print feel. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
 h1, h2, h3, h4, dd, a[href^="http"], a[href^="mailto:"] {
   overflow-wrap: anywhere;
 }
 
 .font-display {
-  font-family: "Sora", "Sora Fallback", sans-serif;
+  font-family: "Instrument Serif", "Instrument Serif Fallback", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
-/* Scroll reveal (see components/Reveal.jsx). */
+.atmosphere-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+/* Scroll reveal — slower, more editorial. */
 .reveal {
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) var(--reveal-delay, 0s),
-    transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) var(--reveal-delay, 0s);
+  transform: translateY(1.25rem);
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0s),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0s);
 }
 .reveal.is-revealed {
   opacity: 1;
   transform: none;
 }
 
-/* One-off entrance for secondary above-the-fold content. Never applied to the
-   headline or intro, which are the Largest Contentful Paint candidates. */
 @keyframes enter {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(1rem); }
   to { opacity: 1; transform: none; }
 }
 .animate-enter {
-  animation: enter 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+  animation: enter 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: var(--enter-delay, 0s);
 }
 
@@ -107,10 +78,18 @@ h1, h2, h3, h4, dd, a[href^="http"], a[href^="mailto:"] {
   to { opacity: 1; }
 }
 .animate-fade {
-  animation: fade-in 0.25s ease-out both;
+  animation: fade-in 0.35s ease-out both;
 }
 
-/* Mobile menu (see components/site/SiteNav.jsx). */
+@keyframes atmosphere-drift {
+  from { transform: scale(1.05) translate3d(0, 0, 0); }
+  to { transform: scale(1.12) translate3d(-1.5%, -1%, 0); }
+}
+.animate-atmosphere {
+  animation: atmosphere-drift 28s ease-in-out alternate infinite;
+  will-change: transform;
+}
+
 @keyframes menu-in {
   from { opacity: 0; clip-path: inset(0 0 100% 0); }
   to { opacity: 1; clip-path: inset(0 0 0 0); }
@@ -120,47 +99,46 @@ h1, h2, h3, h4, dd, a[href^="http"], a[href^="mailto:"] {
   to { opacity: 0; clip-path: inset(0 0 100% 0); }
 }
 .menu-panel {
-  animation: menu-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: menu-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .menu-panel[data-state="closing"] {
-  animation: menu-out 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: menu-out 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .menu-item {
-  animation: enter 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: var(--enter-delay, 0s);
 }
 
 .field-input {
   width: 100%;
-  border-radius: 0.25rem;
+  border-radius: 0.125rem;
   border: 1px solid hsl(var(--border));
   background: hsl(var(--background));
-  padding: 0.7rem 0.9rem;
+  padding: 0.75rem 0.95rem;
   font-size: 0.9rem;
   color: hsl(var(--foreground));
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 .field-input::placeholder { color: hsl(var(--muted-foreground)); }
 .field-input:focus {
   outline: none;
   border-color: hsl(var(--accent));
-  box-shadow: 0 0 0 3px hsl(var(--accent) / 0.12);
+  box-shadow: 0 0 0 3px hsl(var(--accent) / 0.14);
 }
-.field-input[aria-invalid="true"] {
-  border-color: hsl(var(--destructive));
-}
+.field-input[aria-invalid="true"] { border-color: hsl(var(--destructive)); }
 .field-input[aria-invalid="true"]:focus {
   box-shadow: 0 0 0 3px hsl(var(--destructive) / 0.12);
 }
 select.field-input {
   appearance: none;
   padding-right: 2.5rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2364748b' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%236b655c' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.85rem center;
 }
 
-/* Consecutive white sections read as one chapter, divided by a rule aligned to the container. */
+/* Consecutive light sections: hairline aligned to the container. */
+section.bg-canvas + section.bg-canvas::before,
 section.bg-white + section.bg-white::before {
   content: "";
   position: absolute;
@@ -172,79 +150,70 @@ section.bg-white + section.bg-white::before {
   background: hsl(var(--border));
 }
 @media (min-width: 1024px) {
-  section.bg-white + section.bg-white::before { width: calc(min(100%, 80rem) - 6rem); }
+  section.bg-canvas + section.bg-canvas::before,
+  section.bg-white + section.bg-white::before {
+    width: calc(min(100%, 80rem) - 6rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
+  .animate-atmosphere { transform: scale(1.05) !important; }
   html { scroll-behavior: auto; }
 }
 
-/*
-  ---break---
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 211 62% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 216 33% 97%;
-    --secondary-foreground: 211 62% 9%;
-    --muted: 216 33% 97%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 224 76% 55%;
-    --accent-foreground: 0 0% 100%;
-    --violet: 262 72% 58%;
-    --navy: 211 62% 9%;
-    --destructive: 0 84.2% 60.2%;
+    /* Warm stone paper — European print, not cream/terracotta AI cluster. */
+    --background: 40 18% 97%;
+    --foreground: 215 35% 12%;
+    --card: 40 20% 99%;
+    --card-foreground: 215 35% 12%;
+    --popover: 40 20% 99%;
+    --popover-foreground: 215 35% 12%;
+    --primary: 215 42% 12%;
+    --primary-foreground: 40 20% 97%;
+    --secondary: 38 14% 93%;
+    --secondary-foreground: 215 35% 14%;
+    --muted: 38 12% 94%;
+    --muted-foreground: 215 12% 42%;
+    /* Champagne bronze accent — restrained. */
+    --accent: 34 32% 46%;
+    --accent-foreground: 40 20% 98%;
+    --violet: 262 40% 42%;
+    --navy: 215 42% 12%;
+    --ink: 215 42% 8%;
+    --canvas: 40 18% 97%;
+    --mist: 38 16% 94%;
+    --champagne: 34 32% 46%;
+    --destructive: 0 72% 48%;
     --destructive-foreground: 0 0% 98%;
-    --border: 216 20% 91%;
-    --input: 216 20% 91%;
-    --ring: 224 76% 55%;
-    --radius: 0.375rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 35 12% 86%;
+    --input: 35 12% 86%;
+    --ring: 34 32% 46%;
+    --radius: 0.25rem;
+    --sidebar-background: 40 18% 97%;
+    --sidebar-foreground: 215 20% 28%;
+    --sidebar-primary: 215 42% 12%;
+    --sidebar-primary-foreground: 40 20% 98%;
+    --sidebar-accent: 38 14% 93%;
+    --sidebar-accent-foreground: 215 35% 14%;
+    --sidebar-border: 35 12% 86%;
+    --sidebar-ring: 34 32% 46%;
   }
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+@layer utilities {
+  .bg-canvas { background-color: hsl(var(--canvas)); }
+  .bg-mist { background-color: hsl(var(--mist)); }
+  .bg-ink { background-color: hsl(var(--ink)); }
+  .text-ink { color: hsl(var(--foreground)); }
+  .text-champagne { color: hsl(var(--champagne)); }
+  .border-champagne\/30 { border-color: hsl(var(--champagne) / 0.3); }
+  .bg-ink-gradient {
+    background-image:
+      radial-gradient(120% 80% at 85% 0%, hsl(34 28% 28% / 0.18), transparent 55%),
+      linear-gradient(165deg, hsl(215 42% 9%) 0%, hsl(215 40% 7%) 48%, hsl(215 38% 6%) 100%);
   }
 }
