@@ -2965,3 +2965,57 @@
 - url: http://localhost:3000/about
 - via: pushState
 
+## 2026-10-07 15:47:12.956Z load
+- url: http://localhost:3000/about
+- title: VaultAlpha Fund
+
+## 2026-10-07 15:47:13.340Z console.error
+- text: 
+    Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s fetchPriority fetchpriority 
+        at img
+        at div
+        at Atmosphere (http://localhost:3000/src/components/site/Atmosphere.jsx?t=1791383758708:5:3)
+        at section
+        at PageHeader (http://localhost:3000/src/components/site/PageHeader.jsx?t=1791383763342:5:38)
+        at AboutPage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7502:26)
+        at Suspense
+        at main
+        at div
+        at SiteLayout
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:10816:3)
+        at App
+
+## 2026-10-08 15:25:31.969Z load
+- url: http://localhost:3000/about
+- title: VaultAlpha Fund
+
+## 2026-10-08 15:25:33.090Z navigate
+- url: http://localhost:3000/about
+- via: replaceState
+
+## 2026-10-08 15:25:33.259Z console.error
+- text: 
+    Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s fetchPriority fetchpriority 
+        at img
+        at div
+        at Atmosphere (http://localhost:3000/src/components/site/Atmosphere.jsx?t=1791383758708:5:3)
+        at section
+        at PageHeader (http://localhost:3000/src/components/site/PageHeader.jsx?t=1791383763342:5:38)
+        at AboutPage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7502:26)
+        at Suspense
+        at main
+        at div
+        at SiteLayout
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=cbc490b3:10816:3)
+        at App
+

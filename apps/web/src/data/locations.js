@@ -10,9 +10,9 @@
 // - `coordinates` only positions the pin on the network map.
 //
 // Owner-confirmed (2026-10-07): main office in St. Petersburg, Florida; branch
-// offices in London and Singapore. New York is withdrawn (`active: false`).
-// Office street addresses are not published; the registered address appears
-// only in the legal pages (config/company.js).
+// offices in London and Singapore. There is no New York office.
+// Office street addresses are not published; the registered address lives in
+// config/company.js.
 
 export const LOCATION_TYPES = [
     'Main Office',
@@ -48,17 +48,6 @@ export const LOCATIONS = [
         verified: true,
         active: true,
         coordinates: { lat: 51.51, lon: -0.09 },
-    },
-    {
-        id: 'new-york',
-        city: 'New York',
-        country: 'United States',
-        address: null,
-        locationType: 'Branch Office',
-        description: 'Investment team',
-        verified: true,
-        active: false,
-        coordinates: { lat: 40.75, lon: -73.98 },
     },
     {
         id: 'singapore',

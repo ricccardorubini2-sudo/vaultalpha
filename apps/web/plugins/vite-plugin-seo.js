@@ -23,18 +23,21 @@ async function loadSeoModules(loader) {
     return { meta, head };
 }
 
-function noscriptHtml(meta, navLinks, escapeHtml) {
+function noscriptHtml(meta, navLinks, facts, escapeHtml) {
     const link = (l) => `<li><a href="${escapeHtml(l.path)}">${escapeHtml(l.label)}</a></li>`;
     const children = meta.links?.length ? `<ul>${meta.links.map(link).join('')}</ul>` : '';
-    return `<noscript><main style="max-width:48rem;margin:0 auto;padding:3rem 1.5rem;font-family:system-ui,sans-serif;color:#0f172a"><h1>${escapeHtml(meta.heading ?? meta.title)}</h1><p>${escapeHtml(meta.description)}</p>${children}<nav aria-label="Site"><ul>${navLinks.map(link).join('')}</ul></nav></main></noscript>`;
+    const company = facts.length
+        ? `<dl aria-label="Company">${facts.map((f) => `<dt>${escapeHtml(f.label)}</dt><dd>${escapeHtml(f.value)}</dd>`).join('')}</dl>`
+        : '';
+    return `<noscript><main style="max-width:48rem;margin:0 auto;padding:3rem 1.5rem;font-family:system-ui,sans-serif;color:#0f172a"><h1>${escapeHtml(meta.heading ?? meta.title)}</h1><p>${escapeHtml(meta.description)}</p>${children}${company}<nav aria-label="Site"><ul>${navLinks.map(link).join('')}</ul></nav></main></noscript>`;
 }
 
-function injectMeta(template, meta, head, navLinks, preloads = '') {
+function injectMeta(template, meta, head, navLinks, facts, preloads = '') {
     const { title, tags } = head.renderHeadHtml(meta);
     return template
         .replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>\n\t\t${tags}`)
         .replace('</head>', `${preloads}</head>`)
-        .replace('<div id="root"></div>', `<div id="root"></div>\n\t\t${noscriptHtml(meta, navLinks, head.escapeHtml)}`);
+        .replace('<div id="root"></div>', `<div id="root"></div>\n\t\t${noscriptHtml(meta, navLinks, facts, head.escapeHtml)}`);
 }
 
 // Pages are lazy chunks. Without a hint the browser only discovers a page's
@@ -152,12 +155,12 @@ export default function seoPlugin() {
         configureServer(server) {
             server.middlewares.use(async (req, res, next) => {
                 const url = req.url?.split('?')[0];
-                if (url !== '/sitemap.xml' && url !== '/robots.txt') return next();
+                if (url !== '/sitemap.xml' && url !== '/robots.txt' && url !== '/llms.txt') return next();
                 try {
                     const { meta } = await loadSeoModules((id) => server.ssrLoadModule(id));
                     const xml = url === '/sitemap.xml';
                     res.setHeader('Content-Type', xml ? 'application/xml; charset=utf-8' : 'text/plain; charset=utf-8');
-                    res.end(xml ? meta.buildSitemap() : meta.buildRobots());
+                    res.end(xml ? meta.buildSitemap() : url === '/llms.txt' ? meta.buildLlmsTxt() : meta.buildRobots());
                 } catch (err) {
                     next(err);
                 }
@@ -189,17 +192,18 @@ export default function seoPlugin() {
 
                 const paths = meta.listAllPaths();
                 for (const route of paths) {
-                    const html = injectMeta(template, await fixImages(meta.getPageMeta(route), resolveAsset), head, navLinks, preloadsFor(route));
+                    const html = injectMeta(template, await fixImages(meta.getPageMeta(route), resolveAsset), head, navLinks, meta.COMPANY_FACTS, preloadsFor(route));
                     const file = route === '/' ? path.join(outDir, 'index.html') : path.join(outDir, route.slice(1), 'index.html');
                     await fs.mkdir(path.dirname(file), { recursive: true });
                     await fs.writeFile(file, html);
                 }
-                await fs.writeFile(path.join(outDir, '404.html'), injectMeta(template, meta.notFoundMeta(), head, navLinks, preloadsFor(null, routes.NOT_FOUND_PAGE)));
+                await fs.writeFile(path.join(outDir, '404.html'), injectMeta(template, meta.notFoundMeta(), head, navLinks, meta.COMPANY_FACTS, preloadsFor(null, routes.NOT_FOUND_PAGE)));
                 await fs.rm(path.join(outDir, '.vite'), { recursive: true, force: true });
                 await fs.writeFile(path.join(outDir, 'sitemap.xml'), meta.buildSitemap());
                 await fs.writeFile(path.join(outDir, 'robots.txt'), meta.buildRobots());
+                await fs.writeFile(path.join(outDir, 'llms.txt'), meta.buildLlmsTxt());
                 await fs.writeFile(path.join(outDir, '.htaccess'), htaccess(meta.LEGACY_REDIRECTS));
-                config.logger.info(`[seo] wrote ${paths.length} route pages, 404.html, sitemap.xml, robots.txt, .htaccess`);
+                config.logger.info(`[seo] wrote ${paths.length} route pages, 404.html, sitemap.xml, robots.txt, llms.txt, .htaccess`);
             } finally {
                 await loaderServer.close();
             }

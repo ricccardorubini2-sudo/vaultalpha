@@ -10,14 +10,14 @@
 // on the site. Never add AUM, offices/addresses, telephone numbers, founding
 // date, fund size, or regulatory status here.
 
-import { BRAND, DOMAIN, LEGAL_NAME, FIRM_DESCRIPTOR, FOOTER_DESCRIPTION, getSocialProfileUrls } from '../config/site.js';
+import { BRAND, DOMAIN, LEGAL_NAME, FIRM_DESCRIPTOR, FOOTER_DESCRIPTION, NAV_LINKS, getSocialProfileUrls } from '../config/site.js';
 import { CONTACT_CATEGORIES, getContactEmail } from '../config/contact.js';
 import { SECTOR_SUMMARY } from '../config/themes.js';
 import { getActivePortfolio, getPortfolioCompany, portfolioPath, hasValue } from '../data/portfolio.js';
 import { getActiveTeam, getTeamMember, teamPath } from '../data/team.js';
 import { getPublishedArticles, getArticle, articlePath, getAuthor, getCategory } from '../data/research.js';
 import { LEGAL_DOCUMENTS } from '../content/legal/index.js';
-
+import { COMPANY_REGISTRATION, MAIN_OFFICE_SUMMARY, BRANCH_OFFICES_SUMMARY, formatRegisteredAddress } from '../config/company.js';
 // TODO: Confirm the production domain. Override per environment with VITE_SITE_URL.
 export const SITE_URL = (import.meta.env?.VITE_SITE_URL || `https://${DOMAIN}`).replace(/\/+$/, '');
 
@@ -135,7 +135,7 @@ const STATIC_PAGES = {
     '/about': {
         title: 'About',
         heading: 'About VaultAlpha',
-        description: `${BRAND} was founded in March 2025 by angel investors who began with their own capital. Mission, history and how we work with founders.`,
+        description: `${BRAND} was founded in March 2025 and is based in St. Petersburg, Florida, with branch offices in London and Singapore. Our history and mission.`,
     },
     '/strategy': {
         title: 'Investment Strategy',
@@ -349,4 +349,36 @@ export function buildSitemap() {
 
 export function buildRobots() {
     return `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
+}
+
+// Firm facts printed in every page's no-JavaScript HTML and in llms.txt, so
+// crawlers and AI assistants that do not run the app read current details.
+export const COMPANY_FACTS = [
+    { label: 'Main office', value: MAIN_OFFICE_SUMMARY },
+    { label: 'Branch offices', value: BRANCH_OFFICES_SUMMARY },
+    { label: 'Registration', value: `Registered in ${COMPANY_REGISTRATION.jurisdiction} as a ${COMPANY_REGISTRATION.entityType}` },
+    { label: 'LLC document number', value: COMPANY_REGISTRATION.documentNumber },
+    { label: 'Registered address', value: formatRegisteredAddress() },
+];
+
+export function buildLlmsTxt() {
+    const pages = [{ label: 'Home', to: '/' }, ...NAV_LINKS, { label: 'Contact', to: '/contact' }]
+        .map((l) => `- [${l.label}](${absoluteUrl(l.to)}): ${getPageMeta(l.to).description}`);
+    return [
+        `# ${BRAND}`,
+        '',
+        `> ${FOOTER_DESCRIPTION}`,
+        '',
+        ...COMPANY_FACTS.map((f) => `- ${f.label}: ${f.value}`),
+        `- Website: ${SITE_URL}`,
+        '',
+        '## Pages',
+        '',
+        ...pages,
+        '',
+        '## Legal',
+        '',
+        ...LEGAL_DOCUMENTS.map((d) => `- [${d.title}](${absoluteUrl(`/${d.slug}`)}): ${d.subtitle}`),
+        '',
+    ].join('\n');
 }

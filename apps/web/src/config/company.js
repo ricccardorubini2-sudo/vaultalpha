@@ -1,5 +1,6 @@
-// Owner-confirmed company registration (2026-10-07). Shown on the legal pages
-// only; keep out of structured data unless the owner approves otherwise.
+// Owner-confirmed company registration (2026-10-07). Shown on the legal pages,
+// in every page's no-JavaScript fallback and in /llms.txt (seo/meta.js); keep
+// out of JSON-LD structured data unless the owner approves otherwise.
 
 export const COMPANY_REGISTRATION = {
     entityType: 'limited liability company',
