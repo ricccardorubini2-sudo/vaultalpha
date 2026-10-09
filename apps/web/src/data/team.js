@@ -61,25 +61,13 @@ const EMPTY_PROFILE = {
 
 export const TEAM = [
     {
-        slug: 'vladyslav-blyzniuk',
-        name: 'Vladyslav Blyzniuk',
+        slug: 'serhii-kryveko',
+        name: 'Serhii Kryveko',
         role: 'Founding Partner',
         group: 'executive',
-        photo: photo('Vladyslav Blyzniuk.png'),
+        photo: photo('Serhii Kryveko.png'),
         ...EMPTY_PROFILE,
         email: 'founders@vaultalpha.fund',
-        linkedinUrl: 'https://www.linkedin.com/in/vladyslav-blyzniuk-718413278/',
-        active: true,
-    },
-    {
-        slug: 'vadym-nemyrytskyi',
-        name: 'Vadym Nemyrytskyi',
-        role: 'Chief Executive Officer, Partner',
-        group: 'executive',
-        photo: photo('Vadym Nemyrytskyi.png'),
-        ...EMPTY_PROFILE,
-        email: 'vadym.nemyrytskyi@vaultalpha.fund',
-        linkedinUrl: 'https://www.linkedin.com/in/vadym-nemyrytskyi-48780740b/',
         active: true,
     },
     {
@@ -91,6 +79,16 @@ export const TEAM = [
         ...EMPTY_PROFILE,
         email: 'vadym@vaultalpha.fund',
         linkedinUrl: 'https://www.linkedin.com/in/vadym-yaroshevskyi-b479123a6/',
+        active: true,
+    },
+    {
+        slug: 'iuliia-gomes',
+        name: 'Iuliia Gomes',
+        role: 'Chief Business Development Officer',
+        group: 'executive',
+        photo: photo('Iuliia Gomes.png'),
+        ...EMPTY_PROFILE,
+        email: 'yuliia@vaultalpha.fund',
         active: true,
     },
     {
