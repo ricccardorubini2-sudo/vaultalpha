@@ -12,6 +12,13 @@ export const COOKIES = [];
 
 export const BROWSER_STORAGE = [
     {
+        name: 'va:human-check',
+        type: 'Local storage',
+        purpose: 'Records that you completed the "verify you are human" puzzle, so it is not shown again on every visit.',
+        duration: '30 days, or until you clear your browser storage.',
+        essential: true,
+    },
+    {
         name: 'va:last-application',
         type: 'Local storage',
         purpose: 'Records when an application was last submitted from this browser, to prevent repeated automated submissions.',

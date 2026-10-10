@@ -81,6 +81,15 @@ h1, h2, h3, h4, dd, a[href^="http"], a[href^="mailto:"] {
   animation: fade-in 0.35s ease-out both;
 }
 
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+.animate-shake {
+  animation: shake 0.4s ease-in-out both;
+}
+
 @keyframes atmosphere-drift {
   from { transform: scale(1.05) translate3d(0, 0, 0); }
   to { transform: scale(1.12) translate3d(-1.5%, -1%, 0); }
