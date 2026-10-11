@@ -6,7 +6,6 @@ export const HEADER_IMAGES = {
     strategy: '/headers/strategy.jpg',
     portfolio: '/headers/portfolio.jpg',
     team: '/headers/team.jpg',
-    founders: '/headers/founders.jpg',
     contact: '/headers/contact.jpg',
     research: '/headers/research.jpg',
     legal: '/headers/legal.jpg',

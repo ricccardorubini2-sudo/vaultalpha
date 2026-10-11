@@ -1,7 +1,6 @@
-// LEGAL REVIEW REQUIRED BEFORE PUBLICATION
-//
 // Generated from config/siteTechnology.js so it always matches what the site
-// actually stores. It has NOT been reviewed by lawyers.
+// actually stores. Published without the draft notice at the owner's request
+// (2026-10-10); it has not been reviewed by lawyers.
 // If non-essential cookies or analytics are ever added, a consent mechanism
 // must be added BEFORE they load, and this page updated.
 
@@ -14,7 +13,7 @@ export default {
     slug: 'cookies',
     title: 'Cookies',
     subtitle: `What ${DOMAIN} stores on your device and why.`,
-    status: 'draft',
+    status: 'published',
     lastUpdated: null,
     showClearStorage: true,
     sections: [

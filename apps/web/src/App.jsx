@@ -25,6 +25,7 @@ function App() {
                 <Route path="/privacy-policy" element={<Navigate to="/privacy" replace />} />
                 <Route path="/terms-of-service" element={<Navigate to="/terms" replace />} />
                 <Route path="/cookie-settings" element={<Navigate to="/cookies" replace />} />
+                <Route path="/founders" element={<Navigate to="/contact" replace />} />
             </Routes>
         </Router>
     );

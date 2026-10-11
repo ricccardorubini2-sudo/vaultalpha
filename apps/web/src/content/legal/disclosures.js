@@ -1,8 +1,6 @@
-// LEGAL REVIEW REQUIRED BEFORE PUBLICATION
-//
-// This is a DRAFT structure written by the development team. It has NOT been
-// reviewed or approved by lawyers or compliance. Do not change `status` from
-// 'draft' until qualified counsel has reviewed and approved the final text.
+// Written by the development team. Published without the draft notice at the
+// owner's request (2026-10-10); it has not been reviewed by lawyers or
+// compliance.
 //
 // Do not add any regulatory licence, registration, authorisation, or
 // exemption (or imply one exists) unless counsel has confirmed it in writing.
@@ -15,7 +13,7 @@ export default {
     slug: 'disclosures',
     title: 'Disclosures',
     subtitle: 'Important information about the content of this website.',
-    status: 'draft',
+    status: 'published',
     lastUpdated: null,
     sections: [
         {

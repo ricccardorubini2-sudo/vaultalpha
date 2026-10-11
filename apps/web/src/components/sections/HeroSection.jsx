@@ -1,7 +1,7 @@
 import React from 'react';
 import Atmosphere from '@/components/site/Atmosphere';
 import { ArrowLink } from '@/components/site/primitives';
-import { BRAND, APPLY_LINK, FIRM_DESCRIPTOR } from '@/config/site';
+import { BRAND, FIRM_DESCRIPTOR } from '@/config/site';
 import { THEMES, CORE_THEME_SUMMARY } from '@/config/themes';
 
 const delay = (s) => ({ '--enter-delay': `${s}s` });
@@ -24,8 +24,8 @@ export default function HeroSection() {
                     {BRAND} backs founders building the rails of digital finance, centred on {CORE_THEME_SUMMARY}. Adjacent work in blockchain, tokenized assets and trading follows from that core.
                 </p>
                 <div className="animate-enter mt-11 flex flex-col gap-3 sm:flex-row" style={delay(0.18)}>
-                    <ArrowLink to={APPLY_LINK.to} variant="light">{APPLY_LINK.longLabel}</ArrowLink>
-                    <ArrowLink to="/strategy" variant="outline">Explore Strategy</ArrowLink>
+                    <ArrowLink to="/strategy" variant="light">Explore Strategy</ArrowLink>
+                    <ArrowLink to="/contact" variant="outline">Contact Us</ArrowLink>
                 </div>
             </div>
 

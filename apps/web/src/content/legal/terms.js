@@ -1,7 +1,5 @@
-// LEGAL REVIEW REQUIRED BEFORE PUBLICATION
-//
-// Draft written by the development team. It has NOT been reviewed by lawyers.
-// Keep `status: 'draft'` until counsel has approved the final text.
+// Written by the development team. Published without the draft notice at the
+// owner's request (2026-10-10); it has not been reviewed by lawyers.
 // Governing law and jurisdiction are intentionally omitted until confirmed.
 
 import { BRAND, DOMAIN, LEGAL_NAME } from '../../config/site.js';
@@ -12,7 +10,7 @@ export default {
     slug: 'terms',
     title: 'Terms of Use',
     subtitle: `The terms that apply when you use ${DOMAIN}.`,
-    status: 'draft',
+    status: 'published',
     lastUpdated: null,
     sections: [
         {

@@ -8,7 +8,7 @@
 // - `email`: a confirmed address; a path with no address and no action is not shown.
 // - `subject`: pre-filled subject line for mailto links.
 // - `note`: optional one-line expectation (only statements the owner has confirmed).
-// - `action`: optional primary route, e.g. the founder application.
+// - `action`: optional primary route shown instead of the email button.
 
 export const APPLICATION_REVIEW_NOTE = 'We review every application.';
 
@@ -20,7 +20,6 @@ export const CONTACT_CATEGORIES = [
         email: 'founders@vaultalpha.fund',
         subject: 'Founder enquiry',
         note: APPLICATION_REVIEW_NOTE,
-        action: { label: 'Submit Your Company', to: '/founders#apply' },
     },
 ];
 

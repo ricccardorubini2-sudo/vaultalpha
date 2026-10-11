@@ -1,6 +1,7 @@
-// Owner-confirmed company registration (2026-10-07). Shown on the legal pages,
-// in every page's no-JavaScript fallback and in /llms.txt (seo/meta.js); keep
-// out of JSON-LD structured data unless the owner approves otherwise.
+// Owner-confirmed company registration and single location (2026-10-07).
+// Shown on the legal pages, in every page's no-JavaScript fallback and in
+// /llms.txt (seo/meta.js); keep out of JSON-LD structured data unless the
+// owner approves otherwise.
 
 export const COMPANY_REGISTRATION = {
     entityType: 'limited liability company',
@@ -9,8 +10,7 @@ export const COMPANY_REGISTRATION = {
     registeredAddress: ['7901 4th St N', 'Ste 300', 'Saint Petersburg, FL 33702', 'United States'],
 };
 
-export const MAIN_OFFICE_SUMMARY = 'St. Petersburg, Florida, United States';
-export const BRANCH_OFFICES_SUMMARY = 'London and Singapore';
+export const LOCATION_SUMMARY = 'St. Petersburg, Florida, United States';
 
 export const formatRegisteredAddress = () => COMPANY_REGISTRATION.registeredAddress.join(', ');
 
@@ -19,7 +19,7 @@ export const companyInformationSection = (legalName) => ({
     id: 'company-information',
     heading: 'Company information',
     blocks: [
-        `${legalName} is a ${COMPANY_REGISTRATION.entityType} registered in ${COMPANY_REGISTRATION.jurisdiction}.`,
+        `${legalName} is a ${COMPANY_REGISTRATION.entityType} registered in ${COMPANY_REGISTRATION.jurisdiction}, located in ${LOCATION_SUMMARY}.`,
         {
             type: 'table',
             columns: ['Detail', 'Information'],
@@ -27,8 +27,7 @@ export const companyInformationSection = (legalName) => ({
                 ['State of registration', COMPANY_REGISTRATION.jurisdiction],
                 ['LLC document number', COMPANY_REGISTRATION.documentNumber],
                 ['Registered address', formatRegisteredAddress()],
-                ['Main office', MAIN_OFFICE_SUMMARY],
-                ['Branch offices', BRANCH_OFFICES_SUMMARY],
+                ['Location', LOCATION_SUMMARY],
             ],
         },
     ],

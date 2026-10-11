@@ -1,24 +1,17 @@
-// LEGAL REVIEW REQUIRED BEFORE PUBLICATION
-//
-// Draft written by the development team to reflect what the site actually
-// does (see config/siteTechnology.js). It has NOT been reviewed by lawyers.
-// Keep `status: 'draft'` until counsel has approved the final text.
+// Written by the development team to reflect what the site actually does
+// (see config/siteTechnology.js). Published without the draft notice at the
+// owner's request (2026-10-10); it has not been reviewed by lawyers.
 
 import { BRAND, DOMAIN, LEGAL_NAME } from '../../config/site.js';
 import { PRIMARY_CONTACT_EMAIL } from '../../config/contact.js';
-import { APPLICATION_ENDPOINT, APPLICATION_FALLBACK_EMAIL } from '../../config/founders.js';
 import { COOKIES, BROWSER_STORAGE, THIRD_PARTY_SERVICES, HOSTING_PROVIDER } from '../../config/siteTechnology.js';
 import { COMPANY_REGISTRATION, formatRegisteredAddress, companyInformationSection } from '../../config/company.js';
-
-const applicationChannel = APPLICATION_ENDPOINT
-    ? 'Applications submitted through the form are sent securely to our form-processing provider, who stores them on our behalf.'
-    : `Applications are not stored by this website. Submitting the form opens your own email program with the details filled in, and the application reaches us only if you send that email to ${APPLICATION_FALLBACK_EMAIL}.`;
 
 export default {
     slug: 'privacy',
     title: 'Privacy Policy',
     subtitle: `How ${BRAND} handles personal information collected through ${DOMAIN}.`,
-    status: 'draft',
+    status: 'published',
     lastUpdated: null,
     sections: [
         {
@@ -34,9 +27,7 @@ export default {
             id: 'what-we-collect',
             heading: 'Information we collect',
             blocks: [
-                'Founder applications. If you apply through our founder application form, we collect the details you enter: your name, work email, company name, company website, LinkedIn URL, sector, stage, geography, fundraising amount, company description, deck link, any additional notes and your confirmation that you have read this policy.',
-                applicationChannel,
-                'Emails. If you email us, we receive your email address and whatever you include in your message.',
+                `Emails and founder applications. This website has no forms. If you email us, for example to ${PRIMARY_CONTACT_EMAIL} about your company, we receive your email address and whatever you include in your message, such as a company overview or deck link.`,
                 'Technical data. When you visit the site, our hosting provider and the third-party services listed below receive standard technical information, such as your IP address, browser type and the time of the request, as part of delivering the site.',
                 'We do not ask for sensitive personal information, and we ask that you do not include it in applications or emails.',
             ],

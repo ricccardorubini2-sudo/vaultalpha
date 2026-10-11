@@ -4,18 +4,17 @@ import { Section, Container, SectionLabel, H2 } from '@/components/site/primitiv
 import { getPublicLocations, formatList } from '@/data/locations';
 import { getActivePortfolio, hasValue } from '@/data/portfolio';
 
-// Plain facts rather than a decorative map: verified office cities and
+// Plain facts rather than a decorative map: where VaultAlpha is based and
 // the countries represented in the listed portfolio.
 export default function GlobalNetworkSection() {
     const locations = getPublicLocations();
     const portfolioCountries = [...new Set(getActivePortfolio().map((c) => c.geography).filter(hasValue))];
-    const cities = formatList(locations.map((l) => l.city));
+    const places = formatList(locations.map((l) => [l.city, l.region, l.country].filter(hasValue).join(', ')));
     const summary = [
         portfolioCountries.length > 0 && `portfolio companies in ${portfolioCountries.length} countries`,
-        locations.length > 0 && `offices in ${cities}`,
     ].filter(Boolean);
     const facts = [
-        locations.length > 0 && { id: 'locations', label: locations.length === 1 ? 'Office' : 'Offices', value: cities },
+        locations.length > 0 && { id: 'locations', label: 'Based in', value: places },
         portfolioCountries.length > 0 && { id: 'portfolioCountries', label: 'Portfolio countries', value: formatList(portfolioCountries) },
     ].filter(Boolean);
 

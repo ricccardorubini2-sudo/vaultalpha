@@ -1,5 +1,5 @@
 import { THEMES } from './themes.js';
-import { getPublicLocations, formatList } from '../data/locations.js';
+import { LOCATION_SUMMARY } from './company.js';
 
 // Single source of truth for VaultAlpha's investment parameters.
 //
@@ -11,8 +11,6 @@ import { getPublicLocations, formatList } from '../data/locations.js';
 // set `confirmed: true` once the partners have approved the wording.
 //
 // Owner-confirmed (Step 2, 2026-10-06). See SITE_CONTENT_DECISIONS.md.
-
-const locationCities = getPublicLocations().map((l) => l.city);
 
 export const INVESTMENT_PARAMETERS = [
     {
@@ -34,7 +32,7 @@ export const INVESTMENT_PARAMETERS = [
         id: 'geography',
         label: 'Geography',
         value: 'Global',
-        detail: locationCities.length ? `Offices in ${formatList(locationCities)}.` : null,
+        detail: `Based in ${LOCATION_SUMMARY}.`,
         confirmed: true,
     },
     {

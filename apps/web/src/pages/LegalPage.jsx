@@ -1,24 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AlertTriangle, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import PageHeader from '@/components/site/PageHeader';
 import { HEADER_IMAGES } from '@/config/headerImages';
 import { Container } from '@/components/site/primitives';
 import { LEGAL_DOCUMENTS, getLegalDocument } from '@/content/legal';
 import { BROWSER_STORAGE, COOKIES, LEGACY_STORAGE_KEYS } from '@/config/siteTechnology';
-
-function DraftNotice() {
-    return (
-        <div role="note" className="mt-8 flex max-w-2xl gap-3 rounded-md border border-amber-400/40 bg-amber-400/10 p-4 text-sm leading-relaxed text-amber-100">
-            <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-300" aria-hidden />
-            <p>
-                <span className="font-medium uppercase tracking-[0.18em] text-amber-300">Draft</span>
-                <span className="mx-2 text-amber-300/60" aria-hidden>·</span>
-                This document is a working draft pending legal review. It has not been reviewed or approved by legal counsel.
-            </p>
-        </div>
-    );
-}
 
 function Block({ block }) {
     if (typeof block === 'string') return <p>{block}</p>;
@@ -85,13 +72,10 @@ function ClearStoredData() {
 
 export default function LegalPage({ slug }) {
     const doc = getLegalDocument(slug);
-    const isDraft = doc.status === 'draft';
 
     return (
         <>
-            <PageHeader image={HEADER_IMAGES.legal} label="Legal" title={doc.title} intro={doc.subtitle}>
-                {isDraft && <DraftNotice />}
-            </PageHeader>
+            <PageHeader image={HEADER_IMAGES.legal} label="Legal" title={doc.title} intro={doc.subtitle} />
 
             <section className="bg-canvas py-16 lg:py-24">
                 <Container>

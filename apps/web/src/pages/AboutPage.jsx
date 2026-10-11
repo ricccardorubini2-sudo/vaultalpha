@@ -56,7 +56,7 @@ export default function AboutPage() {
                 intro={FOUNDER_PARTNERSHIP_INTRO}
                 spacing="compact"
                 showParameters={false}
-                action={<ArrowLink to="/founders" variant="solid">For Founders</ArrowLink>}
+                action={<ArrowLink to="/contact" variant="solid">Contact the Team</ArrowLink>}
             />
             <GlobalNetworkSection />
             <NextStepsSection items={NEXT_STEPS} />

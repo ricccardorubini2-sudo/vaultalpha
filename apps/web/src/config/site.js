@@ -17,12 +17,9 @@ export const NAV_LINKS = [
     { label: 'Portfolio', to: '/portfolio' },
     { label: 'Team', to: '/team' },
     HAS_RESEARCH && { label: 'Research', to: '/research' },
-    { label: 'Founders', to: '/founders' },
 ].filter(Boolean);
 
 export const NAV_CTA = { label: 'Contact', to: '/contact' };
-
-export const APPLY_LINK = { label: 'Apply', longLabel: 'Submit Your Company', to: '/founders' };
 
 export const FOOTER_DESCRIPTION =
     `A ${FIRM_DESCRIPTOR.toLowerCase()} backing founders in ${SECTOR_SUMMARY}.`;
@@ -43,10 +40,7 @@ export const FOOTER_COLUMNS = [
     },
     {
         title: 'Work With Us',
-        links: [
-            { label: 'Founders', to: '/founders' },
-            { label: 'Contact', to: '/contact' },
-        ],
+        links: [{ label: 'Contact', to: '/contact' }],
     },
     {
         title: 'Legal',

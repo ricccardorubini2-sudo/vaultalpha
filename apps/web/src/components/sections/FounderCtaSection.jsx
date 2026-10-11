@@ -1,7 +1,6 @@
 import React from 'react';
 import Reveal from '@/components/Reveal';
 import { Section, Container, SectionLabel, H2, ArrowLink } from '@/components/site/primitives';
-import { APPLY_LINK } from '@/config/site';
 import { APPLICATION_REVIEW_NOTE } from '@/config/contact';
 
 export default function FounderCtaSection({ spacing = 'compact' }) {
@@ -17,10 +16,7 @@ export default function FounderCtaSection({ spacing = 'compact' }) {
                                 Share an overview of your company. {APPLICATION_REVIEW_NOTE}
                             </p>
                         </div>
-                        <div className="flex flex-col gap-3 sm:flex-row">
-                            <ArrowLink to={APPLY_LINK.to} variant="light">{APPLY_LINK.longLabel}</ArrowLink>
-                            <ArrowLink to="/contact" variant="outline">Contact the Team</ArrowLink>
-                        </div>
+                        <ArrowLink to="/contact" variant="light">Contact the Team</ArrowLink>
                     </div>
                 </Reveal>
             </Container>

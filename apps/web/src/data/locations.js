@@ -9,10 +9,10 @@
 //   `active: false` withdraws a verified location without losing its data.
 // - `coordinates` only positions the pin on the network map.
 //
-// Owner-confirmed (2026-10-07): main office in St. Petersburg, Florida; branch
-// offices in London and Singapore. There is no New York office.
-// Office street addresses are not published; the registered address lives in
-// config/company.js.
+// Owner-confirmed (2026-10-07, revised): VaultAlpha has one location, St. Petersburg,
+// Florida, United States. There are no London, Singapore or New York offices.
+// The office street address is not published here; the registered address
+// lives in config/company.js.
 
 export const LOCATION_TYPES = [
     'Main Office',
@@ -32,33 +32,11 @@ export const LOCATIONS = [
         region: 'Florida',
         country: 'United States',
         address: null,
-        locationType: 'Main Office',
+        locationType: null,
         description: null,
         verified: true,
         active: true,
         coordinates: { lat: 27.77, lon: -82.64 },
-    },
-    {
-        id: 'london',
-        city: 'London',
-        country: 'United Kingdom',
-        address: null,
-        locationType: 'Branch Office',
-        description: 'Investment team',
-        verified: true,
-        active: true,
-        coordinates: { lat: 51.51, lon: -0.09 },
-    },
-    {
-        id: 'singapore',
-        city: 'Singapore',
-        country: 'Singapore',
-        address: null,
-        locationType: 'Branch Office',
-        description: 'Investment team',
-        verified: true,
-        active: true,
-        coordinates: { lat: 1.28, lon: 103.85 },
     },
 ];
 

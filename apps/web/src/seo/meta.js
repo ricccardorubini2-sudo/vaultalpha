@@ -17,7 +17,7 @@ import { getActivePortfolio, getPortfolioCompany, portfolioPath, hasValue } from
 import { getActiveTeam, getTeamMember, teamPath } from '../data/team.js';
 import { getPublishedArticles, getArticle, articlePath, getAuthor, getCategory } from '../data/research.js';
 import { LEGAL_DOCUMENTS } from '../content/legal/index.js';
-import { COMPANY_REGISTRATION, MAIN_OFFICE_SUMMARY, BRANCH_OFFICES_SUMMARY, formatRegisteredAddress } from '../config/company.js';
+import { COMPANY_REGISTRATION, LOCATION_SUMMARY, formatRegisteredAddress } from '../config/company.js';
 // TODO: Confirm the production domain. Override per environment with VITE_SITE_URL.
 export const SITE_URL = (import.meta.env?.VITE_SITE_URL || `https://${DOMAIN}`).replace(/\/+$/, '');
 
@@ -135,7 +135,7 @@ const STATIC_PAGES = {
     '/about': {
         title: 'About',
         heading: 'About VaultAlpha',
-        description: `${BRAND} was founded in March 2025 and is based in St. Petersburg, Florida, with branch offices in London and Singapore. Our history and mission.`,
+        description: `${BRAND} was founded in March 2025 and is based in ${LOCATION_SUMMARY}. Our history, mission and how we work with founders.`,
     },
     '/strategy': {
         title: 'Investment Strategy',
@@ -159,15 +159,10 @@ const STATIC_PAGES = {
         // Thin, empty listing pages should not be indexed.
         noindex: () => getPublishedArticles().length === 0,
     },
-    '/founders': {
-        title: 'For Founders',
-        heading: 'Partner With VaultAlpha',
-        description: `What ${BRAND} invests in, how we evaluate companies and what founders can expect. Submit your company for review by our investment team.`,
-    },
     '/contact': {
         title: 'Contact',
         heading: 'Contact',
-        description: `Contact ${BRAND}: submit your company or email the founders team. Main office in St. Petersburg, Florida, with branch offices in London and Singapore.`,
+        description: `Contact ${BRAND}: email the founders team about your company. Based in ${LOCATION_SUMMARY}.`,
     },
 };
 
@@ -334,6 +329,7 @@ export const LEGACY_REDIRECTS = {
     '/privacy-policy': '/privacy',
     '/terms-of-service': '/terms',
     '/cookie-settings': '/cookies',
+    '/founders': '/contact',
 };
 
 export function buildSitemap() {
@@ -354,8 +350,7 @@ export function buildRobots() {
 // Firm facts printed in every page's no-JavaScript HTML and in llms.txt, so
 // crawlers and AI assistants that do not run the app read current details.
 export const COMPANY_FACTS = [
-    { label: 'Main office', value: MAIN_OFFICE_SUMMARY },
-    { label: 'Branch offices', value: BRANCH_OFFICES_SUMMARY },
+    { label: 'Location', value: LOCATION_SUMMARY },
     { label: 'Registration', value: `Registered in ${COMPANY_REGISTRATION.jurisdiction} as a ${COMPANY_REGISTRATION.entityType}` },
     { label: 'LLC document number', value: COMPANY_REGISTRATION.documentNumber },
     { label: 'Registered address', value: formatRegisteredAddress() },

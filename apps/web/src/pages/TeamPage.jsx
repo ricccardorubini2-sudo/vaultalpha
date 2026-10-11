@@ -13,11 +13,11 @@ const NEXT_STEPS = [
         cta: 'Explore Strategy',
     },
     {
-        to: '/founders',
-        eyebrow: 'For Founders',
+        to: '/contact',
+        eyebrow: 'Contact',
         title: 'Work with us',
         desc: 'Share an overview of your company with our investment team.',
-        cta: 'Submit Your Company',
+        cta: 'Contact the Team',
     },
 ];
 

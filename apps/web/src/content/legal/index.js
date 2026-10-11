@@ -1,5 +1,5 @@
-// LEGAL REVIEW REQUIRED BEFORE PUBLICATION
-// Every document below is a draft that has not been reviewed by lawyers.
+// None of the documents below has been reviewed by lawyers. They are published
+// without the draft notice at the owner's request (2026-10-10).
 
 import privacy from './privacy.js';
 import terms from './terms.js';

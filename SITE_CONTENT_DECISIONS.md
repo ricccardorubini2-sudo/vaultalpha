@@ -22,13 +22,13 @@ Last updated: 2026-10-07 (strategy core thesis and About history).
 | Founded | March 2025 | Owner, 2026-10-07 | About intro, `config/history.js` |
 | Origin | Angel investors formed the team and started with their own capital | Owner, 2026-10-07 | About history and overview |
 | Ambition | Grow a larger fund, network and role in the future of finance | Owner, 2026-10-07 | About history (stated as direction, not a completed fact) |
-| Stages | Pre-seed, Seed, Series A, token rounds | Owner, Step 2 | `config/investmentParameters.js`, About thesis, application form |
+| Stages | Pre-seed, Seed, Series A, token rounds | Owner, Step 2 | `config/investmentParameters.js`, About thesis |
 | Minimum investment | No fixed minimum | Owner, Step 2 | Check size detail |
 | Typical range | Varies by round; not published | Owner, Step 2 | Shown only as "Sized to each round" |
 | Geography | Global | Owner, Step 2 | Investment parameters |
 | Structures | Hybrid equity and token structures | Owner, Step 2 | Investment parameters |
 | Lead / co-invest | Both, depending on the round | Owner, Step 2 | Investment parameters |
-| Support beyond capital | Introductions to institutions, partners and customers; strategic partnerships (exchanges, payment providers, issuers); liquidity support (market-maker / exchange introductions); token design and token economics | Owner, Step 3 | `FOUNDER_SUPPORT` in `config/founders.js`; process step "Long-Term Partnership" |
+| Support beyond capital | Introductions to institutions, partners and customers; strategic partnerships (exchanges, payment providers, issuers); liquidity support (market-maker / exchange introductions); token design and token economics | Owner, Step 3 | Process step "Long-Term Partnership" (the Founders page list was removed with the page) |
 | "Technical judgment" sentence | Remove | Owner, Step 3 | Removed |
 | Founder partnership line | "We aim to move decisively and remain committed for the long term." | Owner, Step 3 (accepted recommendation) | About page |
 | Portfolio | Owner states VaultAlpha has invested in all 15 companies below and asked to list them as the portfolio, without type classification | Owner, Step 5 | `data/portfolio.js`: Portfolio page, homepage (first 6), `/portfolio/[slug]` pages, sitemap |
@@ -38,7 +38,7 @@ Last updated: 2026-10-07 (strategy core thesis and About history).
 | AUM | $750M | Owner, Step 6 | Same as above; kept out of structured data by rule |
 | Founder network, Investment professionals | Remove | Owner, Step 6 | Removed |
 
-| Offices | St. Petersburg, Florida, United States (main office); London, United Kingdom and Singapore (branch offices). New York withdrawn | Owner, 2026-10-07 (replaces Step 7) | `data/locations.js`: Contact "Offices", About Global Network, Geography parameter detail, Contact meta description |
+| Location | St. Petersburg, Florida, United States only. London, Singapore and New York withdrawn | Owner, 2026-10-07 (revised; replaces Step 7) | `data/locations.js` (Contact "Office", About Global Network); `LOCATION_SUMMARY` in `config/company.js` (legal pages, Geography parameter, About/Contact meta, noscript facts, `llms.txt`) |
 | Office addresses | Not published (city and country only) | Owner, Step 7 | `address: null`; offices kept out of structured data |
 | Company registration | Florida LLC, document number L26000508741; registered address 7901 4th St N, Ste 300, Saint Petersburg, FL 33702 | Owner, 2026-10-07 | `config/company.js`: "Company information" section on Privacy, Terms and Disclosures; kept out of structured data |
 | Footer channels | X @vaultalpha_fund; LinkedIn company page; Telegram @Yuli_Hello; WhatsApp +1 249 536 1789 | Owner, 2026-10-07 | `SOCIAL_LINKS` in `config/site.js`; X and LinkedIn also in Organization `sameAs` |
@@ -46,7 +46,7 @@ Last updated: 2026-10-07 (strategy core thesis and About history).
 | Founders email | founders@vaultalpha.fund (real, monitored) | Owner, Step 8 | Contact page, application fallback, legal pages, Organization schema |
 | Partnerships / general email, phone | None; fields removed | Owner, Step 8 | `config/contact.js` |
 | Response time | No time promise: "We review every application." | Owner, Step 8 (accepted recommendation) | `APPLICATION_REVIEW_NOTE` in `config/contact.js` |
-| Application delivery | Form service (e.g. Formspree) | Owner, Step 8 | Pending endpoint URL in `apps/web/.env` (`VITE_FOUNDER_APPLICATION_ENDPOINT`); email fallback until then |
+| Application delivery | By email to founders@vaultalpha.fund; the Founders page and application form were removed | Owner, 2026-10-07 (replaces Step 8 form service) | `config/contact.js`; `/founders` redirects to `/contact` |
 
 ### Portfolio companies (Step 5, 2026-10-06)
 
@@ -99,7 +99,7 @@ Note: the owner's prompt file (`VaultAlpha_15_Real_Crypto_Companies_Cursor_Promp
 |---|---|---|
 | Metrics: $2.4B+ AUM, 180+ companies, 38 countries, 400+ founder network, 25+ professionals | `apps/web/src/config/stats.js` (`STATS_PUBLISHED = false`) | Unverified |
 | Three testimonials (Meridian Labs, Halcyon AI, Vault Protocol) | `apps/web/src/data/testimonials.js` | Unverified; one conflicts with the portfolio stage |
-| Office street addresses (St. Petersburg, London, Singapore); New York office (withdrawn) | `apps/web/src/data/locations.js` | Not published by owner decision |
+| Office street address (St. Petersburg); London, Singapore and New York offices (withdrawn) | `apps/web/src/data/locations.js` | Not published by owner decision |
 | Investment parameters: stage, check size, instruments, lead/follow | `apps/web/src/config/investmentParameters.js` | No values supplied |
 | Three research article titles and covers (no text) | `apps/web/src/data/research.js` | No article text |
 | Firm history and timeline | `apps/web/src/config/history.js` | No confirmed history |
@@ -187,3 +187,6 @@ Earlier passes:
 - 2026-10-07: Strategy rebuilt around Payments & Stablecoins as the core theme (others adjacent); added a market-structure thesis (no fund-performance claims). About: published founding story (March 2025, angel investors, own capital, ambition for a larger fund and network). Files: `config/themes.js`, `config/strategy.js`, `config/history.js`, `config/about.js`, `components/sections/MarketThesisSection.jsx`, `ThemesSection.jsx`, `HistorySection.jsx`, `HeroSection.jsx`, `pages/StrategyPage.jsx`, `pages/AboutPage.jsx`, `pages/HomePage.jsx`, `seo/meta.js`.
 - 2026-10-07: Main office moved to St. Petersburg, Florida; London and Singapore are branches; New York withdrawn. Added Florida LLC registration (document number, registered address) to the legal pages. Added X, LinkedIn, Telegram and WhatsApp icons to the footer. Each page header now has its own background photo (`config/headerImages.js`, `public/headers/*`). Files: `data/locations.js`, `config/company.js`, `config/site.js`, `config/headerImages.js`, `content/legal/{privacy,terms,disclosures}.js`, `components/site/{SiteFooter,SocialIcons,PageHeader,Atmosphere}.jsx`, `components/sections/ContactSection.jsx`, page components, `seo/meta.js`.
 - 2026-10-08: AI assistants still reported the old offices (London main, New York branch) because the no-JavaScript HTML never stated locations. Every page's `<noscript>` fallback now lists main office, branch offices and registration (`COMPANY_FACTS` in `seo/meta.js`); the build also writes `/llms.txt`; the About meta description names the offices. Files: `seo/meta.js`, `plugins/vite-plugin-seo.js`.
+- 2026-10-07 (revised): VaultAlpha is located only in St. Petersburg, Florida, United States; London and Singapore removed from locations, legal "Company information" table, About Global Network, Strategy geography detail, About/Contact meta, noscript facts and `llms.txt`. Founders page removed: nav, footer, hero, "For Founders" CTA, About and Team links now go to `/contact`; `/founders` redirects to `/contact` (router and `.htaccess` 301). Deleted `pages/FoundersPage.jsx`, `components/sections/{FounderApplicationSection,FounderSupportSection}.jsx`, `components/founders/`, `lib/founderApplication.js`, `config/founders.js`, `public/headers/founders.jpg`, `apps/web/.env.example`. Privacy now describes email-only applications; `va:last-application` moved to legacy keys cleared by "Clear stored data". Build passes; built output has no London/Singapore office or `/founders` link.
+- 2026-10-10: Owner asked to remove the "Draft" notice from the Privacy Policy. `content/legal/privacy.js` status changed from `draft` to `published`, which also removes its `noindex` and lists it in the sitemap. The text has still not been reviewed by counsel; Terms, Disclosures and Cookies remain drafts.
+- 2026-10-10: Owner asked to remove every "Draft" notice. Terms, Disclosures and Cookies also changed to `published` (now indexable and in the sitemap); the `DraftNotice` banner was deleted from `pages/LegalPage.jsx`. None of the legal documents has been reviewed by counsel.
