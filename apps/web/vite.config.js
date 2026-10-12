@@ -8,6 +8,7 @@ import iframeRouteRestorationPlugin from './plugins/vite-plugin-iframe-route-res
 import pocketbaseAuthPlugin from './plugins/vite-plugin-pocketbase-auth.js';
 import sessionJournalPlugin from './plugins/session-journal/vite-plugin-session-journal.js';
 import seoPlugin from './plugins/vite-plugin-seo.js';
+import newsDevPlugin from './plugins/vite-plugin-news-dev.js';
 import { imagetools } from 'vite-imagetools';
 
 import { readFileSync } from 'node:fs';
@@ -396,7 +397,8 @@ export default defineConfig({
 		imagetools(),
 		addTransformIndexHtml,
 		staticStatsFallback,
-		seoPlugin()
+		seoPlugin(),
+		newsDevPlugin()
 	],
 	server: {
 		port: 3000,

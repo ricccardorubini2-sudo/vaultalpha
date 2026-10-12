@@ -6,6 +6,9 @@ import { Section, Container, SectionLabel } from '@/components/site/primitives';
 import { getPublicContactCategories, getContactEmail, buildMailto } from '@/config/contact';
 import { getPublicLocations, getLocationTypeLabel } from '@/data/locations';
 import { hasValue } from '@/data/portfolio';
+import { formatRegisteredAddress } from '@/config/company';
+import buildingPicture from '@/assets/contact/building.png?w=480;768;1024&format=avif;webp;jpg&quality=78&as=picture';
+import mapPicture from '@/assets/contact/map.png?w=480;768;1024&format=webp;png&quality=90&as=picture';
 
 function CopyButton({ value, label }) {
     const [copied, setCopied] = useState(false);
@@ -68,29 +71,98 @@ function ContactPath({ category, index }) {
     );
 }
 
+const MIME = { avif: 'image/avif', webp: 'image/webp', jpeg: 'image/jpeg', jpg: 'image/jpeg', png: 'image/png' };
+
+function Photo({ picture, alt, sizes, className = '' }) {
+    return (
+        <picture>
+            {Object.entries(picture.sources ?? {}).map(([format, srcSet]) => (
+                <source key={format} type={MIME[format]} srcSet={srcSet} sizes={sizes} />
+            ))}
+            <img
+                src={picture.img.src}
+                width={picture.img.w}
+                height={picture.img.h}
+                alt={alt}
+                loading="lazy"
+                decoding="async"
+                className={`h-full w-full object-cover ${className}`}
+            />
+        </picture>
+    );
+}
+
 function Locations({ locations }) {
+    const address = formatRegisteredAddress();
+    const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
     return (
         <div className="mt-20">
             <SectionLabel as="h2">{locations.length === 1 ? 'Office' : 'Offices'}</SectionLabel>
-            <ul className="mt-8 grid gap-px overflow-hidden border-y border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-3">
-                {locations.map((l) => {
-                    const type = getLocationTypeLabel(l);
-                    return (
-                        <li key={l.id} className="bg-[hsl(var(--card))] p-7">
-                            <div className="font-display text-lg font-medium tracking-tight text-slate-900">
-                                {l.city}
-                            </div>
-                            {type && <p className="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-slate-500">{type}</p>}
-                            <address className="mt-4 text-sm not-italic leading-relaxed text-slate-600">
-                                {hasValue(l.address) && <>{l.address}<br /></>}
-                                {[l.region, l.country].filter(hasValue).join(', ')}
-                            </address>
-                            {hasValue(l.description) && <p className="mt-3 text-sm text-slate-500">{l.description}</p>}
-                        </li>
-                    );
-                })}
-            </ul>
+            <div className="mt-8 grid gap-6 lg:grid-cols-12">
+                <figure className="overflow-hidden rounded-md bg-[hsl(var(--mist))] lg:col-span-7">
+                    <Photo
+                        picture={buildingPicture}
+                        alt="Exterior of the VaultAlpha office building"
+                        sizes="(min-width: 1024px) 58vw, 100vw"
+                        className="aspect-[4/3] lg:aspect-auto"
+                    />
+                </figure>
+                <div className="flex flex-col gap-6 lg:col-span-5">
+                    <LocationList locations={locations} />
+                    <figure className="group">
+                        <a
+                            href={mapUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            tabIndex={-1}
+                            aria-hidden="true"
+                            className="block overflow-hidden rounded-md border border-slate-200"
+                        >
+                            <Photo
+                                picture={mapPicture}
+                                alt={`Map showing the office at ${address}`}
+                                sizes="(min-width: 1024px) 40vw, 100vw"
+                                className="aspect-[16/10] transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                            />
+                        </a>
+                        <figcaption className="mt-3 flex flex-wrap items-center justify-between gap-2 text-sm text-slate-500">
+                            <span>{address}</span>
+                            <a
+                                href={mapUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 font-medium text-slate-900 underline-offset-4 hover:underline"
+                            >
+                                Open in Google Maps <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                            </a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
         </div>
+    );
+}
+
+function LocationList({ locations }) {
+    return (
+        <ul className="grid gap-px overflow-hidden border-y border-slate-200 bg-slate-200">
+            {locations.map((l) => {
+                const type = getLocationTypeLabel(l);
+                return (
+                    <li key={l.id} className="bg-[hsl(var(--card))] p-7">
+                        <div className="font-display text-lg font-medium tracking-tight text-slate-900">
+                            {l.city}
+                        </div>
+                        {type && <p className="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-slate-500">{type}</p>}
+                        <address className="mt-4 text-sm not-italic leading-relaxed text-slate-600">
+                            {hasValue(l.address) && <>{l.address}<br /></>}
+                            {[l.region, l.country].filter(hasValue).join(', ')}
+                        </address>
+                        {hasValue(l.description) && <p className="mt-3 text-sm text-slate-500">{l.description}</p>}
+                    </li>
+                );
+            })}
+        </ul>
     );
 }
 

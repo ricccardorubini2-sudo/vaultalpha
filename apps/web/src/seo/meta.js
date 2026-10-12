@@ -344,7 +344,7 @@ export function buildSitemap() {
 }
 
 export function buildRobots() {
-    return `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
+    return `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
 }
 
 // Firm facts printed in every page's no-JavaScript HTML and in llms.txt, so

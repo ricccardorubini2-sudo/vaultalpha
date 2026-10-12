@@ -49,6 +49,7 @@ module.exports = {
 					foreground: 'hsl(var(--accent-foreground))',
 				},
 				navy: 'hsl(var(--navy))',
+				champagne: 'hsl(var(--champagne) / <alpha-value>)',
 				violet: 'hsl(var(--violet))',
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',

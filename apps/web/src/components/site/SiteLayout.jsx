@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import SiteNav from './SiteNav';
 import SiteFooter from './SiteFooter';
 import HumanCheck from './HumanCheck';
+import NewsWidget from './NewsWidget';
 import RouteSeo from '@/components/seo/RouteSeo';
 import { needsHumanCheck } from '@/lib/humanCheck';
 
@@ -31,6 +32,7 @@ export default function SiteLayout() {
                     </Suspense>
                 </main>
                 <SiteFooter />
+                <NewsWidget />
             </div>
             {checking && <HumanCheck onVerified={() => setChecking(false)} />}
         </div>

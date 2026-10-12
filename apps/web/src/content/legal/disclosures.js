@@ -8,6 +8,8 @@
 import { BRAND, DOMAIN, LEGAL_NAME } from '../../config/site.js';
 import { PRIMARY_CONTACT_EMAIL } from '../../config/contact.js';
 import { companyInformationSection } from '../../config/company.js';
+import { NEWS_SOURCES } from '../../config/news.js';
+import { formatList } from '../../data/locations.js';
 
 export default {
     slug: 'disclosures',
@@ -64,6 +66,13 @@ export default {
             heading: 'Third-party information',
             blocks: [
                 'Some information on this website may come from third-party sources that we believe to be reliable but have not independently verified. We make no representation as to its accuracy or completeness. Links to third-party websites are provided for convenience; we are not responsible for their content.',
+            ],
+        },
+        {
+            id: 'news-headlines',
+            heading: 'News headlines',
+            blocks: [
+                `The news panel shows headlines collected automatically every hour from third-party crypto publications (${formatList(NEWS_SOURCES)}). ${BRAND} does not write, verify or endorse these headlines or the articles they link to, and they are not investment advice.`,
             ],
         },
         {
