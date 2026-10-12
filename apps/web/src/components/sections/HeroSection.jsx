@@ -1,5 +1,6 @@
 import React from 'react';
 import Atmosphere from '@/components/site/Atmosphere';
+import { HEADER_IMAGES } from '@/config/headerImages';
 import { ArrowLink } from '@/components/site/primitives';
 import { BRAND, FIRM_DESCRIPTOR } from '@/config/site';
 import { THEMES, CORE_THEME_SUMMARY } from '@/config/themes';
@@ -11,7 +12,7 @@ const delay = (s) => ({ '--enter-delay': `${s}s` });
 export default function HeroSection() {
     return (
         <section className="relative flex min-h-[94svh] flex-col overflow-hidden border-b border-white/10 bg-ink text-white">
-            <Atmosphere intensity="default" />
+            <Atmosphere src={HEADER_IMAGES.home} intensity="default" />
 
             <div className="relative mx-auto flex w-full max-w-[80rem] flex-1 flex-col justify-center px-6 pb-16 pt-28 sm:pb-20 sm:pt-36 lg:px-12">
                 <p className="animate-enter text-[0.7rem] font-medium uppercase tracking-[0.28em] text-champagne/90">

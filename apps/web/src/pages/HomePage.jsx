@@ -6,7 +6,6 @@ import PhilosophySection from '@/components/sections/PhilosophySection';
 import ThemesSection from '@/components/sections/ThemesSection';
 import FeaturedPortfolioSection from '@/components/sections/FeaturedPortfolioSection';
 import ProcessSection from '@/components/sections/ProcessSection';
-import TeamSection from '@/components/sections/TeamSection';
 import ResearchSection from '@/components/sections/ResearchSection';
 import FounderCtaSection from '@/components/sections/FounderCtaSection';
 
@@ -25,7 +24,6 @@ export default function HomePage() {
             </ThemesSection>
             <FeaturedPortfolioSection className="bg-mist" spacing="compact" />
             <ProcessSection className="bg-canvas" label="How We Partner" spacing="compact" showParameters={false} />
-            <TeamSection className="bg-canvas" spacing="compact" groupIds={['executive']} showAllTeamLink />
             <ResearchSection className="bg-mist" spacing="compact" />
             <FounderCtaSection />
         </>
