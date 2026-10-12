@@ -162,7 +162,7 @@ const STATIC_PAGES = {
     '/contact': {
         title: 'Contact',
         heading: 'Contact',
-        description: `Contact ${BRAND}: email the founders team about your company. Based in ${LOCATION_SUMMARY}.`,
+        description: `Contact ${BRAND}: email our team about your company. Based in ${LOCATION_SUMMARY}.`,
     },
 };
 

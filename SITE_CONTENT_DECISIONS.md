@@ -43,10 +43,10 @@ Last updated: 2026-10-07 (strategy core thesis and About history).
 | Company registration | Florida LLC, document number L26000508741; registered address 7901 4th St N, Ste 300, Saint Petersburg, FL 33702 | Owner, 2026-10-07 | `config/company.js`: "Company information" section on Privacy, Terms and Disclosures; kept out of structured data |
 | Footer channels | X @vaultalpha_fund; LinkedIn company page; Telegram @Yuli_Hello; WhatsApp +1 249 536 1789 | Owner, 2026-10-07 | `SOCIAL_LINKS` in `config/site.js`; X and LinkedIn also in Organization `sameAs` |
 
-| Founders email | founders@vaultalpha.fund (real, monitored) | Owner, Step 8 | Contact page, application fallback, legal pages, Organization schema |
+| Public email | hello@vaultalpha.fund (replaces founders@vaultalpha.fund) | Owner, 2026-10-11 (replaces Step 8) | Contact page, Serhii Kryveko profile, legal pages, Organization schema |
 | Partnerships / general email, phone | None; fields removed | Owner, Step 8 | `config/contact.js` |
 | Response time | No time promise: "We review every application." | Owner, Step 8 (accepted recommendation) | `APPLICATION_REVIEW_NOTE` in `config/contact.js` |
-| Application delivery | By email to founders@vaultalpha.fund; the Founders page and application form were removed | Owner, 2026-10-07 (replaces Step 8 form service) | `config/contact.js`; `/founders` redirects to `/contact` |
+| Application delivery | By email to hello@vaultalpha.fund; the Founders page and application form were removed | Owner, 2026-10-07 (replaces Step 8 form service) | `config/contact.js`; `/founders` redirects to `/contact` |
 
 ### Portfolio companies (Step 5, 2026-10-06)
 
@@ -89,7 +89,7 @@ Note: the owner's prompt file (`VaultAlpha_15_Real_Crypto_Companies_Cursor_Promp
 | Support with hiring, security, go-to-market and follow-on financing; network introductions | Process, Founders | Unverified | No | Confirm real capabilities | Step 3 |
 | "Founders choose us because we move decisively…" | About | Unverified | No | Confirm or soften | Step 3 |
 | "Responds within five business days" | Home CTA, Founders, Contact, form success | Unverified | No | Confirm response policy | Step 8 |
-| founders@vaultalpha.fund | Contact, Founders, legal pages, schema | Unverified (inbox not tested) | No | Confirm the inbox works | Step 8 |
+| hello@vaultalpha.fund | Contact, team profile, legal pages, schema | Unverified (inbox not tested) | No | Confirm the inbox works | Step 8 |
 | ~~Investors / Media / General contact paths ("Address coming soon")~~ | Contact | Removed | Audience is founders + partners (Step 1) | Investors and Media paths deleted; Strategic partners and General paths stay hidden until an inbox is set | Step 8 |
 | Legal pages (Privacy, Terms, Disclosures, Cookies) | Legal | Draft, marked publicly as not reviewed by counsel | — | Entity details + counsel review | Step 9 |
 
@@ -190,3 +190,4 @@ Earlier passes:
 - 2026-10-07 (revised): VaultAlpha is located only in St. Petersburg, Florida, United States; London and Singapore removed from locations, legal "Company information" table, About Global Network, Strategy geography detail, About/Contact meta, noscript facts and `llms.txt`. Founders page removed: nav, footer, hero, "For Founders" CTA, About and Team links now go to `/contact`; `/founders` redirects to `/contact` (router and `.htaccess` 301). Deleted `pages/FoundersPage.jsx`, `components/sections/{FounderApplicationSection,FounderSupportSection}.jsx`, `components/founders/`, `lib/founderApplication.js`, `config/founders.js`, `public/headers/founders.jpg`, `apps/web/.env.example`. Privacy now describes email-only applications; `va:last-application` moved to legacy keys cleared by "Clear stored data". Build passes; built output has no London/Singapore office or `/founders` link.
 - 2026-10-10: Owner asked to remove the "Draft" notice from the Privacy Policy. `content/legal/privacy.js` status changed from `draft` to `published`, which also removes its `noindex` and lists it in the sitemap. The text has still not been reviewed by counsel; Terms, Disclosures and Cookies remain drafts.
 - 2026-10-10: Owner asked to remove every "Draft" notice. Terms, Disclosures and Cookies also changed to `published` (now indexable and in the sitemap); the `DraftNotice` banner was deleted from `pages/LegalPage.jsx`. None of the legal documents has been reviewed by counsel.
+- 2026-10-11: Public email changed from founders@vaultalpha.fund to hello@vaultalpha.fund (Contact page, legal pages, Organization schema, Serhii Kryveko's profile); Contact meta now says "email our team". Files: `config/contact.js`, `data/team.js`, `seo/meta.js`. Built output has no founders@ address.

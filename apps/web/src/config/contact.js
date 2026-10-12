@@ -1,8 +1,8 @@
 // Single source of truth for public contact details.
 //
-// Owner-confirmed (Step 8, 2026-10-06): founders@vaultalpha.fund is the only
-// public contact. There is no partnerships inbox, general inbox or phone
-// number; do not add them without owner confirmation.
+// Owner-confirmed (2026-10-11, replaces founders@vaultalpha.fund):
+// hello@vaultalpha.fund is the only public email. There is no partnerships
+// inbox or phone number; do not add them without owner confirmation.
 //
 // Per contact path:
 // - `email`: a confirmed address; a path with no address and no action is not shown.
@@ -17,7 +17,7 @@ export const CONTACT_CATEGORIES = [
         id: 'founders',
         label: 'Founders',
         description: 'Pitches and founder applications',
-        email: 'founders@vaultalpha.fund',
+        email: 'hello@vaultalpha.fund',
         subject: 'Founder enquiry',
         note: APPLICATION_REVIEW_NOTE,
     },

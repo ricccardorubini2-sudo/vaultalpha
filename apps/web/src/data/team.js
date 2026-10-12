@@ -67,7 +67,7 @@ export const TEAM = [
         group: 'executive',
         photo: photo('Serhii Kryveko.png'),
         ...EMPTY_PROFILE,
-        email: 'founders@vaultalpha.fund',
+        email: 'hello@vaultalpha.fund',
         active: true,
     },
     {
