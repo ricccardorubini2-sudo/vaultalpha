@@ -520,3 +520,608 @@
 ## 2026-10-13 05:28:23.344Z click
 - element: {"tag":"ul","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Serhii KryvekoFounding PartnerSvitlana PancukChief Executive Officer, PartnerVadym YaroshevskyiManaging PartnerOleksandr PronozaChief Investment OfficerYuliia LohunkovaChief Business Development OfficerIuliia GomesPartner"}
 
+## 2026-10-13 05:30:04.360Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Team"}
+
+## 2026-10-13 05:30:04.361Z navigate
+- url: http://localhost:3000/team
+- via: pushState
+
+## 2026-10-13 05:30:11.620Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Contact"}
+
+## 2026-10-13 05:30:11.620Z navigate
+- url: http://localhost:3000/contact
+- via: pushState
+
+## 2026-10-13 05:30:20.846Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"VaultAlpha Fund"}
+
+## 2026-10-13 05:30:20.847Z navigate
+- url: http://localhost:3000/
+- via: pushState
+
+## 2026-10-13 05:30:40.606Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"About"}
+
+## 2026-10-13 05:30:40.607Z navigate
+- url: http://localhost:3000/about
+- via: pushState
+
+## 2026-10-13 05:30:42.556Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Strategy"}
+
+## 2026-10-13 05:30:42.556Z navigate
+- url: http://localhost:3000/strategy
+- via: pushState
+
+## 2026-10-13 05:30:43.636Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Portfolio"}
+
+## 2026-10-13 05:30:43.636Z navigate
+- url: http://localhost:3000/portfolio
+- via: pushState
+
+## 2026-10-13 05:30:44.568Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Team"}
+
+## 2026-10-13 05:30:44.569Z navigate
+- url: http://localhost:3000/team
+- via: pushState
+
+## 2026-10-13 05:30:53.706Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"VaultAlpha Fund"}
+
+## 2026-10-13 05:30:53.707Z navigate
+- url: http://localhost:3000/
+- via: pushState
+
+## 2026-10-13 05:30:58.866Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"VaultAlpha Fund"}
+
+## 2026-10-13 05:30:58.867Z navigate
+- url: http://localhost:3000/
+- via: pushState
+
+## 2026-10-13 05:31:09.479Z click
+- element: {"tag":"ul","role":null,"ariaLabel":"Investment themes","name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"01Payments & StablecoinsCore02Digital Assets & Blockchain03Real-World Assets04Exchanges & Trading Infrastructure"}
+
+## 2026-10-13 05:31:10.836Z click
+- element: {"tag":"section","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Investment PhilosophyA long-term partner to founders building the rails.VaultAlpha Fund invests primarily in payments and stablecoins, from pre-seed through Series A, including token rounds. Adjacent work in blockchain infrastructure, tokenized assets and trading follows from that centre.About VaultAlpha Fund "}
+
+## 2026-10-13 05:33:24.338Z click
+- element: {"tag":"section","role":null,"ariaLabel":null,"name":null,"type":null,"id":"portfolio","placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Selected PortfolioA selection of the companies we back.View Portfolio BVNKStablecoin payments infrastructure for enterprises.CentrifugeInfrastructure to tokenize, manage and invest in real-world assets onchain.LayerZeroAn interoperability protocol for moving messages and assets between blockchains.PrivyWallet and digital-asset infrastructure for financial products.Maple FinanceOnchain asset management and lending for institutions.MorphoAn open credit network connecting lenders and borrowers onchain."}
+
+## 2026-10-13 05:40:21.490Z window.error
+- message: Uncaught ReferenceError: ThemeIcon is not defined
+- source: http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360
+- line: 68
+- col: 36
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14630:28)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15972:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+
+## 2026-10-13 05:40:21.497Z window.error
+- message: Uncaught ReferenceError: ThemeIcon is not defined
+- source: http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360
+- line: 68
+- col: 36
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14630:28)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15972:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+
+## 2026-10-13 05:40:21.503Z console.error
+- text: 
+    The above error occurred in the <ThemesSection> component:
+    
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360:8:3)
+        at HomePage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7502:26)
+        at Suspense
+        at main
+        at div
+        at div
+        at SiteLayout (http://localhost:3000/src/components/site/SiteLayout.jsx?t=1791863325230:19:35)
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:10816:3)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-10-13 05:40:21.506Z unhandledrejection
+- message: ThemeIcon is not defined
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14630:28)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15972:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:18932:28)
+
+## 2026-10-13 05:40:21.814Z root.empty
+- url: http://localhost:3000/
+
+## 2026-10-13 05:40:22.176Z window.error
+- message: Uncaught ReferenceError: ThemeIcon is not defined
+- source: http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360
+- line: 68
+- col: 36
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14630:28)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15972:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+
+## 2026-10-13 05:40:22.186Z window.error
+- message: Uncaught ReferenceError: ThemeIcon is not defined
+- source: http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360
+- line: 68
+- col: 36
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14630:28)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15972:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+
+## 2026-10-13 05:40:22.193Z console.error
+- text: 
+    The above error occurred in the <ThemesSection> component:
+    
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360:8:3)
+        at HomePage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7502:26)
+        at Suspense
+        at main
+        at div
+        at div
+        at SiteLayout (http://localhost:3000/src/components/site/SiteLayout.jsx?t=1791863669173:19:35)
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:10816:3)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-10-13 05:40:22.219Z unhandledrejection
+- message: ThemeIcon is not defined
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14630:28)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15972:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:18932:28)
+
+## 2026-10-13 05:40:23.081Z root.empty
+- url: http://localhost:3000/
+
+## 2026-10-13 05:40:22.176Z window.error
+- message: Uncaught ReferenceError: ThemeIcon is not defined
+- source: http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360
+- line: 68
+- col: 36
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14630:28)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15972:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+
+## 2026-10-13 05:40:22.185Z window.error
+- message: Uncaught ReferenceError: ThemeIcon is not defined
+- source: http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360
+- line: 68
+- col: 36
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14630:28)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15972:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+
+## 2026-10-13 05:40:22.205Z console.error
+- text: 
+    The above error occurred in the <ThemesSection> component:
+    
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360:8:3)
+        at HomePage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7502:26)
+        at Suspense
+        at main
+        at div
+        at div
+        at SiteLayout (http://localhost:3000/src/components/site/SiteLayout.jsx?t=1791863669173:19:35)
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:10816:3)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-10-13 05:40:22.217Z unhandledrejection
+- message: ThemeIcon is not defined
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870021360:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14630:28)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15972:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:18932:28)
+
+## 2026-10-13 05:40:23.081Z root.empty
+- url: http://localhost:3000/
+
+## 2026-10-13 05:40:25.253Z window.error
+- message: Uncaught ReferenceError: ThemeIcon is not defined
+- source: http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122
+- line: 68
+- col: 36
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+
+## 2026-10-13 05:40:25.281Z window.error
+- message: Uncaught ReferenceError: ThemeIcon is not defined
+- source: http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122
+- line: 68
+- col: 36
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+
+## 2026-10-13 05:40:25.294Z console.error
+- text: 
+    The above error occurred in the <ThemesSection> component:
+    
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122:8:3)
+        at HomePage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7502:26)
+        at Suspense
+        at main
+        at div
+        at div
+        at SiteLayout (http://localhost:3000/src/components/site/SiteLayout.jsx?t=1791863325230:19:35)
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:10816:3)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-10-13 05:40:25.296Z unhandledrejection
+- message: ThemeIcon is not defined
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:18932:28)
+
+## 2026-10-13 05:40:26.098Z window.error
+- message: Uncaught ReferenceError: ThemeIcon is not defined
+- source: http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122
+- line: 68
+- col: 36
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+
+## 2026-10-13 05:40:26.122Z window.error
+- message: Uncaught ReferenceError: ThemeIcon is not defined
+- source: http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122
+- line: 68
+- col: 36
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+
+## 2026-10-13 05:40:26.132Z console.error
+- text: 
+    The above error occurred in the <ThemesSection> component:
+    
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122:8:3)
+        at HomePage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7502:26)
+        at Suspense
+        at main
+        at div
+        at div
+        at SiteLayout (http://localhost:3000/src/components/site/SiteLayout.jsx?t=1791863669173:19:35)
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:10816:3)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-10-13 05:40:26.133Z unhandledrejection
+- message: ThemeIcon is not defined
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:18932:28)
+
+## 2026-10-13 05:40:26.101Z window.error
+- message: Uncaught ReferenceError: ThemeIcon is not defined
+- source: http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122
+- line: 68
+- col: 36
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+
+## 2026-10-13 05:40:26.124Z window.error
+- message: Uncaught ReferenceError: ThemeIcon is not defined
+- source: http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122
+- line: 68
+- col: 36
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+
+## 2026-10-13 05:40:26.136Z console.error
+- text: 
+    The above error occurred in the <ThemesSection> component:
+    
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122:8:3)
+        at HomePage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7502:26)
+        at Suspense
+        at main
+        at div
+        at div
+        at SiteLayout (http://localhost:3000/src/components/site/SiteLayout.jsx?t=1791863669173:19:35)
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:10816:3)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-10-13 05:40:26.137Z unhandledrejection
+- message: ThemeIcon is not defined
+- stack: 
+    ReferenceError: ThemeIcon is not defined
+        at ThemesSection (http://localhost:3000/src/components/sections/ThemesSection.jsx?t=1791870025122:68:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=443ee8de:18932:28)
+
+## 2026-10-13 05:40:34.816Z load
+- url: http://localhost:3000/
+- title: VaultAlpha Fund
+
+## 2026-10-13 05:40:35.068Z console.error
+- text: 
+    Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s fetchPriority fetchpriority 
+        at img
+        at div
+        at Atmosphere (http://localhost:3000/src/components/site/Atmosphere.jsx?t=1791863051659:5:3)
+        at section
+        at HeroSection
+        at HomePage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7502:26)
+        at Suspense
+        at main
+        at div
+        at div
+        at SiteLayout (http://localhost:3000/src/components/site/SiteLayout.jsx?t=1791870026207:19:35)
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:10816:3)
+        at App
+
+## 2026-10-13 06:14:57.117Z load
+- url: http://localhost:3000/
+- title: VaultAlpha Fund
+
+## 2026-10-13 06:14:57.402Z navigate
+- url: http://localhost:3000/
+- via: replaceState
+
+## 2026-10-13 06:14:57.412Z console.error
+- text: 
+    Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s fetchPriority fetchpriority 
+        at img
+        at div
+        at Atmosphere (http://localhost:3000/src/components/site/Atmosphere.jsx:5:3)
+        at section
+        at HeroSection
+        at HomePage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=9a0ebe12:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=9a0ebe12:7502:26)
+        at Suspense
+        at main
+        at div
+        at div
+        at SiteLayout (http://localhost:3000/src/components/site/SiteLayout.jsx:19:35)
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=9a0ebe12:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=9a0ebe12:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=9a0ebe12:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=9a0ebe12:10816:3)
+        at App
+
+## 2026-10-13 06:38:53.649Z load
+- url: http://localhost:3000/
+- title: VaultAlpha Fund
+
+## 2026-10-13 06:38:54.109Z navigate
+- url: http://localhost:3000/
+- via: replaceState
+
+## 2026-10-13 06:38:54.118Z console.error
+- text: 
+    Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s fetchPriority fetchpriority 
+        at img
+        at div
+        at Atmosphere (http://localhost:3000/src/components/site/Atmosphere.jsx:5:3)
+        at section
+        at HeroSection
+        at HomePage
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=9a0ebe12:6647:26)
+        at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=9a0ebe12:7502:26)
+        at Suspense
+        at main
+        at div
+        at div
+        at SiteLayout (http://localhost:3000/src/components/site/SiteLayout.jsx:19:35)
+        at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=9a0ebe12:6647:26)
+        at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=9a0ebe12:7572:3)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=9a0ebe12:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=9a0ebe12:10816:3)
+        at App
+
