@@ -504,3 +504,19 @@
         at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=75f2b440:10816:3)
         at App
 
+## 2026-10-13 05:25:55.320Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Team"}
+
+## 2026-10-13 05:25:55.321Z navigate
+- url: http://localhost:3000/team
+- via: pushState
+
+## 2026-10-13 05:27:52.470Z click
+- element: {"tag":"section","role":null,"ariaLabel":null,"name":null,"type":null,"id":"team","placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Executive OfficersSerhii KryvekoFounding PartnerSvitlana PancukChief Executive Officer, PartnerVadym YaroshevskyiManaging PartnerOleksandr PronozaChief Investment OfficerYuliia LohunkovaChief Business Development OfficerIuliia GomesPartnerSenior LeadershipYuki TanakaHead of ResearchYullia MitchellPartner, Investor Relations"}
+
+## 2026-10-13 05:28:05.578Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-10-13 05:28:23.344Z click
+- element: {"tag":"ul","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Serhii KryvekoFounding PartnerSvitlana PancukChief Executive Officer, PartnerVadym YaroshevskyiManaging PartnerOleksandr PronozaChief Investment OfficerYuliia LohunkovaChief Business Development OfficerIuliia GomesPartner"}
+

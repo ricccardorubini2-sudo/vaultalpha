@@ -71,6 +71,17 @@ export const TEAM = [
         active: true,
     },
     {
+        slug: 'svitlana-pancuk',
+        name: 'Svitlana Pancuk',
+        role: 'Chief Executive Officer, Partner',
+        group: 'executive',
+        photo: photo('Svitlana Pancuk.png'),
+        ...EMPTY_PROFILE,
+        email: 'svitlana@vaultalpha.fund',
+        linkedinUrl: 'https://www.linkedin.com/in/svitlana-pancuk-a636823a1/',
+        active: true,
+    },
+    {
         slug: 'vadym-yaroshevskyi',
         name: 'Vadym Yaroshevskyi',
         role: 'Managing Partner',
