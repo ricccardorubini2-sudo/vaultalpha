@@ -13,6 +13,7 @@ import { getPortfolioCompany } from './portfolio.js';
 //   `verified: true` and the slug matches an active portfolio company.
 // - `education`: [{ institution, qualification }].
 // - `previousCompanies`: [{ name, role }].
+// - `tier`: optional row within a group (see TEAM_TIERS); rows are separated by a line.
 // - `active: false` hides a member everywhere on the public site.
 //
 // Names, roles, and photos are carried over from the existing site.
@@ -23,6 +24,9 @@ export const TEAM_GROUPS = [
     { id: 'executive', label: 'Executive Officers' },
     { id: 'senior', label: 'Senior Leadership' },
 ];
+
+// Row order within a group: partners above the line, chiefs below.
+export const TEAM_TIERS = ['partner', 'chief'];
 
 // Build-time responsive variants (vite-imagetools): AVIF and WebP sources with
 // a JPEG fallback, cropped to the 3:4 top-anchored frame every team photo is
@@ -65,6 +69,7 @@ export const TEAM = [
         name: 'Serhii Kryveko',
         role: 'Founding Partner',
         group: 'executive',
+        tier: 'partner',
         photo: photo('Serhii Kryveko.png'),
         ...EMPTY_PROFILE,
         email: 'hello@vaultalpha.fund',
@@ -75,6 +80,7 @@ export const TEAM = [
         name: 'Svitlana Pancuk',
         role: 'Chief Executive Officer, Partner',
         group: 'executive',
+        tier: 'chief',
         photo: photo('Svitlana Pancuk.png'),
         ...EMPTY_PROFILE,
         email: 'svitlana@vaultalpha.fund',
@@ -82,10 +88,23 @@ export const TEAM = [
         active: true,
     },
     {
+        slug: 'yuliia-malozemova',
+        name: 'Yuliia Malozemova',
+        role: 'General Partner',
+        group: 'executive',
+        tier: 'partner',
+        photo: photo('Yuliia Malozemova.png'),
+        ...EMPTY_PROFILE,
+        email: 'yuliia.malozemova@vaultalpha.fund',
+        linkedinUrl: 'https://www.linkedin.com/in/yuliia-malozemova/',
+        active: true,
+    },
+    {
         slug: 'vadym-yaroshevskyi',
         name: 'Vadym Yaroshevskyi',
         role: 'Managing Partner',
         group: 'executive',
+        tier: 'partner',
         photo: photo('Vadym Yaroshevskyi.png'),
         ...EMPTY_PROFILE,
         email: 'vadym@vaultalpha.fund',
@@ -97,6 +116,7 @@ export const TEAM = [
         name: 'Oleksandr Pronoza',
         role: 'Chief Investment Officer',
         group: 'executive',
+        tier: 'chief',
         photo: photo('Oleksandr Pronoza.png'),
         ...EMPTY_PROFILE,
         email: 'oleksandr@vaultalpha.fund',
@@ -108,6 +128,7 @@ export const TEAM = [
         name: 'Yuliia Lohunkova',
         role: 'Chief Business Development Officer',
         group: 'executive',
+        tier: 'chief',
         photo: photo('Yuliia Lohunkova.png'),
         ...EMPTY_PROFILE,
         email: 'yuliia@vaultalpha.fund',
@@ -118,6 +139,7 @@ export const TEAM = [
         name: 'Iuliia Gomes',
         role: 'Partner',
         group: 'executive',
+        tier: 'partner',
         photo: photo('Iuliia Gomes.png'),
         ...EMPTY_PROFILE,
         email: 'iuliia@vertex.me',
