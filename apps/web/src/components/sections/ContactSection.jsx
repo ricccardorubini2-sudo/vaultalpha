@@ -7,7 +7,7 @@ import { getPublicContactCategories, getContactEmail, buildMailto } from '@/conf
 import { getPublicLocations, getLocationTypeLabel } from '@/data/locations';
 import { hasValue } from '@/data/portfolio';
 import { formatRegisteredAddress } from '@/config/company';
-import buildingPicture from '@/assets/contact/building.png?w=480;768;1024&format=avif;webp;jpg&quality=78&as=picture';
+import buildingPicture from '@/assets/contact/building.jpg?w=480;768;1024&format=avif;webp;jpg&quality=78&as=picture';
 import mapPicture from '@/assets/contact/map.png?w=480;768;1024&format=webp;png&quality=90&as=picture';
 
 function CopyButton({ value, label }) {

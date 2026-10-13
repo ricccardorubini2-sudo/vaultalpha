@@ -25,7 +25,7 @@ export default function ResearchArticlePage() {
                             <ArrowLeft className="h-4 w-4" aria-hidden="true" /> All research
                         </Link>
                         <ArticleMeta article={article} className="mt-10" />
-                        <h1 className="mt-5 font-display text-4xl font-medium leading-[1.1] tracking-[-0.02em] text-slate-900 sm:text-5xl">{article.title}</h1>
+                        <h1 className="mt-5 font-display text-4xl font-medium !leading-[1.18] tracking-[-0.02em] text-slate-900 sm:text-5xl">{article.title}</h1>
                         {article.summary && <p className="mt-6 text-xl leading-relaxed text-slate-600">{article.summary}</p>}
                         {author && (
                             <p className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-500">

@@ -16,7 +16,7 @@ export default function CompanyOverviewSection({ className = 'bg-canvas', spacin
                     </div>
                     <div className="lg:col-span-9">
                         <Reveal delay={0.05}>
-                            <p className="font-display text-2xl font-normal leading-snug tracking-[-0.015em] text-slate-900 sm:text-3xl lg:text-[2.1rem]">{lead}</p>
+                            <p className="font-display text-2xl font-normal !leading-snug tracking-[-0.015em] text-slate-900 sm:text-3xl lg:text-[2.1rem]">{lead}</p>
                             {rest.map((p, i) => (
                                 <p key={i} className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600">{p}</p>
                             ))}

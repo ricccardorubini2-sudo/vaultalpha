@@ -12,7 +12,7 @@ export default function MissionSection({ spacing = 'compact' }) {
                     <div className="lg:col-span-3">
                         <SectionLabel as="h2" id="mission-heading">Our Mission</SectionLabel>
                     </div>
-                    <p className="font-display text-3xl font-normal leading-[1.2] tracking-[-0.02em] text-white sm:text-4xl lg:col-span-9 lg:text-[2.75rem]">
+                    <p className="font-display text-3xl font-normal !leading-[1.25] tracking-[-0.02em] text-white sm:text-4xl lg:col-span-9 lg:text-[2.75rem]">
                         {MISSION}
                     </p>
                 </Reveal>

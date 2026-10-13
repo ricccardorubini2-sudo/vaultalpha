@@ -27,7 +27,7 @@ export const SectionLabel = ({ children, as: Tag = 'div', id, className = '' }) 
 );
 
 export const H2 = ({ children, className = '', id }) => (
-    <h2 id={id} className={`max-w-3xl font-display text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-slate-900 sm:text-4xl lg:text-[2.85rem] ${className}`}>
+    <h2 id={id} className={`max-w-3xl font-display text-3xl font-normal !leading-[1.2] tracking-[-0.02em] text-slate-900 sm:text-4xl lg:text-[2.85rem] ${className}`}>
         {children}
     </h2>
 );

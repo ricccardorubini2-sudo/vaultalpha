@@ -22,6 +22,16 @@ module.exports = {
 				display: ['Instrument Serif', 'Georgia', 'Times New Roman', 'serif'],
 				sans: ['Manrope Variable', 'Manrope', 'Helvetica Neue', 'Arial', 'sans-serif'],
 			},
+			// Instrument Serif has tall ascenders; Tailwind's default 1.0–1.1 line heights make wrapped headings collide.
+			fontSize: {
+				'3xl': ['1.875rem', { lineHeight: '1.25' }],
+				'4xl': ['2.25rem', { lineHeight: '1.2' }],
+				'5xl': ['3rem', { lineHeight: '1.18' }],
+				'6xl': ['3.75rem', { lineHeight: '1.15' }],
+				'7xl': ['4.5rem', { lineHeight: '1.12' }],
+				'8xl': ['6rem', { lineHeight: '1.1' }],
+				'9xl': ['8rem', { lineHeight: '1.1' }],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

@@ -9,7 +9,7 @@ export default function PageHeader({ label, title, intro, before, aside, image, 
         <div>
             {before}
             {label && <SectionLabel className="!text-champagne/80">{label}</SectionLabel>}
-            <h1 className="mt-5 max-w-4xl break-words font-display text-4xl font-normal leading-[1.08] tracking-[-0.02em] text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 max-w-4xl break-words font-display text-4xl font-normal !leading-[1.15] tracking-[-0.02em] text-white sm:text-5xl lg:text-6xl">
                 {title}
             </h1>
             {intro && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/65">{intro}</p>}

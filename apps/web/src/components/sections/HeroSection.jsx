@@ -12,13 +12,13 @@ const delay = (s) => ({ '--enter-delay': `${s}s` });
 export default function HeroSection() {
     return (
         <section className="relative flex min-h-[94svh] flex-col overflow-hidden border-b border-white/10 bg-ink text-white">
-            <Atmosphere src={HEADER_IMAGES.home} intensity="default" />
+            <Atmosphere src={HEADER_IMAGES.home} intensity="soft" />
 
             <div className="relative mx-auto flex w-full max-w-[80rem] flex-1 flex-col justify-center px-6 pb-16 pt-28 sm:pb-20 sm:pt-36 lg:px-12">
                 <p className="animate-enter text-[0.7rem] font-medium uppercase tracking-[0.28em] text-champagne/90">
                     {FIRM_DESCRIPTOR}
                 </p>
-                <h1 className="mt-7 max-w-4xl font-display text-[2.4rem] font-normal leading-[1.05] tracking-[-0.02em] text-white min-[400px]:text-[2.75rem] sm:text-6xl lg:text-[4.5rem]">
+                <h1 className="mt-7 max-w-4xl font-display text-[2.4rem] font-normal !leading-[1.15] tracking-[-0.02em] text-white min-[400px]:text-[2.75rem] sm:text-6xl lg:text-[4.5rem]">
                     Investing in the Infrastructure of the Digital Economy
                 </h1>
                 <p className="mt-7 max-w-xl text-base leading-relaxed text-white/70 sm:mt-8 sm:text-lg">

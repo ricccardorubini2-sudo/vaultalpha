@@ -42,7 +42,7 @@ export default function ArticleCard({ article, variant = 'card' }) {
                 <Cover article={article} className="aspect-[16/10] lg:col-span-7" />
                 <div className={`flex flex-col justify-center ${article.coverImage?.src ? 'lg:col-span-5' : 'max-w-4xl lg:col-span-12'}`}>
                     <ArticleMeta article={article} />
-                    <h2 className={`mt-5 text-[1.75rem] leading-tight sm:text-3xl xl:text-4xl ${TITLE}`}>{article.title}</h2>
+                    <h2 className={`mt-5 text-[1.75rem] !leading-[1.22] sm:text-3xl xl:text-4xl ${TITLE}`}>{article.title}</h2>
                     {article.summary && <p className="mt-5 text-lg leading-relaxed text-slate-600">{article.summary}</p>}
                     <div className="mt-6"><Byline article={article} /></div>
                 </div>

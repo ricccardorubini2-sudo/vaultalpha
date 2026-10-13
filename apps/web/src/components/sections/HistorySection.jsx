@@ -36,7 +36,7 @@ export default function HistorySection({ className = 'bg-canvas', spacing = 'com
                         {milestones.map((m, i) => (
                             <Reveal as="li" key={`${m.year}-${m.title}`} delay={Math.min(i, 4) * 0.06} className="relative grid gap-2 pb-12 pl-8 last:pb-0 lg:grid-cols-12 lg:gap-16 lg:pl-0">
                                 <span aria-hidden="true" className="absolute left-0 top-[1.125rem] h-[0.6875rem] w-[0.6875rem] -translate-y-1/2 rounded-full border-2 border-[hsl(var(--champagne))] bg-canvas lg:left-[calc(25%-1rem-0.34375rem)] lg:top-[1.25rem]" />
-                                <p className="font-display text-3xl font-medium leading-[2.25rem] tracking-[-0.02em] text-slate-900 lg:col-span-3 lg:text-right lg:text-4xl lg:leading-[2.5rem]">
+                                <p className="font-display text-3xl font-medium leading-[2.4rem] tracking-[-0.02em] text-slate-900 lg:col-span-3 lg:text-right lg:text-4xl lg:leading-[2.75rem]">
                                     {/^\d{4}$/.test(String(m.year))
                                         ? <time dateTime={String(m.year)}>{m.year}</time>
                                         : m.year}
