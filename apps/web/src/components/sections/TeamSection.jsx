@@ -2,14 +2,7 @@ import React from 'react';
 import Reveal from '@/components/Reveal';
 import TeamCard from '@/components/team/TeamCard';
 import { Section, Container, SectionHeader, ArrowLink } from '@/components/site/primitives';
-import { getActiveTeam, TEAM_GROUPS, TEAM_TIERS, teamPath } from '@/data/team';
-
-// Splits a group into rows by `tier`, in TEAM_TIERS order; untiered members form the last row.
-const toRows = (members) => {
-    const rows = TEAM_TIERS.map((t) => members.filter((m) => m.tier === t));
-    rows.push(members.filter((m) => !TEAM_TIERS.includes(m.tier)));
-    return rows.filter((r) => r.length > 0);
-};
+import { getActiveTeam, TEAM_GROUPS, teamPath } from '@/data/team';
 
 /**
  * groupIds:        optional list of TEAM_GROUPS ids to include (e.g. ['executive'] for a preview)
@@ -50,23 +43,18 @@ export default function TeamSection({
                     <Reveal key={g.id} delay={0.08 + i * 0.04}>
                         <div className={showHeader || i > 0 ? 'mt-16' : ''}>
                             <GroupHeading className="border-t border-slate-900 pt-5 text-sm font-medium text-slate-900">{g.label}</GroupHeading>
-                            {toRows(g.members).map((row, r) => (
-                                <ul
-                                    key={r}
-                                    className={`grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-8 ${r === 0 ? 'mt-8' : 'mt-12 border-t border-slate-200 pt-12'}`}
-                                >
-                                    {row.map((m) => (
-                                        <li key={m.slug}>
-                                            <TeamCard
-                                                member={m}
-                                                href={linkProfiles ? teamPath(m) : undefined}
-                                                showBio={showBios}
-                                                headingLevel={showHeader ? 4 : 3}
-                                            />
-                                        </li>
-                                    ))}
-                                </ul>
-                            ))}
+                            <ul className="mt-8 grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-8">
+                                {g.members.map((m) => (
+                                    <li key={m.slug}>
+                                        <TeamCard
+                                            member={m}
+                                            href={linkProfiles ? teamPath(m) : undefined}
+                                            showBio={showBios}
+                                            headingLevel={showHeader ? 4 : 3}
+                                        />
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </Reveal>
                 ))}

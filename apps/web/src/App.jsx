@@ -26,6 +26,7 @@ function App() {
                 <Route path="/terms-of-service" element={<Navigate to="/terms" replace />} />
                 <Route path="/cookie-settings" element={<Navigate to="/cookies" replace />} />
                 <Route path="/founders" element={<Navigate to="/contact" replace />} />
+                <Route path="/team/svitlana-pancuk" element={<Navigate to="/team" replace />} />
             </Routes>
         </Router>
     );

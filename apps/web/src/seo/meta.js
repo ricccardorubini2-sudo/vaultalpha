@@ -330,6 +330,7 @@ export const LEGACY_REDIRECTS = {
     '/terms-of-service': '/terms',
     '/cookie-settings': '/cookies',
     '/founders': '/contact',
+    '/team/svitlana-pancuk': '/team',
 };
 
 export function buildSitemap() {
