@@ -84,7 +84,7 @@ export const TEAM = [
     {
         slug: 'yulia-titarenko',
         name: 'Yulia Titarenko',
-        role: 'Chief Executive Officer, Partner',
+        role: 'CEO, General Partner(Investments)',
         group: 'executive',
         photo: photo('Yulia Titarenko.png'),
         ...EMPTY_PROFILE,
@@ -95,7 +95,7 @@ export const TEAM = [
     {
         slug: 'anastasiia-yarmak',
         name: 'Anastasiia Yarmak',
-        role: 'Co-Managing Partner',
+        role: 'General Partner(Investor Relations)',
         group: 'executive',
         photo: photo('Anastasiia Yarmak.png'),
         ...EMPTY_PROFILE,
@@ -117,7 +117,7 @@ export const TEAM = [
     {
         slug: 'yuliia-lohunkova',
         name: 'Yuliia Lohunkova',
-        role: 'Chief Business Development Officer',
+        role: 'Partner(Strategic Investments)',
         group: 'executive',
         photo: photo('Yuliia Lohunkova.jpg'),
         ...EMPTY_PROFILE,
@@ -125,25 +125,25 @@ export const TEAM = [
         active: true,
     },
     {
-        slug: 'oleksandr-pronoza',
-        name: 'Oleksandr Pronoza',
-        role: 'Partner',
-        group: 'executive',
-        photo: photo('Oleksandr Pronoza.png'),
-        ...EMPTY_PROFILE,
-        active: true,
-    },
-    {
         slug: 'iuliia-gomes',
         name: 'Iuliia Gomes',
-        role: 'Partner',
+        role: 'Partner(BD & Partnerships)',
         group: 'executive',
         photo: photo('Iuliia Gomes.png'),
         ...EMPTY_PROFILE,
         active: true,
     },
     { slug: 'yuki-tanaka', name: 'Yuki Tanaka', role: 'Head of Research', group: 'senior', photo: photo('Yuki Tanaka.png'), ...EMPTY_PROFILE, active: true },
-    { slug: 'yullia-mitchell', name: 'Yullia Mitchell', role: 'Partner, Investor Relations', group: 'senior', photo: photo('Yullia Mitchell.png'), ...EMPTY_PROFILE, active: true },
+    { slug: 'yullia-mitchell', name: 'Yullia Mitchell', role: 'Head of Human Resources', group: 'senior', photo: photo('Yullia Mitchell.png'), ...EMPTY_PROFILE, active: true },
+    {
+        slug: 'oleksandr-pronoza',
+        name: 'Oleksandr Pronoza',
+        role: 'Head of Finance',
+        group: 'senior',
+        photo: photo('Oleksandr Pronoza.png'),
+        ...EMPTY_PROFILE,
+        active: true,
+    },
 ];
 
 export const getActiveTeam = () => TEAM.filter((m) => m.active);
