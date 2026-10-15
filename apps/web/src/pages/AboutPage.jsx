@@ -15,11 +15,11 @@ import { BRAND, FIRM_DESCRIPTOR } from '@/config/site';
 
 const NEXT_STEPS = [
     {
-        to: '/strategy',
-        eyebrow: 'Investment Strategy',
+        to: '/themes',
+        eyebrow: 'Investment Themes',
         title: 'What we invest in',
-        desc: 'Why we centre on payments and stablecoins, and how we underwrite around that thesis.',
-        cta: 'Explore Strategy',
+        desc: 'Digital-asset infrastructure and crypto-native commerce — the two focuses of our book.',
+        cta: 'Explore Themes',
     },
     {
         to: '/team',

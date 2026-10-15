@@ -140,7 +140,12 @@ const STATIC_PAGES = {
     '/strategy': {
         title: 'Investment Strategy',
         heading: 'Investment Strategy',
-        description: `${BRAND} centres on payments and stablecoins — why digital dollars are becoming market infrastructure, and the adjacent themes around that thesis.`,
+        description: `${BRAND} centres on payments and stablecoins — why digital dollars are becoming market infrastructure, and how we evaluate and partner with founders.`,
+    },
+    '/themes': {
+        title: 'Investment Themes',
+        heading: 'Building the Real Economy of Digital Assets',
+        description: `${BRAND} invests across digital-asset infrastructure — payments, blockchain, trading and tokenized assets — and crypto-native commerce and services.`,
     },
     '/portfolio': {
         title: 'Portfolio',
@@ -167,6 +172,7 @@ const STATIC_PAGES = {
 };
 
 const SECTION_CRUMBS = {
+    themes: { name: 'Themes', path: '/themes' },
     portfolio: { name: 'Portfolio', path: '/portfolio' },
     team: { name: 'Team', path: '/team' },
     research: { name: 'Research', path: '/research' },

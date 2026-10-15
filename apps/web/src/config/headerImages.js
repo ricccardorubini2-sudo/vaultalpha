@@ -5,6 +5,7 @@ export const HEADER_IMAGES = {
     home: '/headers/hero-lobby.jpg',
     about: '/headers/about.jpg',
     strategy: '/headers/strategy.jpg',
+    themes: '/headers/themes.jpg',
     portfolio: '/headers/portfolio.jpg',
     team: '/headers/team.jpg',
     contact: '/headers/contact.jpg',

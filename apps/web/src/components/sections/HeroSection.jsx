@@ -3,7 +3,7 @@ import Atmosphere from '@/components/site/Atmosphere';
 import { HEADER_IMAGES } from '@/config/headerImages';
 import { ArrowLink } from '@/components/site/primitives';
 import { BRAND, FIRM_DESCRIPTOR } from '@/config/site';
-import { THEMES, CORE_THEME_SUMMARY } from '@/config/themes';
+import { FOCUS_AREAS, CORE_THEME_SUMMARY } from '@/config/themes';
 
 const delay = (s) => ({ '--enter-delay': `${s}s` });
 
@@ -25,21 +25,21 @@ export default function HeroSection() {
                     {BRAND} backs founders building the rails of digital finance, centred on {CORE_THEME_SUMMARY}. Adjacent work in blockchain, tokenized assets and trading follows from that core.
                 </p>
                 <div className="animate-enter mt-11 flex flex-col gap-3 sm:flex-row" style={delay(0.18)}>
-                    <ArrowLink to="/strategy" variant="light">Explore Strategy</ArrowLink>
+                    <ArrowLink to="/themes" variant="light">Explore Themes</ArrowLink>
                     <ArrowLink to="/contact" variant="outline">Contact Us</ArrowLink>
                 </div>
             </div>
 
             <div className="animate-enter relative border-t border-white/10 bg-black/20 backdrop-blur-[2px]" style={delay(0.32)}>
-                <ul className="mx-auto grid max-w-[80rem] grid-cols-2 px-6 lg:grid-cols-4 lg:px-12" aria-label="Investment themes">
-                    {THEMES.map((t, i) => (
+                <ul className="mx-auto grid max-w-[80rem] grid-cols-1 px-6 sm:grid-cols-2 lg:px-12" aria-label="Investment themes">
+                    {FOCUS_AREAS.map((t, i) => (
                         <li
-                            key={t.title}
-                            className={`py-5 pr-4 text-sm text-white/65 transition-colors hover:text-white lg:py-7 lg:pr-6 ${i > 0 ? 'lg:border-l lg:border-white/10 lg:pl-6' : ''}`}
+                            key={t.id}
+                            className={`py-5 pr-4 text-sm text-white/65 transition-colors hover:text-white lg:py-7 lg:pr-6 ${i > 0 ? 'sm:border-l sm:border-white/10 sm:pl-6' : ''}`}
                         >
                             <span className="mb-1 block tabular-nums text-champagne/70 lg:mb-0 lg:mr-3 lg:inline">{t.n}</span>
                             {t.title}
-                            {t.role === 'core' && (
+                            {t.badge === 'Core Focus' && (
                                 <span className="mt-1 block text-[0.65rem] font-medium uppercase tracking-[0.18em] text-champagne lg:mt-0 lg:ml-2 lg:inline">
                                     Core
                                 </span>

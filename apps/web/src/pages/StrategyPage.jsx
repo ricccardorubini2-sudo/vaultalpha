@@ -4,7 +4,6 @@ import { HEADER_IMAGES } from '@/config/headerImages';
 import AlternatingSections from '@/components/site/AlternatingSections';
 import PhilosophySection from '@/components/sections/PhilosophySection';
 import MarketThesisSection from '@/components/sections/MarketThesisSection';
-import ThemesSection from '@/components/sections/ThemesSection';
 import InvestmentParametersSection from '@/components/sections/InvestmentParametersSection';
 import InvestmentCriteriaSection from '@/components/sections/InvestmentCriteriaSection';
 import ProcessSection from '@/components/sections/ProcessSection';
@@ -22,7 +21,6 @@ export default function StrategyPage() {
                 sections={[
                     { key: 'philosophy', render: (bg) => <PhilosophySection variant="compact" showAboutLink={false} className={bg} spacing="compact" /> },
                     { key: 'thesis', render: (bg) => <MarketThesisSection className={bg} spacing="compact" /> },
-                    { key: 'themes', render: (bg) => <ThemesSection className={bg} variant="core" /> },
                     hasParameters && { key: 'parameters', render: (bg) => <InvestmentParametersSection className={bg} /> },
                     { key: 'criteria', render: (bg) => <InvestmentCriteriaSection className={bg} /> },
                     { key: 'process', render: (bg) => <ProcessSection className={bg} layout="timeline" showParameters={false} /> },

@@ -17,7 +17,7 @@ export default function HomePage() {
         <>
             <HeroSection />
             <PhilosophySection variant="compact" spacing="compact" />
-            <ThemesSection className="bg-canvas" spacing="compact" showStrategyLink variant="core">
+            <ThemesSection className="bg-canvas" spacing="compact">
                 <Reveal delay={0.1}>
                     <InvestmentParameters variant="compact" fields={PARAMETER_SUMMARY_FIELDS} className="mt-10" />
                 </Reveal>

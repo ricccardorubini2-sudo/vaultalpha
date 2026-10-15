@@ -6,11 +6,11 @@ import NextStepsSection from '@/components/sections/NextStepsSection';
 
 const NEXT_STEPS = [
     {
-        to: '/strategy',
-        eyebrow: 'Investment Strategy',
+        to: '/themes',
+        eyebrow: 'Investment Themes',
         title: 'What we invest in',
-        desc: 'Our four investment themes, what we look for and how our process works.',
-        cta: 'Explore Strategy',
+        desc: 'Digital-asset infrastructure and crypto-native commerce — the two focuses of our book.',
+        cta: 'Explore Themes',
     },
     {
         to: '/contact',

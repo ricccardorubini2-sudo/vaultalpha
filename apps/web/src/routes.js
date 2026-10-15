@@ -8,6 +8,7 @@
 const pages = {
     about: { module: 'src/pages/AboutPage.jsx', load: () => import('./pages/AboutPage.jsx') },
     strategy: { module: 'src/pages/StrategyPage.jsx', load: () => import('./pages/StrategyPage.jsx') },
+    themes: { module: 'src/pages/ThemesPage.jsx', load: () => import('./pages/ThemesPage.jsx') },
     portfolio: { module: 'src/pages/PortfolioPage.jsx', load: () => import('./pages/PortfolioPage.jsx') },
     portfolioCompany: { module: 'src/pages/PortfolioCompanyPage.jsx', load: () => import('./pages/PortfolioCompanyPage.jsx') },
     team: { module: 'src/pages/TeamPage.jsx', load: () => import('./pages/TeamPage.jsx') },
@@ -23,6 +24,7 @@ const pages = {
 export const LAZY_ROUTES = [
     { path: '/about', page: 'about' },
     { path: '/strategy', page: 'strategy' },
+    { path: '/themes', page: 'themes' },
     { path: '/portfolio', page: 'portfolio' },
     { path: '/portfolio/:slug', page: 'portfolioCompany' },
     { path: '/team', page: 'team' },

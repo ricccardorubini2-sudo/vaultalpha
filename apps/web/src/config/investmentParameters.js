@@ -1,4 +1,4 @@
-import { THEMES } from './themes.js';
+import { FOCUS_AREAS } from './themes.js';
 import { LOCATION_SUMMARY } from './company.js';
 
 // Single source of truth for VaultAlpha's investment parameters.
@@ -52,13 +52,13 @@ export const INVESTMENT_PARAMETERS = [
     {
         id: 'themes',
         label: 'Primary themes',
-        value: THEMES.map((t) => t.title),
+        value: FOCUS_AREAS.map((t) => t.title),
         detail: null,
         confirmed: true,
     },
 ];
 
-// Themes are presented separately on the Strategy page.
+// Themes are presented on the Themes page.
 export const STRATEGY_PARAMETER_FIELDS = ['stage', 'checkSize', 'geography', 'instruments', 'leadFollow'];
 
 // TODO: Confirm disclaimer wording with legal before publication.

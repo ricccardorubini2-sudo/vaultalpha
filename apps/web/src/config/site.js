@@ -14,6 +14,7 @@ export const FIRM_DESCRIPTOR = 'Digital-asset and technology investment firm';
 export const NAV_LINKS = [
     { label: 'About', to: '/about' },
     { label: 'Strategy', to: '/strategy' },
+    { label: 'Themes', to: '/themes' },
     { label: 'Portfolio', to: '/portfolio' },
     { label: 'Team', to: '/team' },
     HAS_RESEARCH && { label: 'Research', to: '/research' },
@@ -30,6 +31,7 @@ export const FOOTER_COLUMNS = [
         links: [
             { label: 'About', to: '/about' },
             { label: 'Strategy', to: '/strategy' },
+            { label: 'Themes', to: '/themes' },
             { label: 'Portfolio', to: '/portfolio' },
             { label: 'Team', to: '/team' },
         ],
