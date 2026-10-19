@@ -61,7 +61,7 @@ export const FOOTER_COLUMNS = [
 export const SOCIAL_LINKS = [
     { id: 'x', label: 'X', handle: '@vaultalpha_fund', url: 'https://x.com/vaultalpha_fund', verified: true, profile: true },
     { id: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/company/vaultalpha-fund/', verified: true, profile: true },
-    { id: 'telegram', label: 'Telegram', handle: '@Yuli_Hello', url: 'https://t.me/Yuli_Hello', verified: true, profile: false },
+    { id: 'telegram', label: 'Telegram', handle: '@hello_vaultalpha', url: 'https://t.me/hello_vaultalpha', verified: true, profile: false },
     { id: 'whatsapp', label: 'WhatsApp', handle: '+1 249 536 1789', url: 'https://wa.me/12495361789', verified: true, profile: false },
 ];
 
