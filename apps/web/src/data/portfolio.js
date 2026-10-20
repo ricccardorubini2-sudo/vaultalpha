@@ -1,8 +1,8 @@
 // Single source of truth for portfolio companies.
 //
-// Owner-confirmed (Step 5, 2026-10-06): VaultAlpha has invested in every
-// company below. See SITE_CONTENT_DECISIONS.md. Websites were checked on
-// 2026-10-06; descriptions summarise each company's own public description.
+// Owner-replaced (2026-10-19): VaultAlpha has invested in every company
+// below. See SITE_CONTENT_DECISIONS.md. Names, websites and descriptions are
+// as supplied by the owner; logos were taken from each company's public site.
 //
 // Field rules:
 // - Use null for anything not yet confirmed. Never fill a field with an estimate.
@@ -38,22 +38,16 @@ const mark = (file, tile = 'light') => ({ src: `/portfolio/${file}`, tile, wide:
 const wordmark = (file, tile = 'light') => ({ src: `/portfolio/${file}`, tile, wide: true });
 
 export const PORTFOLIO = [
-    company('bvnk', 'BVNK', 'https://www.bvnk.com/', 'Stablecoin payments infrastructure for enterprises.', mark('bvnk.png'), true),
-    company('centrifuge', 'Centrifuge', 'https://centrifuge.io/', 'Infrastructure to tokenize, manage and invest in real-world assets onchain.', mark('centrifuge.png'), true),
-    company('layerzero', 'LayerZero', 'https://www.layerzero.org/', 'An interoperability protocol for moving messages and assets between blockchains.', mark('layerzero.png'), true),
-    company('privy', 'Privy', 'https://www.privy.io/', 'Wallet and digital-asset infrastructure for financial products.', mark('privy.png'), true),
-    company('maple-finance', 'Maple Finance', 'https://maple.finance/', 'Onchain asset management and lending for institutions.', mark('maple-finance.png'), true),
-    company('morpho', 'Morpho', 'https://morpho.org/', 'An open credit network connecting lenders and borrowers onchain.', mark('morpho.svg'), true),
-    company('turnkey', 'Turnkey', 'https://www.turnkey.com/', 'Wallet and private-key infrastructure delivered through a single API.', mark('turnkey.png')),
-    company('zerohash', 'zerohash', 'https://zerohash.com/', 'API-first infrastructure for launching crypto and stablecoin products.', mark('zerohash.png')),
-    company('fireblocks', 'Fireblocks', 'https://www.fireblocks.com/', 'Enterprise infrastructure for digital assets and stablecoins.', mark('fireblocks.png')),
-    company('anchorage-digital', 'Anchorage Digital', 'https://www.anchorage.com/', 'An institutional crypto platform for custody and related services.', mark('anchorage-digital.png')),
-    company('figment', 'Figment', 'https://www.figment.io/', 'Staking infrastructure for institutions.', wordmark('figment.svg')),
-    company('copper', 'Copper', 'https://copper.co/', 'Custody, trading, settlement and collateral infrastructure for institutions.', mark('copper.svg')),
-    company('plume', 'Plume', 'https://www.plume.org/', 'A blockchain for bringing institutional assets onchain.', mark('plume.png')),
-    // eigenlayer.xyz now redirects to eigencloud.xyz (the company's current brand).
-    company('eigenlayer', 'EigenLayer', 'https://www.eigenlayer.xyz/', "A restaking protocol that extends Ethereum's security to other services.", mark('eigenlayer.png')),
-    company('wormhole', 'Wormhole', 'https://wormhole.com/', 'Open-source infrastructure for moving tokens, data and assets between blockchains.', mark('wormhole.png')),
+    company('monerium', 'Monerium', 'https://monerium.com/', 'Issues regulated on-chain euros and connects bank accounts with Web3 wallets for payments and settlement.', mark('monerium.png'), true),
+    company('finchtrade', 'FinchTrade', 'https://finchtrade.com/', 'Institutional stablecoin liquidity, crypto/fiat conversions, large-block execution and settlement for payment providers.', mark('finchtrade.png'), true),
+    company('brickken', 'Brickken', 'https://brickken.com/', 'Institutional infrastructure to tokenize, issue and manage real-world assets, funds and securities.', mark('brickken.png'), true),
+    company('centrifuge', 'Centrifuge', 'https://centrifuge.io/', 'Infrastructure for tokenized funds, on-chain investment vaults and institutional RWA liquidity.', mark('centrifuge.png'), true),
+    company('blockscout', 'Blockscout', 'https://blockscout.com/', 'Blockchain explorers, transaction indexing, smart-contract verification and APIs for EVM networks.', mark('blockscout.png'), true),
+    company('gelato', 'Gelato', 'https://gelato.cloud/', 'Blockchain automation, gasless transactions and rollup infrastructure for Web3 developers.', mark('gelato.png'), true),
+    company('flovtec', 'flovtec', 'https://flovtec.com/', 'Algorithmic market making, liquidity provision and order-book management for tokens and exchanges.', mark('flovtec.png')),
+    company('keyrock', 'Keyrock', 'https://keyrock.com/', 'Algorithmic market making, institutional liquidity, OTC execution and trading services across digital-asset markets.', mark('keyrock.png')),
+    company('lcx', 'LCX', 'https://www.lcx.com/', 'Digital-asset exchange and tokenization infrastructure, including asset-backed token markets.', wordmark('lcx.png')),
+    company('coinmetro', 'Coinmetro', 'https://coinmetro.com/', 'Cryptocurrency trading platform offering spot markets, fiat access and digital-asset services.', mark('coinmetro.png')),
 ];
 
 export const HOMEPAGE_PORTFOLIO_LIMIT = 6;

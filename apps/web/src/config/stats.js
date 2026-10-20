@@ -12,8 +12,9 @@ export const STATS = [
     // Keep out of structured data (see seo/meta.js).
     { id: 'aum', value: 750, prefix: '$', suffix: 'M', label: 'Assets under management', verified: true },
     // Keep in step with the active entries in data/portfolio.js.
-    { id: 'portfolioCompanies', value: 15, label: 'Portfolio companies', verified: true },
-    { id: 'countries', value: 6, label: 'Portfolio countries', verified: true },
+    { id: 'portfolioCompanies', value: 10, label: 'Portfolio companies', verified: true },
+    // Portfolio was replaced on 2026-10-19; country count needs owner confirmation.
+    { id: 'countries', value: 6, label: 'Portfolio countries', verified: false },
 ];
 
 export const getPublicStats = () => (STATS_PUBLISHED ? STATS.filter((s) => s.verified === true) : []);

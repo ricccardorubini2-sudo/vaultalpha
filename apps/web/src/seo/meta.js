@@ -337,6 +337,20 @@ export const LEGACY_REDIRECTS = {
     '/cookie-settings': '/cookies',
     '/founders': '/contact',
     '/team/svitlana-pancuk': '/team',
+    '/portfolio/bvnk': '/portfolio',
+    '/portfolio/layerzero': '/portfolio',
+    '/portfolio/privy': '/portfolio',
+    '/portfolio/maple-finance': '/portfolio',
+    '/portfolio/morpho': '/portfolio',
+    '/portfolio/turnkey': '/portfolio',
+    '/portfolio/zerohash': '/portfolio',
+    '/portfolio/fireblocks': '/portfolio',
+    '/portfolio/anchorage-digital': '/portfolio',
+    '/portfolio/figment': '/portfolio',
+    '/portfolio/copper': '/portfolio',
+    '/portfolio/plume': '/portfolio',
+    '/portfolio/eigenlayer': '/portfolio',
+    '/portfolio/wormhole': '/portfolio',
 };
 
 export function buildSitemap() {
