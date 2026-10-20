@@ -11,7 +11,7 @@ const delay = (s) => ({ '--enter-delay': `${s}s` });
 // Largest Contentful Paint candidates); only secondary elements animate in.
 export default function HeroSection() {
     return (
-        <section className="relative flex min-h-[94svh] flex-col overflow-hidden border-b border-white/10 bg-ink text-white">
+        <section className="relative flex min-h-[100svh] flex-col overflow-hidden border-b border-white/10 bg-ink text-white">
             <Atmosphere src={HEADER_IMAGES.home} intensity="soft" />
 
             <div className="relative mx-auto flex w-full max-w-[80rem] flex-1 flex-col justify-center px-6 pb-16 pt-28 sm:pb-20 sm:pt-36 lg:px-12">

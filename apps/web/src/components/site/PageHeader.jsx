@@ -2,8 +2,9 @@ import React from 'react';
 import Atmosphere from './Atmosphere';
 import { SectionLabel } from './primitives';
 
-// Dark page intro with atmospheric architecture wash. The headline renders
-// visible from the first paint (LCP); the optional aside fades in.
+// Full-screen dark page intro with atmospheric architecture wash: the header
+// image fills the first viewport on every page and device. The headline
+// renders visible from the first paint (LCP); the optional aside fades in.
 export default function PageHeader({ label, title, intro, before, aside, image, children }) {
     const text = (
         <div>
@@ -17,9 +18,9 @@ export default function PageHeader({ label, title, intro, before, aside, image, 
         </div>
     );
     return (
-        <section className="relative overflow-hidden border-b border-white/10 bg-ink text-white">
+        <section className="relative flex min-h-[100svh] flex-col overflow-hidden border-b border-white/10 bg-ink text-white">
             <Atmosphere src={image} intensity="soft" />
-            <div className="relative mx-auto max-w-[80rem] px-6 pb-16 pt-28 sm:pb-20 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-44">
+            <div className="relative mx-auto flex w-full max-w-[80rem] flex-1 flex-col justify-center px-6 pb-16 pt-28 sm:pb-20 sm:pt-36 lg:px-12">
                 {aside ? (
                     <div className="grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-16">
                         <div className="lg:col-span-7">{text}</div>
