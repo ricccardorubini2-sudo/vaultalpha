@@ -61,13 +61,14 @@ const EMPTY_PROFILE = {
 
 export const TEAM = [
     {
-        slug: 'serhii-kryveko',
-        name: 'Serhii Kryveko',
-        role: 'Chairman & Founder',
+        slug: 'roman-romanov',
+        name: 'Roman Romanov',
+        role: 'Founder',
         group: 'executive',
-        photo: photo('Serhii Kryveko.png'),
+        photo: photo('Roman Romanov.png'),
         ...EMPTY_PROFILE,
         email: 'hello@vaultalpha.fund',
+        linkedinUrl: 'https://www.linkedin.com/in/roman-romanov-63a2a2422/',
         active: true,
     },
     {
