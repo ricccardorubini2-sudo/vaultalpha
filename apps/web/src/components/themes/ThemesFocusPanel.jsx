@@ -1,10 +1,8 @@
-import React, { useEffect, useId, useState } from 'react';
+import React from 'react';
 import {
     Blocks,
     CandlestickChart,
     CarFront,
-    ChevronDown,
-    ChevronRight,
     Clapperboard,
     Coins,
     Dices,
@@ -75,35 +73,11 @@ function SubAreaCard({ area }) {
     );
 }
 
-export default function ThemesFocusPanel({ focus, open, onOpen, onClose }) {
-    const panelId = useId();
-    const [finePointer, setFinePointer] = useState(true);
-
-    useEffect(() => {
-        const mq = window.matchMedia('(hover: hover) and (pointer: fine)');
-        const sync = () => setFinePointer(mq.matches);
-        sync();
-        mq.addEventListener('change', sync);
-        return () => mq.removeEventListener('change', sync);
-    }, []);
-
-    const toggle = () => {
-        if (open) onClose();
-        else onOpen();
-    };
-
+// Static section: heading and content are always visible (no dropdown).
+export default function ThemesFocusPanel({ focus }) {
     return (
-        <article
-            className={`rounded-sm border transition-colors duration-300 ${open ? 'border-slate-300 bg-white shadow-sm' : 'border-slate-200 bg-mist/80 hover:border-slate-300 hover:bg-white'}`}
-            onMouseEnter={() => finePointer && onOpen()}
-        >
-            <button
-                type="button"
-                className="flex w-full items-start gap-5 px-6 py-6 text-left sm:items-center sm:px-8 sm:py-7"
-                aria-expanded={open}
-                aria-controls={panelId}
-                onClick={() => (finePointer ? onOpen() : toggle())}
-            >
+        <article className="rounded-sm border border-slate-300 bg-white shadow-sm">
+            <div className="flex items-start gap-5 px-6 py-6 sm:items-center sm:px-8 sm:py-7">
                 <span className="shrink-0 pt-0.5 font-display text-2xl tabular-nums text-slate-400 sm:text-3xl">{focus.n}</span>
                 <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-3">
@@ -122,44 +96,33 @@ export default function ThemesFocusPanel({ focus, open, onOpen, onClose }) {
                     </div>
                     <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base">{focus.summary}</p>
                 </div>
-                <span className="ml-auto hidden shrink-0 items-center gap-2 text-[0.65rem] font-medium uppercase tracking-[0.18em] text-slate-500 sm:inline-flex">
-                    {open ? focus.collapseLabel : focus.expandLabel}
-                    {open ? <ChevronDown className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" /> : <ChevronRight className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />}
-                </span>
-            </button>
+            </div>
 
-            <div
-                id={panelId}
-                className={`grid transition-[grid-template-rows] duration-500 ease-out ${open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
-            >
-                <div className="overflow-hidden">
-                    <div className={`border-t border-slate-200 px-6 pb-8 pt-2 sm:px-8 sm:pb-10 ${open ? 'animate-focus-in' : ''}`}>
-                        {focus.purpose && (
-                            <div className="mb-8 max-w-3xl border-b border-slate-100 pb-8">
-                                <p className="text-[0.65rem] font-medium uppercase tracking-[0.22em] text-slate-500">Purpose</p>
-                                <p className="mt-3 text-base leading-relaxed text-slate-700">{focus.purpose}</p>
-                                {focus.approach?.length > 0 && (
-                                    <ul className="mt-6 grid gap-5 sm:grid-cols-2">
-                                        {focus.approach.map((item) => (
-                                            <li key={item.title}>
-                                                <p className="text-sm font-medium text-slate-900">{item.title}</p>
-                                                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </div>
+            <div className="border-t border-slate-200 px-6 pb-8 pt-2 sm:px-8 sm:pb-10">
+                {focus.purpose && (
+                    <div className="mb-8 max-w-3xl border-b border-slate-100 pb-8">
+                        <p className="text-[0.65rem] font-medium uppercase tracking-[0.22em] text-slate-500">Purpose</p>
+                        <p className="mt-3 text-base leading-relaxed text-slate-700">{focus.purpose}</p>
+                        {focus.approach?.length > 0 && (
+                            <ul className="mt-6 grid gap-5 sm:grid-cols-2">
+                                {focus.approach.map((item) => (
+                                    <li key={item.title}>
+                                        <p className="text-sm font-medium text-slate-900">{item.title}</p>
+                                        <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
+                                    </li>
+                                ))}
+                            </ul>
                         )}
-
-                        <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                            {focus.subAreas.map((area) => (
-                                <SubAreaCard key={area.id} area={area} />
-                            ))}
-                        </ul>
-
-                        <EntityMarquee slugs={focus.entitySlugs} />
                     </div>
-                </div>
+                )}
+
+                <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                    {focus.subAreas.map((area) => (
+                        <SubAreaCard key={area.id} area={area} />
+                    ))}
+                </ul>
+
+                <EntityMarquee slugs={focus.entitySlugs} />
             </div>
         </article>
     );
